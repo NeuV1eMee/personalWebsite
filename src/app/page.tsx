@@ -4,14 +4,24 @@ import { useEffect, useRef, useState } from "react";
 import { BracketButton } from "@/components/ui/BracketButton";
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [isContactOpen, setIsContactOpen] = useState(false);
+  
+  // Playlist of background videos
+  const playlist = [
+    "/videos/mainpage_vid-1.mov",
+    "/videos/mainpage_vid-2.mov",
+    "/videos/mainpage_vid-3.mov",
+    "/videos/mainpage_vid-4.mov",
+    "/videos/mainpage_vid-5.mov",
+    "/videos/mainpage_vid-6.mov",
+    "/videos/mainpage_vid-7.mov"
+  ];
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.8;
-    }
-  }, []);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
+  const handleVideoEnded = () => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % playlist.length);
+  };
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center p-8 text-center overflow-hidden">
@@ -57,17 +67,17 @@ export default function Home() {
       {/* Background Video */}
       <div className="absolute inset-0 -z-10 bg-black">
         <video 
-          ref={videoRef}
+          key={playlist[currentVideoIndex]} // Force re-render on change
           autoPlay 
-          loop 
           muted 
           playsInline 
-          className="w-full h-full object-cover opacity-60 grayscale contrast-[1.35]"
+          onEnded={handleVideoEnded}
+          className="w-full h-full object-cover grayscale contrast-[1.2] brightness-[0.8] opacity-70"
         >
-          <source src="/videos/mainpage_video_1.MOV" type="video/quicktime" />
-          <source src="/videos/mainpage_video_1.MOV" type="video/mp4" />
+          <source src={playlist[currentVideoIndex]} type="video/quicktime" />
+          <source src={playlist[currentVideoIndex]} type="video/mp4" />
         </video>
-        {/* Overlay to darken video slightly for text readability */}
+        {/* Subtle overlay for text readability */}
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
