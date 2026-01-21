@@ -126,3 +126,39 @@ Main Page
     │   └── [polaroid]   ──┤    └── Click Photo -> Popup (Color)
     └── [all photos]     ──┘
 ```
+
+
+### Pathtree design
+my-portfolio/
+├── public/                 # 静态资源
+│   ├── videos/             # 存放 Fujifilm X-T5 拍摄的背景循环视频
+│   ├── photos/             # 摄影作品 (按 collection 文件夹分类)
+│   └── resume.pdf          # 你的最新简历 (包含 CSM 认证)
+├── src/
+│   ├── app/                # Next.js 核心路由 (View 层)
+│   │   ├── layout.tsx      # 全局布局：视频背景、[Contact] 按钮
+│   │   ├── page.tsx        # Main Page：Tagline 与导航按钮
+│   │   ├── build/          # Build (Projects) 页面
+│   │   │   └── page.tsx    
+│   │   ├── sound/          # Sound (Music) 页面
+│   │   │   └── page.tsx    
+│   │   ├── lens/           # Lens (Photos) 页面
+│   │   │   └── page.tsx    
+│   │   └── about/          # About (CV) 页面
+│   │       └── page.tsx    
+│   ├── components/         # 可复用的 UI 组件
+│   │   ├── ui/
+│   │   │   ├── BracketButton.tsx  # 标志性的 [Button] 组件
+│   │   │   ├── GrainyOverlay.tsx  # 视频上层的颗粒感滤镜
+│   │   │   └── Lightbox.tsx       # 点击照片后的彩色弹出层
+│   │   ├── ProjectCard.tsx        # Zig-Zag 布局的项目卡片
+│   │   └── MusicRigList.tsx       # 你的乐器设备清单 (Roland, Gibson 等)
+│   ├── hooks/                     # 自定义逻辑层
+│   │   └── useScrollFocus.ts      # 核心：判断元素是否在屏幕中心以触发显色
+│   ├── data/                      # 数据层 (Model 层)
+│   │   ├── projects.ts            # 存放 SleePurr 等项目的信息
+│   │   ├── photos.ts              # 摄影集的元数据
+│   │   └── music.ts               # Band Story 和 Cover 列表
+│   └── styles/
+│       └── globals.css            # Tailwind 全局黑白滤镜配置
+└── tailwind.config.js
