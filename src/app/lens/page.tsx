@@ -1,26 +1,36 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { BracketButton } from "@/components/ui/BracketButton";
-import { Lightbox } from "@/components/ui/Lightbox";
-import { photos, Photo, PhotoCategory } from "@/data/photos";
 import { cn } from "@/lib/utils";
 
-const CATEGORIES: { id: PhotoCategory; label: string; index: string }[] = [
-  { id: "distortion", label: "Distortion", index: "01" },
-  { id: "silence", label: "Silence", index: "02" },
-  { id: "strangers", label: "Strangers", index: "03" },
-  { id: "polaroid", label: "Polaroid", index: "04" },
+const CATEGORIES = [
+  { id: "distortion", label: "Distortion", index: "01", image: "/photos/Distortion/cover.JPG" },
+  { id: "silence", label: "Silence", index: "02", image: "/photos/Silence/cover.JPG" },
+  { id: "strangers", label: "Strangers", index: "03", image: "/photos/Strangers/cover.jpg" },
+  { id: "polaroid", label: "Polaroid", index: "04", image: "/photos/Polariod/cover.JPG" },
+];
+
+const FEATURED_PHOTOS = [
+  { src: "/photos/Featured/feature.JPG", title: "The Beginning", date: "2024", description: "Where it all started." },
+  { src: "/photos/Featured/07cf0d1b1c9e5dc454411b12817255bf.JPG", title: "Abstract Light", date: "2024", description: "Light painting in the dark." },
+  { src: "/photos/Featured/DSCF7414.JPG", title: "Urban Solitude", date: "2023", description: "Alone in the crowd." },
+  { src: "/photos/Featured/XT308590.jpg", title: "Vintage Soul", date: "2023", description: "Captured on film." },
 ];
 
 export default function LensPage() {
-  const [activeCategory, setActiveCategory] = useState<PhotoCategory | "all">("all");
-  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
+  const [featuredIndex, setFeaturedIndex] = useState(0);
 
-  // Filter photos
-  const filteredPhotos = activeCategory === "all"
-    ? photos
-    : photos.filter((p) => p.category === activeCategory);
+  const nextFeatured = () => {
+    setFeaturedIndex((prev) => (prev + 1) % FEATURED_PHOTOS.length);
+  };
+
+  const prevFeatured = () => {
+    setFeaturedIndex((prev) => (prev - 1 + FEATURED_PHOTOS.length) % FEATURED_PHOTOS.length);
+  };
+
+  const currentFeatured = FEATURED_PHOTOS[featuredIndex];
 
   return (
     <div className="min-h-screen bg-black text-neutral-400 font-light selection:bg-white selection:text-black pb-20">
@@ -29,98 +39,99 @@ export default function LensPage() {
       <header className="fixed top-0 left-0 right-0 z-40 p-6 flex justify-between items-center bg-black/80 backdrop-blur-sm">
         <BracketButton text="< Back" href="/" className="text-sm" />
         <h1 className="text-lg font-normal tracking-wide text-neutral-200">Gallery</h1>
-        <div className="w-16" /> {/* Spacer for balance */}
+        <div className="w-16" />
       </header>
 
-      <main className="pt-24 px-6 md:px-12 max-w-[1600px] mx-auto space-y-24">
+      <main className="pt-36 px-6 md:px-12 max-w-[1600px] mx-auto space-y-64">
         
-        {/* Featured Section (Carousel Placeholder) */}
-        <section className="w-full space-y-4">
-           {/* Aspect Ratio 21:9 roughly */}
-           <div className="w-full aspect-[2/1] md:aspect-[21/9] bg-neutral-800/50 border border-neutral-800 relative group cursor-pointer overflow-hidden flex items-center justify-center">
-               <div className="text-center">
-                   <p className="text-xl md:text-2xl text-neutral-600 font-light tracking-widest">[ FEATURED ]</p>
+        {/* Featured Section (Carousel) */}
+        <section className="w-full space-y-8 select-none">
+           {/* Carousel Container */}
+           <div className="relative w-full h-[60vh] flex items-center justify-center group/carousel">
+               
+               {/* PREV Photo (Left) */}
+               <div 
+                 className="absolute left-0 md:left-4 h-[50%] md:h-[60%] z-10 cursor-pointer transition-all duration-500 hover:scale-105 hover:opacity-80 opacity-20 grayscale"
+                 onClick={prevFeatured}
+               >
+                  <img 
+                    key={FEATURED_PHOTOS[(featuredIndex - 1 + FEATURED_PHOTOS.length) % FEATURED_PHOTOS.length].src}
+                    src={FEATURED_PHOTOS[(featuredIndex - 1 + FEATURED_PHOTOS.length) % FEATURED_PHOTOS.length].src}
+                    alt="Previous"
+                    className="h-full w-auto object-contain shadow-xl animate-[fadeScale_0.8s_ease-out]"
+                  />
                </div>
-               {/* Hover Effect */}
-               <div className="absolute inset-0 bg-neutral-700/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+               {/* CURRENT Photo (Center) */}
+               <div className="relative z-20 h-full w-full flex items-center justify-center shadow-2xl overflow-hidden pointer-events-none">
+                  <img 
+                    key={currentFeatured.src}
+                    src={currentFeatured.src}
+                    alt={currentFeatured.title}
+                    className="max-h-full w-auto max-w-[85vw] md:max-w-[65vh] object-contain transition-all duration-1000 ease-in-out pointer-events-auto"
+                  />
+               </div>
+
+               {/* NEXT Photo (Right) */}
+               <div 
+                 className="absolute right-0 md:right-4 h-[50%] md:h-[60%] z-10 cursor-pointer transition-all duration-500 hover:scale-105 hover:opacity-80 opacity-20 grayscale"
+                 onClick={nextFeatured}
+               >
+                  <img 
+                    key={FEATURED_PHOTOS[(featuredIndex + 1) % FEATURED_PHOTOS.length].src}
+                    src={FEATURED_PHOTOS[(featuredIndex + 1) % FEATURED_PHOTOS.length].src}
+                    alt="Next"
+                    className="h-full w-auto object-contain shadow-xl animate-[fadeScale_0.8s_ease-out]"
+                  />
+               </div>
            </div>
            
-           <div className="flex justify-between text-xs md:text-sm text-neutral-500 font-mono">
-               <span>Date.</span>
-               <span>Description of this photo.</span>
-               <span>Taken by [Camera] + [Lens]</span>
+           {/* Metadata */}
+           <div className="flex justify-center items-center text-xs md:text-sm text-neutral-500 font-mono">
+               <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center animate-[fadeUp_1s_ease-out]">
+                   <span>{currentFeatured.date}</span>
+                   <span className="text-neutral-300 uppercase tracking-wide">[{currentFeatured.title}]</span>
+                   <span className="hidden md:inline text-neutral-600">// {currentFeatured.description}</span>
+               </div>
            </div>
         </section>
 
         {/* Categories Blocks */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {CATEGORIES.map((cat) => (
-                <button
+                <Link
                     key={cat.id}
-                    onClick={() => setActiveCategory(cat.id)}
-                    className={cn(
-                        "aspect-[3/4] flex flex-col justify-end p-8 border transition-all duration-300 group relative overflow-hidden",
-                        activeCategory === cat.id 
-                            ? "bg-neutral-900 border-neutral-600 text-white" 
-                            : "bg-transparent border-neutral-800 text-neutral-500 hover:border-neutral-600 hover:text-neutral-300"
-                    )}
+                    href={`/lens/${cat.id}`}
+                    className="aspect-[3/5] flex flex-col justify-end p-8 text-neutral-300 hover:text-white transition-all duration-500 group relative bg-transparent"
                 >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="text-2xl font-light mb-2 block relative z-10">{cat.index}</span>
-                    <span className="text-sm tracking-widest uppercase relative z-10">[{cat.label}]</span>
-                </button>
+                    {/* Background Image with Mask for soft edges */}
+                    <div className="absolute inset-0 z-0 [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_85%,transparent_100%)]">
+                         <img 
+                           src={cat.image} 
+                           alt={cat.label} 
+                           className="w-full h-full object-cover grayscale contrast-125 brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
+                         />
+                         {/* Dark overlay to ensure text readability initially */}
+                         <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />
+                    </div>
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity z-10" />
+                    
+                    <span className="text-2xl font-light mb-2 block relative z-20 translate-y-0 group-hover:-translate-y-1 transition-transform duration-500">{cat.index}</span>
+                    <span className="text-sm tracking-widest uppercase relative z-20 translate-y-0 group-hover:-translate-y-1 transition-transform duration-500 delay-75">[{cat.label}]</span>
+                </Link>
             ))}
         </section>
 
         {/* All Photos Button */}
         <div className="flex justify-center">
-            <button 
-                onClick={() => setActiveCategory("all")}
-                className={cn(
-                    "text-sm tracking-widest uppercase transition-colors duration-300",
-                    activeCategory === "all" ? "text-white underline underline-offset-8" : "text-neutral-600 hover:text-neutral-400"
-                )}
+            <Link 
+                href="/lens/all"
+                className="text-sm tracking-widest uppercase text-neutral-600 hover:text-neutral-400 transition-colors duration-300"
             >
                 [ All Photos ]
-            </button>
+            </Link>
         </div>
-
-        {/* Photo Wall */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {filteredPhotos.map((photo) => (
-                <div 
-                    key={photo.id}
-                    onClick={() => setSelectedPhoto(photo)}
-                    className="group cursor-pointer space-y-3"
-                >
-                    <div className="aspect-[4/5] bg-neutral-900 overflow-hidden relative border border-neutral-900 group-hover:border-neutral-700 transition-colors">
-                        {/* Image Placeholder - In real app use next/image */}
-                         {/* We force grayscale here as per design requirement */}
-                        <img 
-                            src={photo.src} 
-                            alt={photo.title}
-                            className="w-full h-full object-cover grayscale brightness-75 contrast-125 group-hover:brightness-90 transition-all duration-500"
-                            loading="lazy"
-                            onError={(e) => {
-                                e.currentTarget.style.display = 'none';
-                                e.currentTarget.parentElement!.classList.add('flex', 'items-center', 'justify-center');
-                                e.currentTarget.parentElement!.innerHTML += `<span class="text-neutral-700 text-xs p-4 text-center">[ IMG: ${photo.title} ]</span>`;
-                            }}
-                        />
-                    </div>
-                    <div className="flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-1">
-                        <span className="text-xs text-neutral-400 font-mono uppercase truncate max-w-[70%]">{photo.title}</span>
-                        <span className="text-[10px] text-neutral-600 font-mono">{photo.year}</span>
-                    </div>
-                </div>
-            ))}
-            
-            {filteredPhotos.length === 0 && (
-                <div className="col-span-full py-20 text-center text-neutral-600 font-mono text-sm">
-                    [ NO PHOTOS FOUND IN THIS COLLECTION ]
-                </div>
-            )}
-        </section>
 
       </main>
 
@@ -136,12 +147,6 @@ export default function LensPage() {
               </a>
           </div>
       </footer>
-
-      {/* Lightbox Modal */}
-      <Lightbox 
-        photo={selectedPhoto} 
-        onClose={() => setSelectedPhoto(null)} 
-      />
     </div>
   );
 }
