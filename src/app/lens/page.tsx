@@ -4,33 +4,22 @@ import { useState } from "react";
 import Link from "next/link";
 import { BracketButton } from "@/components/ui/BracketButton";
 import { cn } from "@/lib/utils";
-
-const CATEGORIES = [
-  { id: "distortion", label: "Distortion", index: "01", image: "/photos/Distortion/cover.JPG" },
-  { id: "silence", label: "Silence", index: "02", image: "/photos/Silence/cover.JPG" },
-  { id: "strangers", label: "Strangers", index: "03", image: "/photos/Strangers/cover.jpg" },
-  { id: "polaroid", label: "Polaroid", index: "04", image: "/photos/Polariod/cover.JPG" },
-];
-
-const FEATURED_PHOTOS = [
-  { src: "/photos/Featured/feature.JPG", title: "The Beginning", date: "2024", description: "Where it all started." },
-  { src: "/photos/Featured/07cf0d1b1c9e5dc454411b12817255bf.JPG", title: "Abstract Light", date: "2024", description: "Light painting in the dark." },
-  { src: "/photos/Featured/DSCF7414.JPG", title: "Urban Solitude", date: "2023", description: "Alone in the crowd." },
-  { src: "/photos/Featured/XT308590.jpg", title: "Vintage Soul", date: "2023", description: "Captured on film." },
-];
+import { photos, photoDescriptions, CATEGORIES } from "@/data/photos";
 
 export default function LensPage() {
   const [featuredIndex, setFeaturedIndex] = useState(0);
+  const featuredPhotos = photos.filter(p => p.category === "featured");
 
   const nextFeatured = () => {
-    setFeaturedIndex((prev) => (prev + 1) % FEATURED_PHOTOS.length);
+    setFeaturedIndex((prev) => (prev + 1) % featuredPhotos.length);
   };
 
   const prevFeatured = () => {
-    setFeaturedIndex((prev) => (prev - 1 + FEATURED_PHOTOS.length) % FEATURED_PHOTOS.length);
+    setFeaturedIndex((prev) => (prev - 1 + featuredPhotos.length) % featuredPhotos.length);
   };
 
-  const currentFeatured = FEATURED_PHOTOS[featuredIndex];
+  const currentFeatured = featuredPhotos[featuredIndex];
+  const currentDescription = currentFeatured ? photoDescriptions[currentFeatured.id] : "";
 
   return (
     <div className="min-h-screen bg-black text-neutral-400 font-light selection:bg-white selection:text-black pb-20">
@@ -54,22 +43,26 @@ export default function LensPage() {
                  className="absolute left-0 md:left-4 h-[50%] md:h-[60%] z-10 cursor-pointer transition-all duration-500 hover:scale-105 hover:opacity-80 opacity-20 grayscale"
                  onClick={prevFeatured}
                >
-                  <img 
-                    key={FEATURED_PHOTOS[(featuredIndex - 1 + FEATURED_PHOTOS.length) % FEATURED_PHOTOS.length].src}
-                    src={FEATURED_PHOTOS[(featuredIndex - 1 + FEATURED_PHOTOS.length) % FEATURED_PHOTOS.length].src}
-                    alt="Previous"
-                    className="h-full w-auto object-contain shadow-xl animate-[fadeScale_0.8s_ease-out]"
-                  />
+                  {featuredPhotos.length > 0 && (
+                    <img 
+                      key={featuredPhotos[(featuredIndex - 1 + featuredPhotos.length) % featuredPhotos.length].src}
+                      src={featuredPhotos[(featuredIndex - 1 + featuredPhotos.length) % featuredPhotos.length].src}
+                      alt="Previous"
+                      className="h-full w-auto object-contain shadow-xl animate-[fadeScale_0.8s_ease-out]"
+                    />
+                  )}
                </div>
 
                {/* CURRENT Photo (Center) */}
                <div className="relative z-20 h-full w-full flex items-center justify-center shadow-2xl overflow-hidden pointer-events-none">
-                  <img 
-                    key={currentFeatured.src}
-                    src={currentFeatured.src}
-                    alt={currentFeatured.title}
-                    className="max-h-full w-auto max-w-[85vw] md:max-w-[65vh] object-contain transition-all duration-1000 ease-in-out pointer-events-auto"
-                  />
+                  {currentFeatured && (
+                    <img 
+                      key={currentFeatured.src}
+                      src={currentFeatured.src}
+                      alt={currentFeatured.title}
+                      className="max-h-full w-auto max-w-[85vw] md:max-w-[65vh] object-contain transition-all duration-1000 ease-in-out pointer-events-auto"
+                    />
+                  )}
                </div>
 
                {/* NEXT Photo (Right) */}
@@ -77,22 +70,25 @@ export default function LensPage() {
                  className="absolute right-0 md:right-4 h-[50%] md:h-[60%] z-10 cursor-pointer transition-all duration-500 hover:scale-105 hover:opacity-80 opacity-20 grayscale"
                  onClick={nextFeatured}
                >
-                  <img 
-                    key={FEATURED_PHOTOS[(featuredIndex + 1) % FEATURED_PHOTOS.length].src}
-                    src={FEATURED_PHOTOS[(featuredIndex + 1) % FEATURED_PHOTOS.length].src}
-                    alt="Next"
-                    className="h-full w-auto object-contain shadow-xl animate-[fadeScale_0.8s_ease-out]"
-                  />
+                  {featuredPhotos.length > 0 && (
+                    <img 
+                      key={featuredPhotos[(featuredIndex + 1) % featuredPhotos.length].src}
+                      src={featuredPhotos[(featuredIndex + 1) % featuredPhotos.length].src}
+                      alt="Next"
+                      className="h-full w-auto object-contain shadow-xl animate-[fadeScale_0.8s_ease-out]"
+                    />
+                  )}
                </div>
            </div>
            
            {/* Metadata */}
            <div className="flex justify-center items-center text-xs md:text-sm text-neutral-500 font-mono">
-               <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center animate-[fadeUp_1s_ease-out]">
-                   <span>{currentFeatured.date}</span>
-                   <span className="text-neutral-300 uppercase tracking-wide">[{currentFeatured.title}]</span>
-                   <span className="hidden md:inline text-neutral-600">// {currentFeatured.description}</span>
-               </div>
+               {currentFeatured && (
+                 <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center animate-[fadeUp_1s_ease-out]">
+                     {currentDescription && <span className="text-neutral-600">// {currentDescription}</span>}
+                     {!currentDescription && <span>{currentFeatured.year} // {currentFeatured.camera} + {currentFeatured.lens}</span>}
+                 </div>
+               )}
            </div>
         </section>
 

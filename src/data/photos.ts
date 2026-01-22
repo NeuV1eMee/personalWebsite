@@ -1,4 +1,4 @@
-export type PhotoCategory = "distortion" | "silence" | "strangers" | "polaroid";
+export type PhotoCategory = "distortion" | "silence" | "strangers" | "polaroid" | "featured";
 
 export interface Photo {
   id: string;
@@ -8,84 +8,151 @@ export interface Photo {
   year: string;
   camera: string;
   lens: string;
-  description?: string;
 }
 
+export interface Category {
+  id: string;
+  label: string;
+  index: string;
+  image: string;
+}
+
+export const CATEGORIES: Category[] = [
+  { 
+    id: "distortion", 
+    label: "Distortion", 
+    index: "01", 
+    image: "/photos/Distortion/cover.JPG",
+  },
+  { 
+    id: "silence", 
+    label: "Silence", 
+    index: "02", 
+    image: "/photos/Silence/cover.JPG",
+  },
+  { 
+    id: "strangers", 
+    label: "Strangers", 
+    index: "03", 
+    image: "/photos/Strangers/cover.jpg",
+  },
+  { 
+    id: "polaroid", 
+    label: "Polaroid", 
+    index: "04", 
+    image: "/photos/Polariod/cover.JPG",
+  },
+];
+
 export const photos: Photo[] = [
+  // --- Featured Photos ---
   {
-    id: "1",
-    src: "/photos/distortion/1.jpg",
-    title: "Urban Glitch",
-    category: "distortion",
+    id: "f1",
+    src: "/photos/Featured/feature.JPG",
+    title: "",
+    category: "featured",
     year: "2024",
     camera: "Fujifilm X-T5",
     lens: "XF 35mm f/1.4",
-    description: "Reflections in the glass create a distorted reality of the city."
   },
   {
-    id: "2",
-    src: "/photos/silence/1.jpg",
-    title: "Empty Hallway",
-    category: "silence",
-    year: "2023",
-    camera: "Fujifilm X-T5",
-    lens: "XF 16mm f/1.4",
-    description: "The sound of silence in an abandoned space."
-  },
-  {
-    id: "3",
-    src: "/photos/strangers/1.jpg",
-    title: "The Passerby",
-    category: "strangers",
+    id: "f2",
+    src: "/photos/Featured/07cf0d1b1c9e5dc454411b12817255bf.JPG",
+    title: "",
+    category: "featured",
     year: "2024",
     camera: "Fujifilm X-T5",
-    lens: "XF 56mm f/1.2",
-    description: "A fleeting moment of connection with a stranger."
+    lens: "XF 35mm f/1.4",
   },
   {
-    id: "4",
-    src: "/photos/polaroid/1.jpg",
-    title: "Instant Memory",
-    category: "polaroid",
-    year: "2022",
-    camera: "Polaroid Now+",
-    lens: "Standard",
-    description: "Fading colors of a summer afternoon."
-  },
-  {
-    id: "5",
-    src: "/photos/distortion/2.jpg",
-    title: "Water Ripple",
-    category: "distortion",
-    year: "2024",
-    camera: "Fujifilm X-T5",
-    lens: "XF 90mm f/2",
-  },
-  {
-    id: "6",
-    src: "/photos/silence/2.jpg",
-    title: "Snow Field",
-    category: "silence",
+    id: "f3",
+    src: "/photos/Featured/DSCF7414.JPG",
+    title: "",
+    category: "featured",
     year: "2023",
     camera: "Fujifilm X-T5",
     lens: "XF 23mm f/2",
   },
-   {
-    id: "7",
-    src: "/photos/strangers/2.jpg",
-    title: "Metro Crowd",
+  {
+    id: "f4",
+    src: "/photos/Featured/XT308590.jpg",
+    title: "",
+    category: "featured",
+    year: "2023",
+    camera: "Fujifilm X-T30",
+    lens: "XF 35mm f/2",
+  },
+
+  // --- Distortion ---
+  {
+    id: "d1",
+    src: "/photos/Distortion/cover.JPG",
+    title: "",
+    category: "distortion",
+    year: "2024",
+    camera: "Fujifilm X-T5",
+    lens: "XF 35mm f/1.4",
+  },
+
+  // --- Silence ---
+  {
+    id: "s1",
+    src: "/photos/Silence/R0003929.JPG",
+    title: "",
+    category: "silence",
+    year: "2023",
+    camera: "Ricoh GR IIIx",
+    lens: "26.1mm",
+  },
+  {
+    id: "s2",
+    src: "/photos/Silence/cover.JPG",
+    title: "",
+    category: "silence",
+    year: "2023",
+    camera: "Fujifilm X-T5",
+    lens: "XF 16mm f/1.4",
+  },
+
+  // --- Strangers ---
+  {
+    id: "st1",
+    src: "/photos/Strangers/DSCF4308.jpg",
+    title: "",
+    category: "strangers",
+    year: "2024",
+    camera: "Fujifilm X-T5",
+    lens: "XF 56mm f/1.2",
+  },
+  {
+    id: "st2",
+    src: "/photos/Strangers/cover.jpg",
+    title: "",
     category: "strangers",
     year: "2024",
     camera: "Fujifilm X-T5",
     lens: "XF 23mm f/1.4",
   },
+
+  // --- Polaroid ---
   {
-    id: "8",
-    src: "/photos/polaroid/2.jpg",
-    title: "Coffee Stain",
+    id: "p1",
+    src: "/photos/Polariod/cover.JPG",
+    title: "",
     category: "polaroid",
     year: "2022",
-    camera: "Polaroid OneStep",
+    camera: "Polaroid Now+",
     lens: "Standard",
   },
 ];
+
+export const photoDescriptions: Record<string, string> = {
+  // Featured
+  "f1": "2024, Brooklyn, Fujifilm X-T5 + XF 35mm f/1.4",
+  "f2": "2024, Manhattan, Fujifilm X-T5 + XF 35mm f/1.4",
+  "f3": "2023, Tokyo, Fujifilm X-T5 + XF 23mm f/2",
+  "f4": "2023, Kyoto, Fujifilm X-T30 + XF 35mm f/2",
+  
+  // You can add descriptions for the new IDs below if you wish:
+  // "s1": "2023, Location, Camera + Lens",
+};

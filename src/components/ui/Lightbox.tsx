@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Photo } from "@/data/photos";
+import { Photo, photoDescriptions } from "@/data/photos";
 import { BracketButton } from "./BracketButton";
 
 interface LightboxProps {
@@ -24,11 +24,13 @@ export function Lightbox({ photo, onClose }: LightboxProps) {
 
   if (!photo) return null;
 
+  const description = photoDescriptions[photo.id];
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md animate-in fade-in duration-300">
       {/* Close Button */}
       <div className="absolute top-6 right-6 z-50">
-        <BracketButton text="Close" onClick={onClose} className="text-white hover:text-white" />
+        <BracketButton text="Close" onClick={onClose} className="text-white hover:text-white text-xs" />
       </div>
 
       <div className="relative max-w-5xl w-full h-full p-8 flex flex-col items-center justify-center">
@@ -50,13 +52,9 @@ export function Lightbox({ photo, onClose }: LightboxProps) {
 
         {/* Caption */}
         <div className="text-center space-y-2 text-neutral-300">
-          <h3 className="text-xl font-medium tracking-wide text-white uppercase">{photo.title}</h3>
-          <p className="text-sm font-light text-neutral-500">
-            {photo.year} // {photo.camera} + {photo.lens}
-          </p>
-          {photo.description && (
-            <p className="text-sm font-light italic opacity-80 max-w-2xl mx-auto mt-2">
-              "{photo.description}"
+          {description && (
+            <p className="text-sm font-light text-neutral-500">
+              {description}
             </p>
           )}
         </div>

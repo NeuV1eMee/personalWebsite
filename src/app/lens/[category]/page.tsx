@@ -29,31 +29,27 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
         <div className="w-16" />
       </header>
 
-      <main className="pt-32 px-6 md:px-12 max-w-[1600px] mx-auto">
-        {/* Photo Wall */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <main className="pt-32 px-8 md:px-24 lg:px-48 xl:px-64 max-w-[1400px] mx-auto">
+        {/* Photo Wall (Masonry Layout) */}
+        <section className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8">
           {filteredPhotos.map((photo) => (
             <div 
               key={photo.id}
               onClick={() => setSelectedPhoto(photo)}
-              className="group cursor-pointer space-y-3"
+              className="group cursor-pointer break-inside-avoid mb-8"
             >
-              <div className="aspect-[4/5] bg-neutral-900 overflow-hidden relative border border-neutral-900 group-hover:border-neutral-700 transition-colors">
+              <div className="bg-neutral-900 overflow-hidden relative border border-neutral-900 group-hover:border-neutral-700 transition-colors">
                 <img 
                   src={photo.src} 
                   alt={photo.title}
-                  className="w-full h-full object-cover grayscale brightness-75 contrast-125 group-hover:brightness-90 transition-all duration-500"
+                  className="w-full h-auto object-cover grayscale brightness-75 contrast-125 group-hover:grayscale-0 group-hover:brightness-100 group-hover:contrast-100 transition-all duration-700 ease-in-out"
                   loading="lazy"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.parentElement!.classList.add('flex', 'items-center', 'justify-center');
+                    e.currentTarget.parentElement!.classList.add('flex', 'items-center', 'justify-center', 'h-64');
                     e.currentTarget.parentElement!.innerHTML += `<span class="text-neutral-700 text-xs p-4 text-center">[ IMG: ${photo.title} ]</span>`;
                   }}
                 />
-              </div>
-              <div className="flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-1">
-                <span className="text-xs text-neutral-400 font-mono uppercase truncate max-w-[70%]">{photo.title}</span>
-                <span className="text-[10px] text-neutral-600 font-mono">{photo.year}</span>
               </div>
             </div>
           ))}

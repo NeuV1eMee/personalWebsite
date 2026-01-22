@@ -21,19 +21,24 @@ The project follows the standard Next.js App Router structure with feature-based
     - `layout.tsx`: Global layout containing the `.grainy` overlay and font configurations.
     - `lens/`: **Photography Portfolio**.
         - `page.tsx`: **Lens Landing Page**.
-            - **Featured Carousel:** Interactive 3-image carousel. Center photo is always in color and scaled to balance horizontal/vertical sizes (`max-w-[65vh]` on desktop). Side images are grayscale, semi-transparent (`opacity-20`), and animate (`fadeScale`) on switch.
-            - **Layout:** Top padding (`pt-36`) and large vertical spacing (`space-y-64`) between sections.
-            - **Categories:** Links to collections, styled as tall (`3:5`) blocks with cover images that fade at the edges (using `mask-image`, no distinct borders). Hovering brings color.
-        - `[category]/page.tsx`: **Dynamic Category Page**. Displays a grid of photos for a specific category (e.g., "distortion", "silence") or "all".
+            - **Featured Carousel:** Interactive 3-image carousel driven by `src/data/photos.ts`. Center photo is always in color. Metadata is minimal (Year // Location // Gear) and only appears if explicitly defined in `photoDescriptions`.
+            - **Categories:** Links to collections (`Distortion`, `Silence`, etc.).
+        - `[category]/page.tsx`: **Dynamic Category Page**.
+            - **Layout:** **Masonry Layout** using Tailwind columns (`columns-1` to `columns-4`). Images display at natural aspect ratios.
+            - **Styling:** Large horizontal margins (`xl:px-64`) for a "museum wall" feel.
+            - **Interaction:** Photos are Grayscale/Dim by default. **Hover** restores full Color/Brightness. No text overlays on hover.
     - `build/`: Projects showcase (Zig-Zag layout).
     - `sound/`: Music portfolio.
     - `about/`: CV and Resume.
 - **`src/components/`**: Reusable UI components.
     - `ui/BracketButton.tsx`: Core interactive button component `[ Text ]`.
-    - `ui/Lightbox.tsx`: Modal for viewing full-screen photos.
+    - `ui/Lightbox.tsx`: Modal for viewing full-screen photos. Displays only the photo and an optional description (if found in lookup table). Minimal UI (small close button, no titles).
     - `ProjectCard.tsx`: Component for the "Build" section projects.
 - **`src/data/`**: Static data files.
-    - `photos.ts`: Photo metadata and categorization logic.
+    - `photos.ts`: **Central Data Source**.
+        - `photos`: Array containing all photo metadata (ID, src, category). **Note:** Titles are intentionally empty strings to enforce minimalism.
+        - `photoDescriptions`: **Lookup Table** (Dictionary) mapping `PhotoID -> Description`. Format: "Year, Location, Camera + Lens". Used primarily for Featured photos.
+        - `CATEGORIES`: Definitions for the category blocks (ID, Label, Index, Image).
 - **`public/`**: Static assets.
     - `photos/`: Organized by category folders (`Distortion`, `Silence`, `Strangers`, `Polariod`, `Featured`).
     - `videos/`: Background video loops for the main page.
@@ -41,12 +46,12 @@ The project follows the standard Next.js App Router structure with feature-based
 ### Design System
 - **Theme:** Predominantly Black & White.
 - **Interaction:**
-    - **Hover:** Elements often transition from Grayscale/Dim -> Color/Bright.
-    - **Focus:** The "Featured" carousel center image is always colored, while side images wait in the shadows.
+    - **Hover:** Elements transition from Grayscale/Dim -> Color/Bright.
+    - **Cursor:** Default system cursor, but photos react vividly to presence.
 - **Typography:** `Inter` (sans-serif) & `JetBrains Mono` (monospace).
 - **Visuals:**
     - **Grain:** Global CSS utility `.grainy` for texture.
-    - **Soft Edges:** Images often use `mask-image` gradients to blend into the black background rather than hard borders.
+    - **Masonry:** Photos flow naturally in vertical columns, avoiding rigid grids.
 
 ## Building and Running
 
@@ -57,8 +62,9 @@ The project follows the standard Next.js App Router structure with feature-based
 ## Development Conventions
 
 - **Styling:** Tailwind CSS is the primary styling engine.
+- **Data Management:**
+    - **Photos:** Added to `src/data/photos.ts`.
+    - **Descriptions:** Added to the `photoDescriptions` lookup object in `src/data/photos.ts` ONLY if a story/context is needed. Otherwise, photos remain text-free.
 - **Assets:**
     - **Photos:** Place in `public/photos/[Category]/`.
-    - **Cover Images:** Each category folder should have a `cover.JPG` (or similar) used for the landing page block.
-- **Animations:** Use standard Tailwind animation utilities or define custom keyframes in `globals.css` (e.g., `fadeScale`, `fadeUp`) for specific interactions.
 - **Navigation:** Use `Link` from `next/link` for internal routing and `BracketButton` for UI-styled actions.
