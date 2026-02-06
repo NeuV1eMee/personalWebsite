@@ -20,51 +20,45 @@ The project follows the standard Next.js App Router structure with feature-based
     - `page.tsx`: **Main Page**. Features a grainy video background (subtly darkened), tagline, and central navigation.
     - `layout.tsx`: Global layout containing the `.grainy` overlay and font configurations.
     - `lens/`: **Photography Portfolio**.
-        - `page.tsx`: **Lens Landing Page**.
-            - **Featured Carousel:** Interactive 3-image carousel driven by `src/data/photos.ts`. Center photo is always in color. Metadata is minimal (Year // Location // Gear) and only appears if explicitly defined in `photoDescriptions`.
-            - **Categories:** Links to collections (`Distortion`, `Silence`, etc.).
-        - `[category]/page.tsx`: **Dynamic Category Page**.
-            - **Layout:** **Masonry Layout** using Tailwind columns (`columns-1` to `columns-4`). Images display at natural aspect ratios.
-            - **Styling:** Large horizontal margins (`xl:px-64`) for a "museum wall" feel.
-            - **Interaction:** Photos are Grayscale/Dim by default. **Hover** restores full Color/Brightness. No text overlays on hover.
-    - `build/`: Projects showcase (Zig-Zag layout).
+        - `page.tsx`: **Lens Landing Page**. Interactive 3-image carousel driven by `src/data/photos.ts`. Center photo is always in color.
+        - `[category]/page.tsx`: **Dynamic Category Page**. Masonry layout using Tailwind columns. Large horizontal margins (`xl:px-64`).
+    - `build/`: **Projects Showcase**. 
+        - Features a wide layout with large margins.
+        - Scroll-triggered activation: Projects colorize and gain opacity when they reach the viewport center via `IntersectionObserver`.
     - `sound/`: Music portfolio.
     - `about/`: CV and Resume.
 - **`src/components/`**: Reusable UI components.
     - `ui/BracketButton.tsx`: Core interactive button component `[ Text ]`.
-    - `ui/Lightbox.tsx`: Modal for viewing full-screen photos. Displays only the photo and an optional description (if found in lookup table). Minimal UI (small close button, no titles).
-    - `ProjectCard.tsx`: Component for the "Build" section projects.
+    - `ProjectCard.tsx`: Blocky container design with large index numbers and tech stack tags.
+    - `ProjectGallery.tsx`: **Project Detail Modal**. Split-screen design (Left: Preview Carousel, Right: Detailed Introduction with `#060606` background).
 - **`src/data/`**: Static data files.
-    - `photos.ts`: **Central Data Source**.
-        - `photos`: Array containing all photo metadata (ID, src, category). **Note:** Titles are intentionally empty strings to enforce minimalism.
-        - `photoDescriptions`: **Lookup Table** (Dictionary) mapping `PhotoID -> Description`. Format: "Year, Location, Camera + Lens". Used primarily for Featured photos.
-        - `CATEGORIES`: Definitions for the category blocks (ID, Label, Index, Image).
+    - `photos.ts`: Central data source for the photography section.
+    - `projects.ts`: **Central Data Source for Build section**. Stores project summaries, full descriptions, tech stacks, and gallery image paths.
 - **`public/`**: Static assets.
-    - `photos/`: Organized by category folders (`Distortion`, `Silence`, `Strangers`, `Polariod`, `Featured`).
-    - `videos/`: Background video loops for the main page.
+    - `photos/`: Photography assets organized by category.
+    - `projectPhotos/`: Project-specific assets (icons, screenshots).
+    - `videos/`: Background video loops.
 
 ### Design System
 - **Theme:** Predominantly Black & White.
 - **Interaction:**
-    - **Hover:** Elements transition from Grayscale/Dim -> Color/Bright.
-    - **Cursor:** Default system cursor, but photos react vividly to presence.
-- **Typography:** `Inter` (sans-serif) & `JetBrains Mono` (monospace).
+    - **Activation:** Elements transition from Grayscale/Dim -> Color/Bright based on **Scroll Position** (in Build) or **Hover** (in Lens).
+    - **Responsive:** Project details stack vertically on mobile; side-by-side on desktop.
+- **Typography:** `SF Pro` (sans-serif) & `JetBrains Mono` (monospace).
 - **Visuals:**
     - **Grain:** Global CSS utility `.grainy` for texture.
-    - **Masonry:** Photos flow naturally in vertical columns, avoiding rigid grids.
+    - **Masonry:** Vertical column flows for photo collections.
 
 ## Building and Running
 
-- **Development:** `npm run dev` (Starts at `http://localhost:3000`)
+- **Development:** `npm run dev`
 - **Build:** `npm run build`
 - **Lint:** `npm run lint`
 
 ## Development Conventions
 
-- **Styling:** Tailwind CSS is the primary styling engine.
+- **Styling:** Tailwind CSS 4 with custom utilities like `grainy` and `no-scrollbar`.
 - **Data Management:**
+    - **Projects:** Added to `src/data/projects.ts`. Use `description` for cards and `fullDescription` for the detail modal.
     - **Photos:** Added to `src/data/photos.ts`.
-    - **Descriptions:** Added to the `photoDescriptions` lookup object in `src/data/photos.ts` ONLY if a story/context is needed. Otherwise, photos remain text-free.
-- **Assets:**
-    - **Photos:** Place in `public/photos/[Category]/`.
-- **Navigation:** Use `Link` from `next/link` for internal routing and `BracketButton` for UI-styled actions.
+- **Navigation:** Use `Link` from `next/link` for internal routing. `ProjectCard` handles its own navigation/modal logic based on data presence.

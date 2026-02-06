@@ -2,9 +2,12 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  fullDescription?: string;
   imageUrl?: string;
   link: string;
   year?: string;
+  tools?: string[];
+  gallery?: string[];
 }
 
 export interface Photo {
