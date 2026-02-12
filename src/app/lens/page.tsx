@@ -25,10 +25,16 @@ export default function LensPage() {
     <div className="min-h-screen bg-black text-neutral-400 font-light selection:bg-white selection:text-black pb-20">
       
       {/* Top Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-40 p-6 flex justify-between items-center bg-black/80 backdrop-blur-sm">
-        <BracketButton text="< Back" href="/" className="text-sm" />
-        <h1 className="text-lg font-normal tracking-wide text-neutral-200">Gallery</h1>
-        <div className="w-16" />
+      <header className="fixed top-0 left-0 right-0 z-40 p-6 grid grid-cols-3 items-center bg-black/80 backdrop-blur-sm">
+        <div className="flex justify-start">
+          <BracketButton text="< Back" href="/" className="text-sm text-neutral-500 hover:text-white" />
+        </div>
+        <div className="flex justify-center">
+          <h1 className="text-sm md:text-base font-normal tracking-[0.3em] text-neutral-300 uppercase">
+            Gallery
+          </h1>
+        </div>
+        <div className="w-16" /> 
       </header>
 
       <main className="pt-36 px-6 md:px-12 max-w-[1600px] mx-auto space-y-64">

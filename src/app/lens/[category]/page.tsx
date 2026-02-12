@@ -21,15 +21,19 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
   return (
     <div className="min-h-screen bg-black text-neutral-400 font-light selection:bg-white selection:text-black pb-20">
       {/* Top Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-40 p-6 flex justify-between items-center bg-black/80 backdrop-blur-sm">
-        <BracketButton text="< Back" href="/lens" className="text-sm" />
-        <h1 className="text-lg font-normal tracking-wide text-neutral-200">
-          {category === "all" ? "All Photos" : categoryTitle}
-        </h1>
-        <div className="w-16" />
+      <header className="fixed top-0 left-0 right-0 z-40 p-6 grid grid-cols-3 items-center bg-black/80 backdrop-blur-sm">
+        <div className="flex justify-start">
+          <BracketButton text="< Back" href="/lens" className="text-sm text-neutral-500 hover:text-white" />
+        </div>
+        <div className="flex justify-center">
+          <h1 className="text-sm md:text-base font-normal tracking-[0.3em] text-neutral-300 uppercase whitespace-nowrap">
+            {category === "all" ? "All Photos" : categoryTitle}
+          </h1>
+        </div>
+        <div className="w-16 invisible md:visible" />
       </header>
 
-      <main className="pt-32 px-8 md:px-24 lg:px-48 xl:px-64 max-w-[1400px] mx-auto">
+      <main className="pt-48 px-8 md:px-24 lg:px-48 xl:px-64 max-w-[1400px] mx-auto">
         {/* Photo Wall (Masonry Layout) */}
         <section className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8">
           {filteredPhotos.map((photo) => (

@@ -28,12 +28,16 @@ export function Lightbox({ photo, onClose }: LightboxProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md animate-in fade-in duration-300">
-      {/* Close Button */}
-      <div className="absolute top-6 right-6 z-50">
-        <BracketButton text="Close" onClick={onClose} className="text-white hover:text-white text-xs" />
+      {/* Top Header Mockup for Close Button */}
+      <div className="absolute top-0 left-0 right-0 p-6 flex justify-start items-center z-50">
+        <BracketButton 
+          text="Close" 
+          onClick={onClose} 
+          className="text-sm text-neutral-500 hover:text-white" 
+        />
       </div>
 
-      <div className="relative max-w-5xl w-full h-full p-8 flex flex-col items-center justify-center">
+      <div className="relative max-w-5xl w-full h-full p-8 pt-24 flex flex-col items-center justify-center">
         {/* Image Container */}
         <div className="relative w-full max-h-[80vh] flex items-center justify-center mb-6">
            {/* In a real app, use next/image. For now using div placeholder if src fails or mocking */}

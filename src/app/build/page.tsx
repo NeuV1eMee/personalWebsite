@@ -19,7 +19,7 @@ export default function BuildPage() {
           <BracketButton text="< Back" href="/" className="text-sm text-neutral-500 hover:text-white" />
         </div>
         <div className="flex justify-center">
-          <h1 className="text-sm md:text-base font-normal tracking-widest text-neutral-300 uppercase">
+          <h1 className="text-sm md:text-base font-normal tracking-[0.3em] text-neutral-300 uppercase">
             Projects
           </h1>
         </div>
