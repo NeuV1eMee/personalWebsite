@@ -29,3 +29,25 @@ export interface SongCover {
   originalArtist: string;
   videoUrl?: string;
 }
+
+export interface BandMember {
+  handle: string;
+  name?: string;
+}
+
+export interface MusicPageData {
+  photoWall: string[];
+  band: {
+    name: string;
+    logo: string;
+    description: string;
+    members: BandMember[];
+  };
+  covers: SongCover[];
+  personalMonologue: string;
+  rig: {
+    guitars: string[];
+    ampsAndPedals: string[];
+    keys: string[];
+  };
+}

@@ -2,7 +2,9 @@
 
 import { BracketButton } from "@/components/ui/BracketButton";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
+import { musicData } from "@/data/music";
+import { cn } from "@/lib/utils";
 
 export default function SoundPage() {
   const logoRef = useRef<HTMLDivElement>(null);
@@ -32,6 +34,57 @@ export default function SoundPage() {
     return () => observer.disconnect();
   }, []);
 
+  // Smarter Greedy Distribution Logic
+  const columnData = useMemo(() => {
+    const getDistributedColumns = (numCols: number) => {
+      const cols: string[][] = Array.from({ length: numCols }, () => []);
+      const heights = Array(numCols).fill(0);
+
+      musicData.photoWall.forEach((src) => {
+        // Heuristic: iPhone 'IMG' files are mostly tall (1.6), Fuji/Others are wider (1.0)
+        const isTall = src.includes("IMG_4252") || src.includes("IMG_3184") || 
+                       src.includes("IMG_1491") || src.includes("IMG_3738") || 
+                       src.includes("IMG_4013") || src.includes("IMG_1267") || 
+                       src.includes("IMG_3249") || src.includes("IMG_0897") ||
+                       src.includes("IMG_4252") || src.includes("IMG_4311");
+        
+        const weight = isTall ? 1.6 : 1.0;
+        
+        // Find shortest column
+        let shortestIdx = 0;
+        for (let j = 1; j < numCols; j++) {
+          if (heights[j] < heights[shortestIdx]) {
+            shortestIdx = j;
+          }
+        }
+        
+        cols[shortestIdx].push(src);
+        heights[shortestIdx] += weight;
+      });
+      return cols;
+    };
+
+    return {
+      mobile: getDistributedColumns(2),
+      tablet: getDistributedColumns(3),
+      desktop: getDistributedColumns(4),
+      xl: getDistributedColumns(5),
+    };
+  }, []);
+
+  const Column = ({ images }: { images: string[] }) => (
+    <div className="flex-1 flex flex-col justify-end gap-3">
+      {images.map((src, index) => (
+        <img 
+          key={index} 
+          src={src} 
+          className="w-full grayscale brightness-75 contrast-125 hover:grayscale-0 hover:brightness-100 transition-all duration-700" 
+          alt="" 
+        />
+      ))}
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-[#060606] text-neutral-300 font-sans selection:bg-white selection:text-black pb-32">
       {/* Header */}
@@ -43,54 +96,68 @@ export default function SoundPage() {
         <div className="w-16 invisible md:visible" />
       </header>
 
-      <main className="pt-48 px-6 md:px-12 lg:px-24 xl:px-64 space-y-32 md:space-y-48">
-        {/* Section 1: Cinematic Video */}
-        <section className="w-full animate-in fade-in duration-1000">
-          <div className="relative w-full aspect-[2.35/1] bg-neutral-900/50 border border-neutral-800/30 overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-neutral-600 font-light text-center px-4">
-                2.35:1 instrument playing video looping in black&white
-              </span>
-            </div>
+      <main className="space-y-32 md:space-y-48">
+        {/* Section 1: Photo Wall (Fixed 5-Column Bottom-Aligned Masonry) */}
+        <section className="relative w-full h-[85vh] md:h-[95vh] overflow-hidden bg-black flex items-end">
+          
+          {/* Always 5 Columns */}
+          <div className="flex w-full items-end gap-2 md:gap-3 px-2 md:px-3 relative z-0">
+            {columnData.xl.map((col, i) => (
+              <div key={i} className="flex-1 flex flex-col justify-end gap-2 md:gap-3">
+                {col.map((src, index) => (
+                  <img 
+                    key={index} 
+                    src={src} 
+                    className="w-full grayscale brightness-75 contrast-125 hover:grayscale-0 hover:brightness-100 transition-all duration-700" 
+                    alt="" 
+                  />
+                ))}
+              </div>
+            ))}
           </div>
+          
+          {/* Enhanced Blur and Gradient Overlay at Bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#060606] via-[#060606]/80 to-transparent pointer-events-none z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-24 backdrop-blur-sm pointer-events-none z-20" />
         </section>
 
         {/* Section 2: Band Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+        <section className="px-6 md:px-12 lg:px-24 xl:px-64 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
           <div 
             ref={logoRef}
-            className="relative aspect-[4/3] w-full bg-neutral-900/30 border border-neutral-800/20 overflow-hidden transition-all duration-1000 ease-in-out"
+            className="relative aspect-[16/9] w-full overflow-hidden transition-all duration-1000 ease-in-out [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_90%)]"
           >
             <Image
-              src="/musicPhotos/aedlogo.png"
-              alt="V-DISTRICT Band Logo"
+              src={musicData.band.logo}
+              alt={`${musicData.band.name} Logo`}
               fill
               className={`object-cover transition-all duration-1000 ease-in-out ${
                 isLogoActive ? "grayscale-0 brightness-100 scale-105" : "grayscale brightness-75 scale-100 opacity-60"
               }`}
             />
           </div>
-          <div className="space-y-6">
-            <p className="text-sm md:text-base leading-relaxed font-light text-neutral-400">
-              Story of the band.<br />
-              How we get this name.<br />
-              Members of the band.
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <h3 className="text-base md:text-lg font-medium text-white tracking-widest uppercase">{musicData.band.name}</h3>
+              <p className="text-sm md:text-base leading-relaxed font-light text-neutral-400 whitespace-pre-line">
+                {musicData.band.description}
+              </p>
+            </div>
+            <p className="text-xs md:text-sm text-neutral-500 font-mono tracking-tight whitespace-pre-line">
+              {musicData.band.members.map(member => member.handle).join('\n')}
             </p>
           </div>
         </section>
 
         {/* Section 3: Covered List & Stage Video */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+        <section className="px-6 md:px-12 lg:px-24 xl:px-64 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
           <div className="space-y-8">
-            <h2 className="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Covered List:</h2>
-            <ol className="space-y-2 text-sm md:text-base font-light text-neutral-400">
-              {[1, 2, 3, 4].map((i) => (
-                <li key={i} className="flex gap-4">
-                  <span className="text-neutral-600">{i}.</span>
-                  <span>song name - Artist</span>
-                </li>
+            <h2 className="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">Played/Covered List:</h2>
+            <ul className="space-y-3 text-sm md:text-base font-light text-neutral-400">
+              {musicData.covers.map((cover, index) => (
+                <li key={index}>“{cover.title}” — {cover.originalArtist}</li>
               ))}
-            </ol>
+            </ul>
           </div>
           
           <div className="space-y-4">
@@ -103,31 +170,21 @@ export default function SoundPage() {
           </div>
         </section>
 
-        {/* Section 4: Monologue & Rig */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 pt-12 border-t border-neutral-900">
-          <div className="space-y-4">
-            <p className="text-sm md:text-base leading-relaxed font-light text-neutral-400">
-              Monologue of mine, talking about what instrument do I play and the story of why I picked it up.
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            <h2 className="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">The Rig:</h2>
-            <div className="space-y-6 text-sm md:text-base font-light text-neutral-400">
+        {/* Section 4: Rig */}
+        <section className="px-6 md:px-12 lg:px-24 xl:px-64 pt-12 border-t border-neutral-900">
+          <div className="max-w-2xl mx-auto space-y-8 text-center">
+            <h2 className="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">My Rig:</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm md:text-base font-light text-neutral-400">
                <div className="space-y-1">
-                 <p>Epiphone Les Paul Standard 60s, Cherry Sunburst</p>
-                 <p>Squier Affinity Stratocaster, Metallic Ice Blue</p>
+                 {musicData.rig.guitars.map((item, index) => <p key={index}>{item}</p>)}
                </div>
                
                <div className="space-y-1">
-                 <p>Boss Katana 50</p>
-                 <p>Hotone Ampero II Stomp</p>
-                 <p>Spark Mini</p>
+                 {musicData.rig.ampsAndPedals.map((item, index) => <p key={index}>{item}</p>)}
                </div>
                
                <div className="space-y-1">
-                 <p>Roland Go Key 3</p>
-                 <p>Yamaha SHS-500</p>
+                 {musicData.rig.keys.map((item, index) => <p key={index}>{item}</p>)}
                </div>
             </div>
           </div>
