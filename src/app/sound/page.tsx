@@ -172,9 +172,9 @@ export default function SoundPage() {
 
         {/* Section 4: Rig */}
         <section className="px-6 md:px-12 lg:px-24 xl:px-64 pt-12 border-t border-neutral-900">
-          <div className="max-w-2xl mx-auto space-y-8 text-center">
+          <div className="space-y-8 text-left">
             <h2 className="text-[10px] tracking-[0.3em] uppercase text-neutral-500 font-medium">My Rig:</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm md:text-base font-light text-neutral-400">
+            <div className="flex flex-col gap-8 text-sm md:text-base font-light text-neutral-400">
                <div className="space-y-1">
                  {musicData.rig.guitars.map((item, index) => <p key={index}>{item}</p>)}
                </div>
