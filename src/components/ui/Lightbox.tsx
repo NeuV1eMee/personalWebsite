@@ -62,6 +62,9 @@ export function Lightbox({ photo, onClose }: LightboxProps) {
 
         {/* Caption */}
         <div className="text-center space-y-1 font-mono text-xs md:text-sm">
+          {photo.location && (
+            <p className="text-neutral-400 uppercase tracking-widest mb-1">{photo.location}</p>
+          )}
           {(photo.year || photo.camera || photo.lens) && (
             <p className="text-neutral-500">
               {[
