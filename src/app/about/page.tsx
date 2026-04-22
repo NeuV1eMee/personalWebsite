@@ -52,7 +52,7 @@ export default function AboutPage() {
           <section className="space-y-6">
               <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-[0.3em]">[ The Noise ]</h2>
               <p className="text-sm md:text-base">
-                  When I'm not coding, I'm making noise. I play guitar in a shoegaze/post-punk band. We are currently recording our first EP.
+                  When I&apos;m not coding, I&apos;m making noise. I play guitar in a shoegaze/post-punk band. We are currently recording our first EP.
               </p>
           </section>
           

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Photo, photoDescriptions } from "@/data/photos";
+import { Photo } from "@/lib/photo-constants";
 import { BracketButton } from "./BracketButton";
 
 interface LightboxProps {
@@ -24,10 +24,13 @@ export function Lightbox({ photo, onClose }: LightboxProps) {
 
   if (!photo) return null;
 
-  const description = photoDescriptions[photo.id];
+  const description = photo.description;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md animate-in fade-in duration-300">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md animate-in fade-in duration-300"
+      onClick={onClose}
+    >
       {/* Top Header Mockup for Close Button */}
       <div className="absolute top-0 left-0 right-0 p-6 flex justify-start items-center z-50">
         <BracketButton 
@@ -37,7 +40,10 @@ export function Lightbox({ photo, onClose }: LightboxProps) {
         />
       </div>
 
-      <div className="relative max-w-5xl w-full h-full p-8 pt-24 flex flex-col items-center justify-center">
+      <div 
+        className="relative max-w-5xl w-full h-full p-8 pt-24 flex flex-col items-center justify-center"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Image Container */}
         <div className="relative w-full max-h-[80vh] flex items-center justify-center mb-6">
            {/* In a real app, use next/image. For now using div placeholder if src fails or mocking */}
@@ -55,11 +61,17 @@ export function Lightbox({ photo, onClose }: LightboxProps) {
         </div>
 
         {/* Caption */}
-        <div className="text-center space-y-2 text-neutral-300">
-          {description && (
-            <p className="text-sm font-light text-neutral-500">
-              {description}
+        <div className="text-center space-y-1 font-mono text-xs md:text-sm">
+          {(photo.year || photo.camera || photo.lens) && (
+            <p className="text-neutral-500">
+              {[
+                photo.year,
+                [photo.camera, photo.lens].filter(Boolean).join(" ")
+              ].filter(Boolean).join(". ")}
             </p>
+          )}
+          {description && (
+            <p className="text-neutral-600">{"//"} {description}</p>
           )}
         </div>
       </div>

@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: NeuV1eMee/personalWebsite
+  branch: main
+
+# Set to true during local development to use decap-server
+local_backend: true
+
+media_folder: "public/photos/uploads"
+public_folder: "/photos/uploads"
+
+collections:
+  - name: "photos"
+    label: "Photos"
+    folder: "content/photos"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
+    summary: "{{title}} - {{category}}"
+    fields:
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Title", name: "title", widget: "string", required: false, default: "New Photo" }
+      - { label: "Upload Date", name: "date", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string", required: false, hint: "Type a location (e.g. Alaska). Decap CMS will save this text." }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Set as Collection Cover", name: "isCover", widget: "boolean", default: false, required: false, hint: "Turn this on to make this photo the thumbnail for its Category on the main Lens page." }
+      - { label: "Category", name: "category", widget: "select", options: ["distortion", "silence", "strangers", "polaroid", "featured"], default: "featured" }
+      - { label: "Year", name: "year", widget: "string", required: false }
+      - { label: "Camera", name: "camera", widget: "string", required: false }
+      - { label: "Lens", name: "lens", widget: "string", required: false }

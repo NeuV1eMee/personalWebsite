@@ -19,6 +19,7 @@ export function ProjectGallery({ project, isOpen, onClose }: ProjectGalleryProps
     if (isOpen && project?.gallery) {
       // Find index of sp3.PNG to set as default, fallback to 0
       const defaultIndex = project.gallery.findIndex(src => src.includes("sp3.PNG"));
+      // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/set-state-in-effect
       setCurrentIndex(defaultIndex !== -1 ? defaultIndex : 0);
     }
   }, [isOpen, project]);

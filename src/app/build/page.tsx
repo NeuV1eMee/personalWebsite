@@ -55,7 +55,7 @@ export default function BuildPage() {
         {/* Footer Text */}
         <div className="text-left">
            <p className="text-xs text-neutral-600 font-mono">
-             // Keep pushing commits. More logic in progress.
+             {"//"} Keep pushing commits. More logic in progress.
            </p>
         </div>
 
