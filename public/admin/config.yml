@@ -10,6 +10,53 @@ media_folder: "public/photos/uploads"
 public_folder: "/photos/uploads"
 
 collections:
+  - name: "settings"
+    label: "Settings"
+    delete: false # Prevent accidental deletion of the config file
+    files:
+      - name: "homepage"
+        label: "Homepage Settings"
+        file: "content/settings/homepage.json"
+        fields:
+          - label: "Background Videos"
+            name: "backgroundVideos"
+            widget: "list"
+            field: { label: "Video", name: "video", widget: "file" }
+
+  - name: "music_photos"
+    label: "Music Photos"
+    folder: "content/music-photos"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Title", name: "title", widget: "string", required: false, default: "Music Moment" }
+      - { label: "Upload Date", name: "date", widget: "datetime" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{year}}-{{title}}"
+    summary: "{{title}} ({{year}})"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Year", name: "year", widget: "string", required: false }
+      - { label: "Main Image", name: "imageUrl", widget: "image" }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Full Description", name: "fullDescription", widget: "text", required: false }
+      - { label: "Tech Stack", name: "tools", widget: "list", required: false }
+      - { label: "Project Link", name: "link", widget: "string", required: false, default: "#" }
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        field: { label: "Image", name: "image", widget: "image" }
+
   - name: "photos"
     label: "Photos"
     folder: "content/photos"

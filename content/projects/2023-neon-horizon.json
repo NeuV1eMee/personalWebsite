@@ -1,0 +1,21 @@
+{
+  "title": "O-RE-O",
+  "year": "2025",
+  "imageUrl": "/photos/uploads/cleanshot-2026-04-22-at-22.49.35.jpg",
+  "description": "Oreo is an immersive 3D sci-fi puzzler developed in 48 hours for game jam. Built in Unity, it features floating movement, CCTV-based puzzles, and interactive terminals. Players explore atmospheric environments using portals and collection mechanics within a polished, holographic aesthetic.",
+  "tools": [
+    "Unity",
+    "Blender",
+    "C#"
+  ],
+  "link": "#",
+  "gallery": [
+    "/photos/uploads/o-re-o-artwork.png",
+    "/photos/uploads/o-re-o-artwork-1-.png",
+    "/photos/uploads/o-re-o-artwork-2-.png",
+    "/photos/uploads/o-re-o-artwork-3-.png",
+    "/photos/uploads/o-re-o-artwork-4-.png",
+    "/photos/uploads/o-re-o-artwork-5-.png"
+  ],
+  "fullDescription": "@Pitt's Game 4 Social Impact 2025\n\nOreo is a mind-bending 3D sci-fi puzzle-adventure that invites players into a meticulously crafted world of retro-futurism. The game’s aesthetic strikes a unique balance between the tactile grit of vintage surveillance technology and the ethereal glow of sleek holographic displays, creating an atmosphere that feels both nostalgic and hauntingly advanced. \n\n Born from the high-pressure constraints of a 48-hour game jam, Oreo pushes the boundaries of traditional puzzle design by forcing players to truly think outside the box. The experience centers on a reality-bending core mechanic: the ability to jump between two distinct scenes to overcome environmental obstacles. What appears to be a dead-end in one world often holds the key to progression in the other, requiring players to synchronize their actions across different layers of reality.\n\nAs you navigate through its atmospheric corridors using fluid, floating movement, you must interact with terminal systems and monitor CCTV feeds to piece together solutions. Whether you are managing power grids or navigating through portals, Oreo rewards lateral thinking and keen observation. It is a polished exploration of space and logic, delivering a complete, stylish, and intellectually stimulating experience within a compact, high-tech package.\n\nCo-worked with: Peter Ju, Alina Yue, Zilin Wang, Marshall Fan, Sam Gao, Yishui Sun"
+}

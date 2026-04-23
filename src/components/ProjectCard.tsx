@@ -111,7 +111,7 @@ export function ProjectCard({ project, index, onClick }: ProjectCardProps) {
         {/* Tech Stack */}
         <div className="pt-4 mt-auto">
             <div className="text-[10px] md:text-xs font-mono text-neutral-500 uppercase tracking-wider">
-                {project.tools ? project.tools.join(" // ") : "Tech Stack"}
+                {project.tools ? project.tools.join(" // ") : ""}
             </div>
         </div>
 

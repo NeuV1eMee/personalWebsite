@@ -50,8 +50,12 @@ export function ProjectGallery({ project, isOpen, onClose }: ProjectGalleryProps
     <div className="fixed inset-0 z-[100] flex flex-col md:flex-row bg-black/95 backdrop-blur-md animate-in fade-in duration-300">
       
       {/* Close Button */}
-      <div className="absolute top-6 right-6 z-50">
-        <BracketButton text="Close" onClick={onClose} className="text-white hover:text-neutral-300" />
+      <div className="absolute top-6 left-6 z-50">
+        <BracketButton 
+          text="Close" 
+          onClick={onClose} 
+          className="text-xs px-2 py-1 md:text-sm md:px-3 text-white hover:text-neutral-300" 
+        />
       </div>
 
       {/* LEFT: Carousel Container */}
@@ -143,9 +147,6 @@ export function ProjectGallery({ project, isOpen, onClose }: ProjectGalleryProps
                 {/* Tech Stack */}
                 {project.tools && (
                     <div className="pt-8 pb-16 md:pb-0">
-                        <h3 className="text-xs font-mono text-neutral-600 uppercase tracking-widest mb-4">
-                            Technology //
-                        </h3>
                         <div className="flex flex-wrap gap-2">
                             {project.tools.map(tool => (
                                 <span key={tool} className="text-xs text-neutral-400 border border-neutral-800 px-3 py-1 rounded-full">
