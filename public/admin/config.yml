@@ -22,6 +22,10 @@ collections:
             name: "backgroundVideos"
             widget: "list"
             field: { label: "Video", name: "video", widget: "file" }
+          - label: "Rotating Taglines"
+            name: "taglines"
+            widget: "list"
+            field: { label: "Tagline", name: "text", widget: "string" }
 
   - name: "music_photos"
     label: "Music Photos"

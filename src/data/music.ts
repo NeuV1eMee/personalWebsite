@@ -4,25 +4,25 @@ export const musicData: MusicPageData = {
   photoWall: [
     "/musicPhotos/IMG_0897.jpg",        // Added
     "/musicPhotos/IMG_4252.jpg",        // Tall
-    "/musicPhotos/IMG_0652.JPG",        // Wide
+    "/musicPhotos/IMG_0652.jpg",        // Wide
     "/musicPhotos/IMG_3184.jpg",        // Tall
     "/musicPhotos/DSCF4102.jpg",        // Wide
     "/musicPhotos/IMG_1491.jpg",        // Tall
-    "/musicPhotos/DSCF5594.JPG",        // Wide
+    "/musicPhotos/DSCF5594.jpg",        // Wide
     "/musicPhotos/IMG_3738.jpg",        // Tall
     "/musicPhotos/1stguitarstage.jpg",  // Wide
     "/musicPhotos/IMG_4013.jpg",        // Tall
-    "/musicPhotos/2026cny.JPG",         // Wide
+    "/musicPhotos/2026cny.jpg",         // Wide
     "/musicPhotos/IMG_1267.jpg",        // Tall
-    "/musicPhotos/goattyycq.JPG",       // Wide
+    "/musicPhotos/goattyycq.jpg",       // Wide
     "/musicPhotos/IMG_3249.jpg",        // Tall
-    "/musicPhotos/IMG_0542.JPG",        // Wide
-    "/musicPhotos/IMG_4311.JPG",        // Tall
+    "/musicPhotos/IMG_0542.jpg",        // Wide
+    "/musicPhotos/IMG_4311.jpg",        // Tall
     "/musicPhotos/huhwhat.jpg",         // Wide
   ],
   band: {
     name: "∀∃District.",
-    logo: "/musicPhotos/aedlogo.JPG",
+    logo: "/musicPhotos/aedlogo.jpg",
     description: `∀∃District (For-all /Exist /District.)
 
 We embrace inclusivity and openness, standing in the world with obsession. We go by AED; just like the device, our mission is to bring to room back to life.`,

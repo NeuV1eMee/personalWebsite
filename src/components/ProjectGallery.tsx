@@ -36,6 +36,19 @@ export function ProjectGallery({ project, isOpen, onClose }: ProjectGalleryProps
     };
   }, [isOpen]);
 
+  // Auto-scroll logic
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isOpen && project?.gallery && project.gallery.length > 1) {
+      interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % project.gallery!.length);
+      }, 4000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isOpen, project]);
+
   if (!isOpen || !project || !project.gallery) return null;
 
   const nextImage = () => {
@@ -132,13 +145,13 @@ export function ProjectGallery({ project, isOpen, onClose }: ProjectGalleryProps
                     <div className="text-xs font-mono text-neutral-500 uppercase tracking-widest">
                         {project.year ? `// ${project.year}` : "// ARCHIVE"}
                     </div>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-100 tracking-tight">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-100 tracking-tight">
                         {project.title}
                     </h2>
                 </div>
 
                 {/* Description */}
-                <div className="text-neutral-400 text-sm md:text-base md:text-lg leading-relaxed font-light space-y-6">
+                <div className="text-neutral-400 text-sm md:text-base leading-relaxed font-light space-y-6">
                     {(project.fullDescription || project.description).split('\n').filter(Boolean).map((paragraph, idx) => (
                       <p key={idx}>{paragraph}</p>
                     ))}

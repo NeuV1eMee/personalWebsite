@@ -1,39 +1,95 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BracketButton } from "@/components/ui/BracketButton";
 
 interface HomeClientProps {
   backgroundVideos: string[];
+  taglines: string[];
 }
 
-export function HomeClient({ backgroundVideos }: HomeClientProps) {
+export function HomeClient({ backgroundVideos, taglines }: HomeClientProps) {
   const [isContactOpen, setIsContactOpen] = useState(false);
-  
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [currentTaglineIndex, setCurrentTaglineIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+  const [videoErrorCount, setVideoErrorCount] = useState(0);
+  const [isVideoFading, setIsVideoFading] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleVideoEnded = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % backgroundVideos.length);
+  // Tagline rotation logic
+  useEffect(() => {
+    if (taglines.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setIsFading(true);
+      setTimeout(() => {
+        setCurrentTaglineIndex((prev) => (prev + 1) % taglines.length);
+        setIsFading(false);
+      }, 500);
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, [taglines]);
+
+  // Pre-emptive fade to black logic
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (video && video.duration > 0) {
+      // Start fading 0.8 seconds before the end
+      if (video.duration - video.currentTime < 0.8 && !isVideoFading) {
+        setIsVideoFading(true);
+      }
+    }
   };
 
-  const currentVideo = backgroundVideos[currentVideoIndex] || "";
+  const handleVideoEnded = () => {
+    // Source switch happens while we are black
+    const totalVideos = backgroundVideos.length > 0 ? backgroundVideos.length : 7;
+    setCurrentVideoIndex((prev) => (prev + 1) % totalVideos);
+    setVideoErrorCount(0);
+    
+    // Pause briefly at black to ensure a clean source swap, then fade in
+    setTimeout(() => {
+      setIsVideoFading(false);
+    }, 150);
+  };
+
+  const handleVideoError = () => {
+    console.warn("Video failed to load, trying next one...");
+    setVideoErrorCount(prev => prev + 1);
+    if (videoErrorCount < 5) {
+      handleVideoEnded();
+    }
+  };
+
+  const currentTagline = taglines[currentTaglineIndex] || "Crafting Code, Capturing Light and Making Some Noise.";
+
+  const fallbackVideos = [
+    "/videos/mainpage_vid-1.mov",
+    "/videos/mainpage_vid-2.mov",
+    "/videos/mainpage_vid-3.mov",
+    "/videos/mainpage_vid-4.mov",
+    "/videos/mainpage_vid-5.mov",
+    "/videos/mainpage_vid-6.mov",
+    "/videos/mainpage_vid-7.mov"
+  ];
+  
+  const videoToPlay = (backgroundVideos && backgroundVideos.length > 0 && videoErrorCount < 3) 
+    ? backgroundVideos[currentVideoIndex] 
+    : fallbackVideos[currentVideoIndex % fallbackVideos.length];
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center p-8 text-center overflow-hidden">
       
       {/* Top Navigation Bar */}
-      <header className="absolute top-6 left-6 right-6 z-40 flex justify-between items-center">
-        {/* Top Left: Logo & Name */}
-        <div className="flex items-center gap-3 text-neutral-300">
-          <div className="w-8 h-8 rounded-full bg-neutral-200 text-black flex items-center justify-center">
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-             </svg>
-          </div>
-          <span className="font-light tracking-wide text-lg">Zuocheng Wang</span>
+      <header className="absolute top-6 left-10 md:left-12 right-6 z-40 flex justify-between items-center">
+        <div className="flex items-center text-neutral-300">
+          <span className="font-light tracking-[0.2em] text-xs md:text-sm uppercase select-none">
+             ZW 99
+          </span>
         </div>
 
-        {/* Top Right: Contact Button */}
         <BracketButton 
           text="Contact" 
           onClick={() => setIsContactOpen(true)} 
@@ -43,11 +99,10 @@ export function HomeClient({ backgroundVideos }: HomeClientProps) {
 
       {/* Center Content */}
       <div className="z-10 flex flex-col items-center space-y-8">
-        <h1 className="text-xl md:text-3xl font-medium tracking-wide uppercase text-neutral-100 max-w-none md:whitespace-nowrap">
-          Crafting Code, Capturing Light and Making Some Noise.
+        <h1 className={`text-lg md:text-2xl font-medium tracking-wide uppercase text-neutral-100 max-w-4xl transition-opacity duration-500 ${isFading ? "opacity-0" : "opacity-100"}`}>
+          {currentTagline}
         </h1>
 
-        {/* Navigation Buttons */}
         <nav className="flex flex-wrap justify-center items-center gap-2 text-neutral-400 font-sans text-sm md:text-base">
           <BracketButton text="Build" href="/build" className="text-neutral-300 hover:text-white" />
           <span>/</span>
@@ -61,17 +116,19 @@ export function HomeClient({ backgroundVideos }: HomeClientProps) {
       
       {/* Background Video */}
       <div className="absolute inset-0 -z-10 bg-black">
-        {currentVideo && (
+        {videoToPlay && (
           <video 
-            key={currentVideo}
+            ref={videoRef}
+            key={videoToPlay}
             autoPlay 
             muted 
             playsInline 
+            onTimeUpdate={handleTimeUpdate}
             onEnded={handleVideoEnded}
-            className="w-full h-full object-cover grayscale contrast-[1.2] brightness-[0.8] opacity-70"
+            onError={handleVideoError}
+            className={`w-full h-full object-cover grayscale contrast-[1.2] brightness-[0.8] transition-opacity duration-700 ease-in-out ${isVideoFading ? "opacity-0" : "opacity-70"}`}
           >
-            <source src={currentVideo} type="video/quicktime" />
-            <source src={currentVideo} type="video/mp4" />
+            <source src={videoToPlay} />
           </video>
         )}
         <div className="absolute inset-0 bg-black/40" />

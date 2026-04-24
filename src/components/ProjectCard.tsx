@@ -104,7 +104,7 @@ export function ProjectCard({ project, index, onClick }: ProjectCardProps) {
         </div>
 
         {/* Description */}
-        <p className="text-neutral-400 text-sm md:text-base leading-relaxed max-w-xl">
+        <p className="text-neutral-400 text-xs md:text-sm leading-relaxed max-w-lg">
             {project.description}
         </p>
 

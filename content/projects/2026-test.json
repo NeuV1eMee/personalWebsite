@@ -1,9 +1,9 @@
 {
   "link": "#",
-  "title": "test",
-  "year": "2021",
-  "imageUrl": "/photos/uploads/6341ee6dd1266fe91bf1f0554d1759df.jpg",
-  "description": "123",
+  "title": "MyWebsite",
+  "year": "2026",
+  "imageUrl": "/photos/uploads/8a4434e5debbf66033da5c47ee099bce.jpg",
+  "description": "This website itself is a cool project, isn't it?",
   "fullDescription": "1234",
   "tools": [
     "abc",

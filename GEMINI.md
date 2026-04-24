@@ -78,16 +78,19 @@ The project follows the standard Next.js App Router structure with feature-based
 
 ## Recent Updates / Work Log
 
-- **Decap CMS Integration (April 2026):**
-  - Completely replaced hardcoded `photos.ts` with a Git-based CMS.
-  - Setup local proxy backend (`npx decap-server`) allowing drag-and-drop bulk uploading with auto-generated timestamps for filenames.
-  - Refactored Lens pages (`LensClient`, `CategoryClient`) to read CMS-generated JSON files dynamically at build time.
-  - Added smart data-fields: Location tagging, descriptive titles, and a toggle to explicitly set a photo as a Category Cover.
-- **Dynamic Content & UI Enhancements:**
-  - Built an automatic "By Places" tag cloud on the main Lens page that extracts all unique locations from CMS data and links to dedicated `/lens/location/[place]` gallery pages.
-  - Revamped gallery layout: Widened containers (`max-w-[1800px]`, `xl:px-48`), switched to a 4-column masonry layout for larger, more imposing vertical and horizontal photo rendering without cropping.
-  - Updated hover animations to be snappier (`duration-300`).
-  - Improved Lightbox UX: Clicking anywhere on the background dim layer now closes the modal.
-  - Unified photo metadata formatting across all views: `[Year]. [Camera Info] [Lens Info] // [Description]`.
-- **Optimization Pipeline:**
-  - Created `scripts/optimize.sh` to batch-convert `.HEIC`/high-res photos into 2560px max-width `.jpg` files, outputting them to a `readyToUpload` sibling directory to avoid committing unoptimized raw files.
+- **CMS-Driven Content Management (April 2026):**
+  - Expanded Decap CMS to manage **Projects** (Build section) and **Music Photos** (Sound section) via JSON in `content/`.
+  - Migrated all static project and music data to the CMS, enabling 100% dynamic updates without code changes.
+  - Implemented Server Component refactoring for `/build`, `/sound`, and `/` to support build-time data fetching with client-side interactivity.
+- **Dynamic Homepage Enhancements:**
+  - Added a **Rotating Tagline** system managed via CMS, featuring a 4.5s cycle with smooth fade transitions.
+  - Implemented a cinematic **"Dip to Black" video transition** that pre-emptively fades the background 0.8s before a video ends.
+  - Refined header UI: Replaced logo with minimalist "ZW 99" initials and adjusted positioning.
+- **UI/UX Polishing:**
+  - Standardized project gallery and cards to be more generic (removed "Technology" labels) to accommodate film and other creative works.
+  - Optimized typography for laptop screens, reducing scale for titles and descriptions to improve balance.
+  - Added **Auto-Scroll** (4s) to project detail galleries.
+  - Increased Sound page density (6-column masonry) and Build page "breathing room" (mb-96 footer gap).
+- **Optimization & Deployment:**
+  - Executed a full optimization pass on the Music portfolio, converting all high-res HEIC/JPGs to web-ready 2560px JPEGs.
+  - Documented Cloudflare Pages deployment workflow (`npm run build` -> `out`).

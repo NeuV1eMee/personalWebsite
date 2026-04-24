@@ -4,6 +4,7 @@ import { HomeClient } from "./HomeClient";
 export default function Home() {
   const settings = getHomepageSettings();
   const backgroundVideos = settings.backgroundVideos || [];
+  const taglines = settings.taglines || [];
 
-  return <HomeClient backgroundVideos={backgroundVideos} />;
+  return <HomeClient backgroundVideos={backgroundVideos} taglines={taglines} />;
 }

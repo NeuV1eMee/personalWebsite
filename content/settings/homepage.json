@@ -1,11 +1,21 @@
 {
   "backgroundVideos": [
-    "/videos/mainpage_vid-1.mov",
-    "/videos/mainpage_vid-2.mov",
-    "/videos/mainpage_vid-3.mov",
-    "/videos/mainpage_vid-4.mov",
-    "/videos/mainpage_vid-5.mov",
-    "/videos/mainpage_vid-6.mov",
-    "/videos/mainpage_vid-7.mov"
+    "/photos/uploads/code.mov",
+    "/photos/uploads/flowers.mov",
+    "/photos/uploads/guitar.mov",
+    "/photos/uploads/piano.mov",
+    "/photos/uploads/pov.mp4",
+    "/photos/uploads/record.mov",
+    "/photos/uploads/school.mov",
+    "/photos/uploads/road.mov"
+  ],
+  "taglines": [
+    "This is Zuocheng Wang. Hi.",
+    "Die Welt wird schöner.",
+    "Thank you, I know this looks fire.",
+    "Crafting Code, Capturing Light and Making Some Noise.",
+    "Why not? Why bother? Why so serious?",
+    "Is this a personal display case? Hmm, What a narcissist.",
+    "My lack of insanity often makes me feel insecure."
   ]
 }

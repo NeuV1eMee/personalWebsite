@@ -25,7 +25,7 @@ export function BuildClient({ projects }: BuildClientProps) {
         </div>
 
         {/* Projects Grid */}
-        <div className="flex flex-col gap-32 mb-40">
+        <div className="flex flex-col gap-32 mb-96">
           {projects.map((project, index) => (
             <ProjectCard 
               key={project.id} 
