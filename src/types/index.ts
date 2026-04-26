@@ -59,8 +59,7 @@ export interface BandMember {
   name?: string;
 }
 
-export interface MusicPageData {
-  photoWall: string[];
+export interface MusicSettings {
   band: {
     name: string;
     logo: string;
@@ -71,4 +70,8 @@ export interface MusicPageData {
   stageVideo?: {
     videoUrl: string;
   };
+}
+
+export interface MusicPageData extends MusicSettings {
+  photoWall: string[];
 }

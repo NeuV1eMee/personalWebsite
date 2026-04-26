@@ -4,11 +4,11 @@ import { BracketButton } from "@/components/ui/BracketButton";
 import Image from "next/image";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { musicData } from "@/data/music";
-import { MusicPageData } from "@/types";
+import { MusicSettings } from "@/types";
 
 interface SoundClientProps {
   photoWall: string[];
-  settings: MusicPageData | null;
+  settings: MusicSettings | null;
 }
 
 export function SoundClient({ photoWall, settings }: SoundClientProps) {
