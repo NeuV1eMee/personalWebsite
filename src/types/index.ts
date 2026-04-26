@@ -60,6 +60,7 @@ export interface BandMember {
 }
 
 export interface MusicPageData {
+  photoWall: string[];
   band: {
     name: string;
     logo: string;
