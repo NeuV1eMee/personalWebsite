@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "eslint",
     "optimize": "./scripts/optimize.sh",
-    "build": "next build",
     "cf-build": "opennextjs-cloudflare build"
   },
   "dependencies": {
