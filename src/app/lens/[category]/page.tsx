@@ -1,11 +1,20 @@
-import { use } from "react";
 import { BracketButton } from "@/components/ui/BracketButton";
 import { getAllPhotos } from "@/lib/photos";
 import { CategoryClient } from "./CategoryClient";
 
-export default function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
-  const resolvedParams = use(params);
-  const category = resolvedParams.category;
+interface PageProps {
+  params: Promise<{ category: string }>;
+}
+
+export async function generateStaticParams() {
+  const categories = ["distortion", "silence", "strangers", "polaroid", "featured", "all"];
+  return categories.map((category) => ({
+    category,
+  }));
+}
+
+export default async function CategoryPage({ params }: PageProps) {
+  const { category } = await params;
   
   const photos = getAllPhotos();
   const filteredPhotos = category === "all"
@@ -17,7 +26,7 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
   return (
     <div className="min-h-screen bg-black text-neutral-400 font-light selection:bg-white selection:text-black pb-20">
       {/* Top Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-40 p-6 grid grid-cols-3 items-center bg-black/80 backdrop-blur-sm">
+      <header className="fixed top-0 left-0 right-0 z-40 p-6 grid grid-cols-3 items-center bg-black/80 backdrop-blur-sm border-b border-neutral-900/50">
         <div className="flex justify-start">
           <BracketButton text="< Back" href="/lens" className="text-sm text-neutral-500 hover:text-white" />
         </div>
@@ -26,7 +35,9 @@ export default function CategoryPage({ params }: { params: Promise<{ category: s
             {category === "all" ? "All Photos" : categoryTitle}
           </h1>
         </div>
-        <div className="w-16 invisible md:visible" />
+        <div className="flex justify-end invisible md:visible">
+          <div className="w-16" />
+        </div>
       </header>
 
       <CategoryClient 

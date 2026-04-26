@@ -1,9 +1,16 @@
-import { getJournalEntry } from "@/lib/journal";
+import { getJournalEntry, getAllJournalEntries } from "@/lib/journal";
 import { BracketButton } from "@/components/ui/BracketButton";
 import { notFound } from "next/navigation";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  const entries = getAllJournalEntries();
+  return entries.map((entry) => ({
+    slug: entry.id,
+  }));
 }
 
 export default async function JournalPostPage({ params }: PageProps) {
