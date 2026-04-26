@@ -3,13 +3,15 @@ import path from 'path';
 import { Photo, PhotoCategory } from './photo-constants';
 
 export function getAllPhotos(): Photo[] {
-  const photosDirectory = path.join(process.cwd(), 'content', 'photos');
+  const photosDirectory = path.resolve(process.cwd(), 'content/photos');
   
   if (!fs.existsSync(photosDirectory)) {
+    console.warn('Directory not found:', photosDirectory);
     return [];
   }
 
   const fileNames = fs.readdirSync(photosDirectory);
+  console.log(`Found ${fileNames.length} files in ${photosDirectory}`);
   
   const photos = fileNames
     .filter(fileName => fileName.endsWith('.json'))
