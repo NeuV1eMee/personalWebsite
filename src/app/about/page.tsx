@@ -1,6 +1,28 @@
 import { BracketButton } from "@/components/ui/BracketButton";
+import { getAllJournalEntries } from "@/lib/journal";
+import { getAboutData } from "@/lib/about";
+import { JournalCard } from "@/components/JournalCard";
+import Link from "next/link";
 
 export default function AboutPage() {
+  const entries = getAllJournalEntries();
+  const aboutData = getAboutData();
+
+  // Helper to render description with a specific link style for the Resume markdown
+  const renderDescription = (text: string) => {
+    const parts = text.split(/(\[Resume\]\(\/resume\.pdf\))/);
+    return parts.map((part, i) => {
+      if (part === "[Resume](/resume.pdf)") {
+        return (
+          <Link key={i} href={aboutData.resumeUrl} className="text-white hover:underline underline-offset-4 decoration-neutral-600 transition-all">
+            Resume
+          </Link>
+        );
+      }
+      return part;
+    });
+  };
+
   return (
     <div className="min-h-screen bg-[#060606] text-neutral-400 font-light selection:bg-white selection:text-black pb-32">
       {/* Top Navigation */}
@@ -14,61 +36,46 @@ export default function AboutPage() {
           </h1>
         </div>
         <div className="flex justify-end">
-          <BracketButton text="Resume" href="/resume.pdf" className="text-sm text-neutral-500 hover:text-white" />
+          <BracketButton text="Resume" href={aboutData.resumeUrl} className="text-sm text-neutral-500 hover:text-white" />
         </div>
       </header>
 
-      <main className="pt-48 px-6 md:px-12 max-w-4xl mx-auto space-y-24">
+      <main className="pt-48 px-6 md:px-12 max-w-[1800px] mx-auto">
         
-        <header className="mb-16 border-b border-neutral-800 pb-12">
-          <h1 className="text-4xl md:text-5xl font-light tracking-tight text-neutral-200 mb-6">HELLO, WORLD.</h1>
-          <p className="text-lg text-neutral-500 font-mono tracking-tighter">
-            &gt; Developer. Photographer. Musician.
+        {/* About Header */}
+        <div className="max-w-4xl mx-auto mb-32 border-b border-neutral-800 pb-12">
+          <h1 className="text-4xl md:text-5xl font-light tracking-tight text-neutral-200 mb-6 uppercase">
+            {aboutData.intro.heading}
+          </h1>
+          <p className="text-lg text-neutral-500 font-mono tracking-tighter mb-8">
+            {aboutData.intro.subheading}
           </p>
-        </header>
+          <div className="text-neutral-400 text-sm md:text-base leading-relaxed whitespace-pre-wrap">
+            {renderDescription(aboutData.intro.description)}
+          </div>
+        </div>
 
-        <div className="space-y-20 text-neutral-400 leading-relaxed font-light">
-          <section className="space-y-6">
-            <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-[0.3em]">[ The Code ]</h2>
-            <div className="space-y-4 text-sm md:text-base">
-              <p>
-                I am a software engineer focused on building immersive digital experiences. 
-                My work bridges the gap between functional engineering and aesthetic design.
-                I specialize in React, TypeScript, and modern web frameworks.
-              </p>
-              <p>
-                Currently working on personal projects involving generative art and audio visualization.
-              </p>
+        <div className="max-w-4xl mx-auto flex flex-col gap-16 mb-64">
+          {entries.length > 0 ? (
+            entries.map((entry) => (
+              <JournalCard 
+                key={entry.id} 
+                entry={entry} 
+              />
+            ))
+          ) : (
+            <div className="text-center py-24 border border-dashed border-neutral-800">
+               <p className="text-xs font-mono text-neutral-600 uppercase tracking-widest">
+                 {"//"} No monologues found in the archive.
+               </p>
             </div>
-          </section>
+          )}
+        </div>
 
-          <section className="space-y-6">
-            <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-[0.3em]">[ The Light ]</h2>
-            <p className="text-sm md:text-base">
-              Photography is my way of documenting the silent moments of chaos. I shoot primarily with a Fujifilm X-T5, focusing on high-contrast black and white street photography.
-            </p>
-          </section>
-
-          <section className="space-y-6">
-              <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-[0.3em]">[ The Noise ]</h2>
-              <p className="text-sm md:text-base">
-                  When I&apos;m not coding, I&apos;m making noise. I play guitar in a shoegaze/post-punk band. We are currently recording our first EP.
-              </p>
-          </section>
-          
-          <section className="pt-12 border-t border-neutral-900 space-y-8">
-               <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-[0.3em]">[ Contact ]</h2>
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-mono text-xs text-neutral-500 uppercase tracking-widest">
-                   <div className="flex flex-col gap-2">
-                     <span className="text-neutral-700">Email</span>
-                     <a href="mailto:wangzuocheng99@gmail.com" className="hover:text-white transition-colors">wangzuocheng99@gmail.com</a>
-                   </div>
-                   <div className="flex flex-col gap-2">
-                     <span className="text-neutral-700">Instagram</span>
-                     <a href="https://instagram.com/zzzuochengw" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">@zzzuochengw</a>
-                   </div>
-               </div>
-          </section>
+        <div className="max-w-4xl mx-auto text-left">
+           <p className="text-xs text-neutral-600 font-mono">
+             {"//"} Thinking in public.
+           </p>
         </div>
       </main>
     </div>

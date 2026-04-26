@@ -1,3 +1,27 @@
+export interface JournalEntry {
+  id: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  content: string;
+}
+
+export interface AboutData {
+  resumeUrl: string;
+  intro: {
+    heading: string;
+    subheading: string;
+    description: string;
+  };
+  contact: {
+    email: string;
+    instagram: string;
+    phone?: string;
+    wechat?: string;
+    github?: string;
+  };
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -36,7 +60,6 @@ export interface BandMember {
 }
 
 export interface MusicPageData {
-  photoWall: string[];
   band: {
     name: string;
     logo: string;
@@ -44,10 +67,7 @@ export interface MusicPageData {
     members: BandMember[];
   };
   covers: SongCover[];
-  personalMonologue: string;
-  rig: {
-    guitars: string[];
-    ampsAndPedals: string[];
-    keys: string[];
+  stageVideo?: {
+    videoUrl: string;
   };
 }

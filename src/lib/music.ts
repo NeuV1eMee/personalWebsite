@@ -1,6 +1,15 @@
 import fs from 'fs';
 import path from 'path';
 
+export function getMusicSettings() {
+  const filePath = path.join(process.cwd(), 'content', 'settings', 'music.json');
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  return JSON.parse(fileContents);
+}
+
 export function getHomepageSettings() {
   const filePath = path.join(process.cwd(), 'content', 'settings', 'homepage.json');
   if (!fs.existsSync(filePath)) {
