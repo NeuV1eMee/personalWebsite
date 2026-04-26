@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "optimize": "./scripts/optimize.sh",
-    "cf-build": "opennextjs-cloudflare build"
+    "cf-build": "opennextjs-cloudflare build && rm -rf build-assets && mkdir -p build-assets && cp -r .open-next/assets/* build-assets/"
     },
     "dependencies": {
     "clsx": "^2.1.1",

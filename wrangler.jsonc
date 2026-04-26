@@ -3,7 +3,7 @@
   "name": "my-portfolio",
   "main": ".open-next/worker.js",
   "assets": {
-    "directory": ".open-next/assets",
+    "directory": "build-assets",
     "binding": "ASSETS",
     "run_worker_first": false
   },
