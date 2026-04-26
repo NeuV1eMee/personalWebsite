@@ -41,41 +41,42 @@ export function Lightbox({ photo, onClose }: LightboxProps) {
       </div>
 
       <div 
-        className="relative max-w-5xl w-full h-full p-8 pt-24 flex flex-col items-center justify-center"
-        onClick={(e) => e.stopPropagation()}
+        className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center pointer-events-none"
       >
-        {/* Image Container */}
-        <div className="relative w-full max-h-[80vh] flex items-center justify-center mb-6">
-           {/* In a real app, use next/image. For now using div placeholder if src fails or mocking */}
-           {/* We use a simple img tag here to ensure color is shown (no CSS filters applied) */}
-           <img 
-             src={photo.src} 
-             alt={photo.title} 
-             className="max-w-full max-h-full object-contain shadow-2xl"
-             onError={(e) => {
-                 // Fallback for missing images
-                 e.currentTarget.style.display = 'none';
-                 e.currentTarget.parentElement!.innerHTML = `<div class="w-full h-96 bg-neutral-800 flex items-center justify-center text-neutral-500">[ IMAGE NOT FOUND: ${photo.src} ]</div>`;
-             }}
-           />
-        </div>
+        <div 
+          className="relative flex flex-col items-center justify-center p-4 md:p-8 pointer-events-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Image Container */}
+          <div className="relative w-full max-h-[75vh] flex items-center justify-center mb-6">
+             <img 
+               src={photo.src} 
+               alt={photo.title} 
+               className="max-w-full max-h-[75vh] object-contain shadow-2xl"
+               onError={(e) => {
+                   e.currentTarget.style.display = 'none';
+                   e.currentTarget.parentElement!.innerHTML = `<div class="w-full h-96 bg-neutral-800 flex items-center justify-center text-neutral-500">[ IMAGE NOT FOUND: ${photo.src} ]</div>`;
+               }}
+             />
+          </div>
 
-        {/* Caption */}
-        <div className="text-center space-y-1 font-mono text-xs md:text-sm">
-          {photo.location && (
-            <p className="text-neutral-400 uppercase tracking-widest mb-1">{photo.location}</p>
-          )}
-          {(photo.year || photo.camera || photo.lens) && (
-            <p className="text-neutral-500">
-              {[
-                photo.year,
-                [photo.camera, photo.lens].filter(Boolean).join(" ")
-              ].filter(Boolean).join(". ")}
-            </p>
-          )}
-          {description && (
-            <p className="text-neutral-600">{"//"} {description}</p>
-          )}
+          {/* Caption */}
+          <div className="text-center space-y-1 font-mono text-xs md:text-sm p-4">
+            {photo.location && (
+              <p className="text-neutral-400 uppercase tracking-widest mb-1">{photo.location}</p>
+            )}
+            {(photo.year || photo.camera || photo.lens) && (
+              <p className="text-neutral-500">
+                {[
+                  photo.year,
+                  [photo.camera, photo.lens].filter(Boolean).join(" ")
+                ].filter(Boolean).join(". ")}
+              </p>
+            )}
+            {description && (
+              <p className="text-neutral-600">{"//"} {description}</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
