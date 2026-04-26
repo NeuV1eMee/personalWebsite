@@ -1,42 +1,15 @@
-import fs from 'fs';
-import path from 'path';
+import { cmsData } from '@/data/cms-data';
 
 export function getMusicSettings() {
-  const filePath = path.join(process.cwd(), 'content', 'settings', 'music.json');
-  if (!fs.existsSync(filePath)) {
-    return null;
-  }
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  return JSON.parse(fileContents);
+  return cmsData.settings.music;
 }
 
 export function getHomepageSettings() {
-  const filePath = path.join(process.cwd(), 'content', 'settings', 'homepage.json');
-  if (!fs.existsSync(filePath)) {
-    return { backgroundVideos: [] };
-  }
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  return JSON.parse(fileContents);
+  return cmsData.settings.homepage;
 }
 
 export function getMusicPhotos(): string[] {
-  const directory = path.join(process.cwd(), 'content', 'music-photos');
-  
-  if (!fs.existsSync(directory)) {
-    return [];
-  }
-
-  const fileNames = fs.readdirSync(directory);
-  
-  const photos = fileNames
-    .filter(fileName => fileName.endsWith('.json'))
-    .map((fileName) => {
-      const filePath = path.join(directory, fileName);
-      const fileContents = fs.readFileSync(filePath, 'utf8');
-      const data = JSON.parse(fileContents);
-      return data.image || '';
-    })
+  return cmsData.musicPhotos
+    .map((data: any) => data.image || '')
     .filter(Boolean);
-
-  return photos;
 }

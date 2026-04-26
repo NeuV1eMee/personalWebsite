@@ -1,35 +1,18 @@
-import fs from 'fs';
-import path from 'path';
+import { cmsData } from '@/data/cms-data';
 import { Project } from '@/types';
 
 export function getAllProjects(): Project[] {
-  const projectsDirectory = path.join(process.cwd(), 'content', 'projects');
-  
-  if (!fs.existsSync(projectsDirectory)) {
-    return [];
-  }
-
-  const fileNames = fs.readdirSync(projectsDirectory);
-  
-  const projects = fileNames
-    .filter(fileName => fileName.endsWith('.json'))
-    .map((fileName) => {
-      const filePath = path.join(projectsDirectory, fileName);
-      const fileContents = fs.readFileSync(filePath, 'utf8');
-      const data = JSON.parse(fileContents);
-      
-      return {
-        id: fileName.replace(/\.json$/, ''),
-        title: data.title || '',
-        year: data.year || '',
-        description: data.description || '',
-        fullDescription: data.fullDescription || '',
-        imageUrl: data.imageUrl || '',
-        tools: data.tools || [],
-        link: data.link || '#',
-        gallery: data.gallery || []
-      };
-    });
+  const projects = cmsData.projects.map((data: any, index: number) => ({
+    id: `project-${index}`,
+    title: data.title || '',
+    year: data.year || '',
+    description: data.description || '',
+    fullDescription: data.fullDescription || '',
+    imageUrl: data.imageUrl || '',
+    tools: data.tools || [],
+    link: data.link || '#',
+    gallery: data.gallery || []
+  }));
 
   // Sort projects by year (descending)
   return projects.sort((a, b) => {

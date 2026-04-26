@@ -1,38 +1,18 @@
-import fs from 'fs';
-import path from 'path';
+import { cmsData } from '@/data/cms-data';
 import { Photo, PhotoCategory } from './photo-constants';
 
 export function getAllPhotos(): Photo[] {
-  const photosDirectory = path.resolve(process.cwd(), 'content/photos');
-  
-  if (!fs.existsSync(photosDirectory)) {
-    console.warn('Directory not found:', photosDirectory);
-    return [];
-  }
-
-  const fileNames = fs.readdirSync(photosDirectory);
-  console.log(`Found ${fileNames.length} files in ${photosDirectory}`);
-  
-  const photos = fileNames
-    .filter(fileName => fileName.endsWith('.json'))
-    .map((fileName) => {
-      const filePath = path.join(photosDirectory, fileName);
-      const fileContents = fs.readFileSync(filePath, 'utf8');
-      const data = JSON.parse(fileContents);
-      
-      return {
-        id: fileName.replace(/\.json$/, ''),
-        src: data.image || '',
-        title: data.title || '',
-        location: data.location || '',
-        description: data.description || '',
-        isCover: !!data.isCover,
-        category: (data.category || 'featured') as PhotoCategory,
-        year: data.year || '',
-        camera: data.camera || '',
-        lens: data.lens || ''
-      };
-    });
-
-  return photos;
+  // Use pre-compiled data instead of fs for Cloudflare compatibility
+  return cmsData.photos.map((data: any, index: number) => ({
+    id: `photo-${index}`,
+    src: data.image || '',
+    title: data.title || '',
+    location: data.location || '',
+    description: data.description || '',
+    isCover: !!data.isCover,
+    category: (data.category || 'featured') as PhotoCategory,
+    year: data.year || '',
+    camera: data.camera || '',
+    lens: data.lens || ''
+  }));
 }
