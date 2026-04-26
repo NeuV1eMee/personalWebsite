@@ -100,7 +100,7 @@ export function ProjectGallery({ project, isOpen, onClose }: ProjectGalleryProps
 
           {/* MAIN Image */}
           <div 
-             className="relative z-20 w-[90%] md:w-[70%] h-full flex items-center justify-center cursor-pointer md:cursor-default group/image"
+             className="relative z-20 w-[90%] md:w-[70%] h-full flex items-center justify-center cursor-pointer md:cursor-default"
              onClick={(e) => {
                  // Simple tap navigation for mobile
                  if (window.innerWidth < 768) {
@@ -111,28 +111,28 @@ export function ProjectGallery({ project, isOpen, onClose }: ProjectGalleryProps
                  }
              }}
           >
-             {/* Navigation Arrows - Desktop only, visible on hover */}
-             <button 
-               onClick={(e) => { e.stopPropagation(); prevImage(); }}
-               className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-4 text-white/30 hover:text-white transition-all hidden md:block group-hover/image:translate-x-0 -translate-x-4 opacity-0 group-hover/image:opacity-100"
-             >
-               <span className="text-3xl font-light font-mono leading-none">&lt;</span>
-             </button>
-
              <img 
                key={currentIndex}
                src={project.gallery[currentIndex]} 
                alt={`Gallery image ${currentIndex + 1}`}
                className="max-w-full max-h-[80vh] object-contain shadow-2xl animate-[fadeScale_0.4s_ease-out]"
              />
-
-             <button 
-               onClick={(e) => { e.stopPropagation(); nextImage(); }}
-               className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-4 text-white/30 hover:text-white transition-all hidden md:block group-hover/image:translate-x-0 translate-x-4 opacity-0 group-hover/image:opacity-100"
-             >
-               <span className="text-3xl font-light font-mono leading-none">&gt;</span>
-             </button>
           </div>
+
+          {/* Navigation Arrows - Desktop only, constantly visible */}
+          <button 
+            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+            className="absolute left-6 top-1/2 -translate-y-1/2 z-40 p-4 text-white/40 hover:text-white transition-all hidden md:block"
+          >
+            <span className="text-4xl font-light font-mono leading-none">&lt;</span>
+          </button>
+
+          <button 
+            onClick={(e) => { e.stopPropagation(); nextImage(); }}
+            className="absolute right-6 top-1/2 -translate-y-1/2 z-40 p-4 text-white/40 hover:text-white transition-all hidden md:block"
+          >
+            <span className="text-4xl font-light font-mono leading-none">&gt;</span>
+          </button>
 
           {/* Counter/Indicators */}
           <div className="absolute bottom-4 md:bottom-8 left-0 right-0 flex justify-center gap-2 z-30">
