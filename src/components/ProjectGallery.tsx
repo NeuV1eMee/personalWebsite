@@ -119,20 +119,14 @@ export function ProjectGallery({ project, isOpen, onClose }: ProjectGalleryProps
              />
           </div>
 
-          {/* Navigation Arrows - Desktop only, constantly visible */}
-          <button 
-            onClick={(e) => { e.stopPropagation(); prevImage(); }}
-            className="absolute left-6 top-1/2 -translate-y-1/2 z-40 p-4 text-white/40 hover:text-white transition-all hidden md:block"
-          >
+          {/* Navigation Arrows - Desktop only, constantly visible indicators */}
+          <div className="absolute left-6 top-1/2 -translate-y-1/2 z-40 p-4 text-white/20 hidden md:block pointer-events-none">
             <span className="text-4xl font-light font-mono leading-none">&lt;</span>
-          </button>
+          </div>
 
-          <button 
-            onClick={(e) => { e.stopPropagation(); nextImage(); }}
-            className="absolute right-6 top-1/2 -translate-y-1/2 z-40 p-4 text-white/40 hover:text-white transition-all hidden md:block"
-          >
+          <div className="absolute right-6 top-1/2 -translate-y-1/2 z-40 p-4 text-white/20 hidden md:block pointer-events-none">
             <span className="text-4xl font-light font-mono leading-none">&gt;</span>
-          </button>
+          </div>
 
           {/* Counter/Indicators */}
           <div className="absolute bottom-4 md:bottom-8 left-0 right-0 flex justify-center gap-2 z-30">
