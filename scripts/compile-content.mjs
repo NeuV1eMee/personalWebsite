@@ -22,21 +22,40 @@ function readJsonFiles(dir) {
     });
 }
 
-const data = {
-  photos: readJsonFiles(path.join(contentDir, 'photos')),
-  musicPhotos: readJsonFiles(path.join(contentDir, 'music-photos')),
-  projects: readJsonFiles(path.join(contentDir, 'projects')),
-  journal: readJsonFiles(path.join(contentDir, 'journal')),
-  settings: {
-    homepage: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/homepage.json'), 'utf8')),
-    about: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/about.json'), 'utf8')),
-    music: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/music.json'), 'utf8')),
-  }
-};
+function compile() {
+  try {
+    const data = {
+      photos: readJsonFiles(path.join(contentDir, 'photos')),
+      musicPhotos: readJsonFiles(path.join(contentDir, 'music-photos')),
+      projects: readJsonFiles(path.join(contentDir, 'projects')),
+      journal: readJsonFiles(path.join(contentDir, 'journal')),
+      settings: {
+        homepage: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/homepage.json'), 'utf8')),
+        about: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/about.json'), 'utf8')),
+        music: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/music.json'), 'utf8')),
+      }
+    };
 
-const tsContent = `// AUTO-GENERATED FILE - DO NOT EDIT
+    const tsContent = `// AUTO-GENERATED FILE - DO NOT EDIT
 export const cmsData = ${JSON.stringify(data, null, 2)};
 `;
 
-fs.writeFileSync(outputFile, tsContent);
-console.log('✅ CMS Content compiled to src/data/cms-data.ts');
+    fs.writeFileSync(outputFile, tsContent);
+    console.log(`✅ [${new Date().toLocaleTimeString()}] CMS Content compiled to src/data/cms-data.ts`);
+  } catch (err) {
+    console.error('❌ Error compiling CMS content:', err.message);
+  }
+}
+
+// Initial compile
+compile();
+
+// Watch mode
+if (process.argv.includes('--watch')) {
+  console.log('👀 Watching for changes in content directory...');
+  fs.watch(contentDir, { recursive: true }, (eventType, filename) => {
+    if (filename && filename.endsWith('.json')) {
+      compile();
+    }
+  });
+}

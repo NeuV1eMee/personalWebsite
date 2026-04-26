@@ -1979,11 +1979,11 @@ export const cmsData = {
       "title": "AE-Synth",
       "year": "2025",
       "imageUrl": "/photos/uploads/aesynth.jpg",
-      "description": "Audio visualization tool that reacts to microphone input. Built with Web Audio API and Canvas.",
+      "description": "An audio controller that uses an Arduino to control signal output; the signal is fed into Logic Pro to trigger selected synthesizer sounds.",
       "tools": [
-        "Web Audio API",
-        "Canvas",
-        "Vanilla JS"
+        "Arduino",
+        "LogicPro",
+        "VinylCut"
       ],
       "link": "#",
       "_slug": "2023-echo-chamber"
