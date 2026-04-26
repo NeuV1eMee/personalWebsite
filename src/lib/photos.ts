@@ -2,9 +2,8 @@ import { cmsData } from '@/data/cms-data';
 import { Photo, PhotoCategory } from './photo-constants';
 
 export function getAllPhotos(): Photo[] {
-  // Use pre-compiled data instead of fs for Cloudflare compatibility
-  return cmsData.photos.map((data: any, index: number) => ({
-    id: `photo-${index}`,
+  return cmsData.photos.map((data: any) => ({
+    id: data._slug,
     src: data.image || '',
     title: data.title || '',
     location: data.location || '',

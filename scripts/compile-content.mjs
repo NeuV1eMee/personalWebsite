@@ -13,7 +13,13 @@ function readJsonFiles(dir) {
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir)
     .filter(f => f.endsWith('.json'))
-    .map(f => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')));
+    .map(f => {
+      const content = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+      return {
+        ...content,
+        _slug: f.replace(/\.json$/, '') // Keep the original filename as the slug/ID
+      };
+    });
 }
 
 const data = {

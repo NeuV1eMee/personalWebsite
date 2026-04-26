@@ -2,8 +2,8 @@ import { cmsData } from '@/data/cms-data';
 import { Project } from '@/types';
 
 export function getAllProjects(): Project[] {
-  const projects = cmsData.projects.map((data: any, index: number) => ({
-    id: `project-${index}`,
+  const projects = cmsData.projects.map((data: any) => ({
+    id: data._slug,
     title: data.title || '',
     year: data.year || '',
     description: data.description || '',
