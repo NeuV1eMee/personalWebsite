@@ -2,6 +2,8 @@ import { BracketButton } from "@/components/ui/BracketButton";
 import { SoundClient } from "./SoundClient";
 import { getMusicPhotos, getMusicSettings } from "@/lib/music";
 
+export const dynamic = "force-static";
+
 export default function SoundPage() {
   const photoWall = getMusicPhotos();
   const settings = getMusicSettings();

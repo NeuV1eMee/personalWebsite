@@ -6,6 +6,8 @@ interface PageProps {
   params: Promise<{ category: string }>;
 }
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   const categories = ["distortion", "silence", "strangers", "polaroid", "featured", "all"];
   return categories.map((category) => ({

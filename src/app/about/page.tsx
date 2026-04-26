@@ -4,6 +4,8 @@ import { getAboutData } from "@/lib/about";
 import { JournalCard } from "@/components/JournalCard";
 import Link from "next/link";
 
+export const dynamic = "force-static";
+
 export default function AboutPage() {
   const entries = getAllJournalEntries();
   const aboutData = getAboutData();

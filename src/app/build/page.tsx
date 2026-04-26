@@ -3,6 +3,8 @@ import { BuildClient } from "./BuildClient";
 import { getAllProjects } from "@/lib/projects";
 import { getAboutData } from "@/lib/about";
 
+export const dynamic = "force-static";
+
 export default function BuildPage() {
   const projects = getAllProjects();
   const aboutData = getAboutData();

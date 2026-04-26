@@ -6,6 +6,8 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   const entries = getAllJournalEntries();
   return entries.map((entry) => ({

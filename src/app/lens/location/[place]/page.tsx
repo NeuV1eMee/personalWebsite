@@ -6,6 +6,8 @@ interface PageProps {
   params: Promise<{ place: string }>;
 }
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   const photos = getAllPhotos();
   const locations = Array.from(new Set(photos.map(p => p.location).filter(Boolean)));

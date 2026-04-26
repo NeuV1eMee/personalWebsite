@@ -2,6 +2,8 @@ import { BracketButton } from "@/components/ui/BracketButton";
 import { LensClient } from "./LensClient";
 import { getAllPhotos } from "@/lib/photos";
 
+export const dynamic = "force-static";
+
 export default function LensPage() {
   const photos = getAllPhotos();
   const featuredPhotos = photos.filter(p => p.category === "featured");

@@ -2,6 +2,8 @@ import { getHomepageSettings } from "@/lib/music";
 import { getAboutData } from "@/lib/about";
 import { HomeClient } from "./HomeClient";
 
+export const dynamic = "force-static";
+
 export default function Home() {
   const settings = getHomepageSettings();
   const aboutData = getAboutData();
