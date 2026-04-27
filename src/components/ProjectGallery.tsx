@@ -49,6 +49,27 @@ export function ProjectGallery({ project, isOpen, onClose }: ProjectGalleryProps
     };
   }, [isOpen, project]);
 
+  // Keyboard support
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (!isOpen) return;
+      
+      if (event.key === "ArrowRight") {
+        nextImage();
+      } else if (event.key === "ArrowLeft") {
+        prevImage();
+      } else if (event.key === "Escape") {
+        onClose();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen, currentIndex, project]);
+
   if (!isOpen || !project || !project.gallery) return null;
 
   const nextImage = () => {
