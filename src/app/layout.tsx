@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "Personal Portfolio",
+  title: "ZW99",
   description: "Crafting code, capturing light, and making some noise.",
 };
 
