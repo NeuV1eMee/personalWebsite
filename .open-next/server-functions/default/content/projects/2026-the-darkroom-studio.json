@@ -1,0 +1,21 @@
+{
+  "link": "#",
+  "title": "The Darkroom Studio",
+  "year": "2026",
+  "imageUrl": "/photos/uploads/dnid-capstone-group-16.png",
+  "description": "Darkroom Studio is a native Swift app that democratizes film photography. By leveraging open-source LUTs and enforced development times, it teaches the mechanics of gear and darkroom chemistry, bringing the soul of \"slow photography\" to the iPhone without the expensive barrier to entry.",
+  "fullDescription": "The Mission: Analog Soul, Zero Barrier\nWhile film photography is seeing a massive resurgence, the \"entry fee\"—from skyrocketing gear prices to the cost of every shutter click—is a major hurdle for casual creators. Darkroom Studio was built to dismantle these barriers. It isn't just a camera app; it is an educational sandbox that brings the intentionality of analog to the iPhone. By teaching users the relationship between different camera bodies, film stocks, and lenses, the project provides a risk-free environment to learn the craft without the financial stakes of physical film.\n\nThe Simulation: Demystifying the Darkroom\nThe core of the experience lies in its commitment to the \"black box\" of the darkroom. Most digital users have no idea what happens after they drop off a roll of film, so the app visualizes the chemistry of development and the enlarging process. Once a \"roll\" is finished, the app simulates the chemical processing in real-time. This includes an \"Enforced Patience\" mechanic—removing the skip button and forcing users to wait for their results—which restores the weight and commitment to every frame captured.\n\nThe Build: Native Precision and Authentic Color\nMoving away from game-engine wrappers, I developed the prototype entirely in Swift to leverage native iOS performance and high-end camera APIs. To ensure the aesthetic was as authentic as the workflow, I integrated open-source film LUTs (Look-Up Tables) to drive the color science. This allows the app to replicate the specific color shifts and tonal curves of legendary film stocks with mathematical accuracy. By combining native performance with established color science, Darkroom Studio proves that the essence of film isn't just in the grain, but in the methodology and the wait.",
+  "tools": [
+    "Figma",
+    "Swift",
+    "iOS"
+  ],
+  "gallery": [
+    "/photos/uploads/dnid-capstone-group-18-2-.png",
+    "/photos/uploads/dnid-capstone-group-17-1-.png",
+    "/photos/uploads/dnid-capstone-group-17.png",
+    "/photos/uploads/dnid-capstone-group-17-2-.png",
+    "/photos/uploads/dnid-capstone-group-18-1-.png",
+    "/photos/uploads/dnid-capstone-group-18.png"
+  ]
+}

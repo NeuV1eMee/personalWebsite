@@ -1,0 +1,16 @@
+{
+  "title": "SleePurr",
+  "year": "2025",
+  "imageUrl": "/projectPhotos/sleepurr/icon.jpg",
+  "description": "SleePurr is a gamified iOS sleep tracker that replaces dry data with an interactive virtual cat and a social \"PK\" competition system. It uses HealthKit data and AI-driven dialogues to provide personalized sleep insights while fostering healthy habits through emotional connection.",
+  "fullDescription": "SleePurr transforms sleep health into a delightful experience by reflecting a user's sleep quality through the mood and status of a virtual cat companion. Built with SwiftUI and Supabase, the application employs a sophisticated \"Slow Loop\" AI architecture to analyze 10 dimensions of sleep data and generate personalized, empathetic dialogues that help users identify habits like caffeine intake or screen time that affect their rest. By combining this AI core with a 7-day social competition system inspired by Apple Fitness, SleePurr bridges the gap between raw health metrics and actionable behavior change, offering a resilient and engaging platform for improving long-term sleep hygiene.\n\nThe application is built on a modern, scalable stack centered around SwiftUI for a native iOS frontend and HealthKit for robust health data integration. The backend infrastructure utilizes Supabase, leveraging PostgreSQL with Row Level Security (RLS) for data integrity and TypeScript-based Edge Functions (Deno) for performant serverless logic. Advanced AI interactions are orchestrated through OpenRouter, providing access to various Large Language Models (LLMs) such as GPT-4 and Claude. The project also employs a modularized architecture via Swift Package Manager (SPM) and maintains high code quality through a custom Deno-based testing framework and a structured migration system for database evolution.",
+  "tools": ["Supabase", "Swift", "Experience Design"],
+  "link": "#",
+  "gallery": [
+    "/projectPhotos/sleepurr/sp1.PNG",
+    "/projectPhotos/sleepurr/sp2.PNG",
+    "/projectPhotos/sleepurr/sp3.PNG",
+    "/projectPhotos/sleepurr/sp4.png",
+    "/projectPhotos/sleepurr/sp5.jpg"
+  ]
+}

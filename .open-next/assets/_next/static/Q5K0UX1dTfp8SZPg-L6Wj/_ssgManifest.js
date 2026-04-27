@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fabout\u002F[slug]","\u002Flens\u002F[category]","\u002Flens\u002Flocation\u002F[place]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

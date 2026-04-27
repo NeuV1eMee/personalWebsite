@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/[slug]/page": "/about/[slug]",
+  "/about/page": "/about",
+  "/build/page": "/build",
+  "/favicon.ico/route": "/favicon.ico",
+  "/lens/[category]/page": "/lens/[category]",
+  "/lens/location/[place]/page": "/lens/location/[place]",
+  "/lens/page": "/lens",
+  "/page": "/",
+  "/sound/page": "/sound"
+}

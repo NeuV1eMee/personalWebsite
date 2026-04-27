@@ -1,0 +1,12 @@
+{
+  "title": "AE-Synth",
+  "year": "2025",
+  "imageUrl": "/photos/uploads/aesynth.jpg",
+  "description": "Audio visualization tool that reacts to microphone input. Built with Web Audio API and Canvas.",
+  "tools": [
+    "Web Audio API",
+    "Canvas",
+    "Vanilla JS"
+  ],
+  "link": "#"
+}

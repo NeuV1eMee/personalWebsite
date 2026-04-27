@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/[slug]/page": "app/about/[slug]/page.js",
+  "/about/page": "app/about/page.js",
+  "/build/page": "app/build/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/lens/[category]/page": "app/lens/[category]/page.js",
+  "/lens/location/[place]/page": "app/lens/location/[place]/page.js",
+  "/lens/page": "app/lens/page.js",
+  "/page": "app/page.js",
+  "/sound/page": "app/sound/page.js"
+}

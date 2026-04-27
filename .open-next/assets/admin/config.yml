@@ -1,0 +1,146 @@
+backend:
+  name: github
+  repo: NeuV1eMee/personalWebsite
+  branch: main
+
+# Set to true during local development to use decap-server
+local_backend: true
+
+media_folder: "public/photos/uploads"
+public_folder: "/photos/uploads"
+
+collections:
+  - name: "settings"
+    label: "Settings"
+    delete: false # Prevent accidental deletion of the config file
+    files:
+      - name: "homepage"
+        label: "Homepage Settings"
+        file: "content/settings/homepage.json"
+        fields:
+          - label: "Background Videos"
+            name: "backgroundVideos"
+            widget: "list"
+            field: { label: "Video", name: "video", widget: "file" }
+          - label: "Rotating Taglines"
+            name: "taglines"
+            widget: "list"
+            field: { label: "Tagline", name: "text", widget: "string" }
+
+      - name: "about"
+        label: "About & Contact"
+        file: "content/settings/about.json"
+        fields:
+          - { label: "Global Resume File", name: "resumeUrl", widget: "file", default: "/resume.pdf" }
+          - label: "Intro Section"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "Main Heading", name: "heading", widget: "string", default: "HELLO, WORLD." }
+              - { label: "Subheading", name: "subheading", widget: "string", default: "> Developer. Photographer. Musician." }
+              - { label: "Description", name: "description", widget: "text", hint: "Explain why this page became a journal instead of a CV." }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Instagram Username", name: "instagram", widget: "string" }
+              - { label: "Phone Number", name: "phone", widget: "string", required: false }
+              - { label: "WeChat ID", name: "wechat", widget: "string", required: false }
+              - { label: "GitHub Username", name: "github", widget: "string", required: false }
+
+      - name: "music"
+        label: "Music Page Settings"
+        file: "content/settings/music.json"
+        fields:
+          - label: "Band"
+            name: "band"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Members"
+                name: "members"
+                widget: "list"
+                fields:
+                  - { label: "Instagram Handle", name: "handle", widget: "string" }
+          - label: "Played/Covered List"
+            name: "covers"
+            widget: "list"
+            fields:
+              - { label: "Song Title", name: "title", widget: "string" }
+              - { label: "Original Artist", name: "originalArtist", widget: "string" }
+          - label: "Stage Video"
+            name: "stageVideo"
+            widget: "object"
+            fields:
+              - { label: "Video File", name: "videoUrl", widget: "file", required: false }
+
+  - name: "journal"
+    label: "Journal"
+    folder: "content/journal"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    summary: "{{title}} ({{date}})"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "Short summary for the list view card." }
+      - { label: "Content", name: "content", widget: "markdown" }
+
+  - name: "music_photos"
+    label: "Music Photos"
+    folder: "content/music-photos"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Title", name: "title", widget: "string", required: false, default: "Music Moment" }
+      - { label: "Upload Date", name: "date", widget: "datetime" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{year}}-{{title}}"
+    summary: "{{title}} ({{year}})"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Year", name: "year", widget: "string", required: false }
+      - { label: "Main Image", name: "imageUrl", widget: "image" }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Full Description", name: "fullDescription", widget: "text", required: false }
+      - { label: "Tech Stack", name: "tools", widget: "list", required: false }
+      - { label: "Project Link", name: "link", widget: "string", required: false, default: "#" }
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        field: { label: "Image", name: "image", widget: "image" }
+
+  - name: "photos"
+    label: "Photos"
+    folder: "content/photos"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}"
+    summary: "{{title}} - {{category}}"
+    fields:
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Title", name: "title", widget: "string", required: false, default: "New Photo" }
+      - { label: "Upload Date", name: "date", widget: "datetime" }
+      - { label: "Location", name: "location", widget: "string", required: false, hint: "Type a location (e.g. Alaska). Decap CMS will save this text." }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "Set as Collection Cover", name: "isCover", widget: "boolean", default: false, required: false, hint: "Turn this on to make this photo the thumbnail for its Category on the main Lens page." }
+      - { label: "Category", name: "category", widget: "select", options: ["distortion", "silence", "strangers", "polaroid", "featured"], default: "featured" }
+      - { label: "Year", name: "year", widget: "string", required: false }
+      - { label: "Camera", name: "camera", widget: "string", required: false }
+      - { label: "Lens", name: "lens", widget: "string", required: false }

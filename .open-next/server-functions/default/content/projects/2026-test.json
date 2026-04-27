@@ -1,0 +1,19 @@
+{
+  "link": "#",
+  "title": "MyWebsite",
+  "year": "2026",
+  "imageUrl": "/photos/uploads/cleanshot-2026-04-26-at-00.25.55.jpg",
+  "description": "This website itself is a cool project, isn't it?",
+  "fullDescription": "The Philosophy: Brutalist Minimalism & Visual Silence\nIn a digital landscape filled with saturated colors and over-engineered interactions, this portfolio was built as an exercise in restraint. The design system follows a strict Black & White palette, where every pixel is intentional. Color is treated as a premium resource, only appearing when the user actively engages with a project or photograph. The use of bracketed UI elements and monospaced typography pays homage to terminal aesthetics while maintaining a premium, high-fashion editorial feel.\n\nThe Architecture: Dynamic, Server-First, and Scalable\nThe technical foundation is built on Next.js 16 and the App Router, prioritizing Server Components to ensure lightning-fast load times despite the use of high-resolution video backgrounds. Instead of a traditional database, the entire site is powered by a Git-based headless CMS (Decap CMS). Every project, photograph, and journal entry is stored as flat JSON files within the repository. This architecture ensures the site is 100% data-driven and manageable via a local admin interface, while remaining exceptionally cost-effective and portable.\n\nThe Experience: Cinematic Motion & Grain\nTo avoid the static nature of traditional portfolios, I implemented a custom background system that loops grainy, B&W visual fragments. A cinematic \"dip-to-black\" transition logic was built into the video engine to pre-emptively fade the background 0.8s before a video ends, ensuring a seamless loop. Combined with a global CSS grain overlay and scroll-triggered grayscale-to-color transitions, the site feels \"grounded\" and alive—reflecting the physical textures of film and analog noise.",
+  "tools": [
+    "Next.js",
+    "DecapCMS",
+    "TailwindCSS"
+  ],
+  "gallery": [
+    "/photos/uploads/cleanshot-2026-04-26-at-00.15.33.jpg",
+    "/photos/uploads/cleanshot-2026-04-26-at-00.15.54.jpg",
+    "/photos/uploads/cleanshot-2026-04-26-at-00.16.23.jpg",
+    "/photos/uploads/8a4434e5debbf66033da5c47ee099bce.jpg"
+  ]
+}
