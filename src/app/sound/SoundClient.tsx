@@ -53,11 +53,14 @@ export function SoundClient({ photoWall, settings }: SoundClientProps) {
 
       photosToUse.forEach((src) => {
         // Heuristic: iPhone 'IMG' files are mostly tall (1.6), Fuji/Others are wider (1.0)
-        const isTall = src.includes("IMG_4252") || src.includes("IMG_3184") || 
-                       src.includes("IMG_1491") || src.includes("IMG_3738") || 
-                       src.includes("IMG_4013") || src.includes("IMG_1267") || 
-                       src.includes("IMG_3249") || src.includes("IMG_0897") ||
-                       src.includes("IMG_4252") || src.includes("IMG_4311");
+        // Check for both uppercase and lowercase 'img' to cover CMS uploads
+        const isTall = src.toLowerCase().includes("img_") && (
+          src.includes("4252") || src.includes("3184") || 
+          src.includes("1491") || src.includes("3738") || 
+          src.includes("4013") || src.includes("1267") || 
+          src.includes("3249") || src.includes("0897") ||
+          src.includes("4311")
+        );
         
         const weight = isTall ? 1.6 : 1.0;
         
@@ -88,10 +91,10 @@ export function SoundClient({ photoWall, settings }: SoundClientProps) {
           {/* Always 6 Columns */}
           <div className="flex w-full items-end gap-1 md:gap-1.5 px-1 md:px-1.5 relative z-0">
             {columnData.xl.map((col, i) => (
-              <div key={i} className="flex-1 flex flex-col justify-end gap-1 md:gap-1.5">
-                {col.map((src, index) => (
+              <div key={`col-${i}`} className="flex-1 flex flex-col justify-end gap-1 md:gap-1.5">
+                {col.map((src) => (
                   <img 
-                    key={index} 
+                    key={src} 
                     src={src} 
                     className="w-full grayscale brightness-75 contrast-125 hover:grayscale-0 hover:brightness-100 transition-all duration-700" 
                     alt="" 

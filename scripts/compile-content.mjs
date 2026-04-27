@@ -25,10 +25,11 @@ function readJsonFiles(dir) {
 function compile() {
   try {
     const data = {
-      photos: readJsonFiles(path.join(contentDir, 'photos')),
-      musicPhotos: readJsonFiles(path.join(contentDir, 'music-photos')),
+      photos: readJsonFiles(path.join(contentDir, 'photos')).sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0)),
+      musicPhotos: readJsonFiles(path.join(contentDir, 'music-photos')).sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0)),
       projects: readJsonFiles(path.join(contentDir, 'projects')),
       journal: readJsonFiles(path.join(contentDir, 'journal')),
+
       settings: {
         homepage: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/homepage.json'), 'utf8')),
         about: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/about.json'), 'utf8')),
