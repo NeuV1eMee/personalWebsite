@@ -15,6 +15,17 @@ function readJsonFiles(dir) {
     .filter(f => f.endsWith('.json'))
     .map(f => {
       const content = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+      
+      // Normalize image paths to match Git casing
+      if (content.image && content.image.startsWith('/musicPhotos/')) {
+        const fileName = content.image.replace('/musicPhotos/', '');
+        const actualFiles = fs.readdirSync(path.join(process.cwd(), 'public/musicPhotos'));
+        const match = actualFiles.find(af => af.toLowerCase() === fileName.toLowerCase());
+        if (match) {
+          content.image = `/musicPhotos/${match}`;
+        }
+      }
+
       return {
         ...content,
         _slug: f.replace(/\.json$/, '') // Keep the original filename as the slug/ID
