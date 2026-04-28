@@ -5,9 +5,18 @@ import Image from "next/image";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { musicData } from "@/data/music";
 import { MusicSettings } from "@/types";
+import { Lightbox } from "@/components/ui/Lightbox";
+import { Photo } from "@/lib/photo-constants";
+
+interface MusicPhotoCMS {
+  image: string;
+  title?: string;
+  date?: string;
+  _slug: string;
+}
 
 interface SoundClientProps {
-  photoWall: string[];
+  photoWall: MusicPhotoCMS[];
   settings: MusicSettings | null;
 }
 
@@ -17,6 +26,7 @@ export function SoundClient({ photoWall, settings }: SoundClientProps) {
   
   const logoRef = useRef<HTMLDivElement>(null);
   const [isLogoActive, setIsLogoActive] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,24 +52,29 @@ export function SoundClient({ photoWall, settings }: SoundClientProps) {
     return () => observer.disconnect();
   }, []);
 
+  // Convert CMS Music Photos to the standard Photo type for Lightbox
+  const galleryPhotos: Photo[] = useMemo(() => {
+    return photoWall.map(p => ({
+      id: p._slug,
+      src: p.image,
+      title: p.title || "Music Moment",
+      category: "featured", // Standard category for compatibility
+      description: p.date ? new Date(p.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) : ""
+    }));
+  }, [photoWall]);
+
   // Smarter Greedy Distribution Logic
   const columnData = useMemo(() => {
     const getDistributedColumns = (numCols: number) => {
-      const cols: string[][] = Array.from({ length: numCols }, () => []);
+      const cols: Photo[][] = Array.from({ length: numCols }, () => []);
       const heights = Array(numCols).fill(0);
 
-      // Combine CMS photos with static fallback photos to ensure none are missing
-      const combinedPhotos = Array.from(new Set([
-        ...photoWall,
-        ...(musicData.photoWall || [])
-      ]));
-
-      combinedPhotos.forEach((src) => {
+      galleryPhotos.forEach((photo) => {
+        const src = photo.src;
         // Heuristic: iPhone 'IMG' files are mostly tall (1.6), Fuji/Others are wider (1.0)
-        // Treat most iPhone photos as tall by default
         const isIPhone = src.toLowerCase().includes("img_");
         const isTall = isIPhone || 
-                       src.includes("DSCF5594") || // Specific Fuji shots that are vertical
+                       src.includes("DSCF5594") || 
                        src.includes("1stguitarstage");
         
         const weight = isTall ? 1.6 : 1.0;
@@ -72,7 +87,7 @@ export function SoundClient({ photoWall, settings }: SoundClientProps) {
           }
         }
         
-        cols[shortestIdx].push(src);
+        cols[shortestIdx].push(photo);
         heights[shortestIdx] += weight;
       });
       return cols;
@@ -81,9 +96,24 @@ export function SoundClient({ photoWall, settings }: SoundClientProps) {
     return {
       xl: getDistributedColumns(6),
     };
-  }, [photoWall]);
+  }, [galleryPhotos]);
+
+  const handleNext = () => {
+    if (!selectedPhoto) return;
+    const currentIndex = galleryPhotos.findIndex(p => p.id === selectedPhoto.id);
+    const nextIndex = (currentIndex + 1) % galleryPhotos.length;
+    setSelectedPhoto(galleryPhotos[nextIndex]);
+  };
+
+  const handlePrev = () => {
+    if (!selectedPhoto) return;
+    const currentIndex = galleryPhotos.findIndex(p => p.id === selectedPhoto.id);
+    const prevIndex = (currentIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+    setSelectedPhoto(galleryPhotos[prevIndex]);
+  };
 
   return (
+    <>
     <main className="space-y-32 md:space-y-48">
         {/* Section 1: Photo Wall (Fixed 6-Column Bottom-Aligned Masonry) */}
         <section className="relative w-full h-[85vh] md:h-[95vh] overflow-hidden bg-black flex items-end">
@@ -92,14 +122,15 @@ export function SoundClient({ photoWall, settings }: SoundClientProps) {
           <div className="flex w-full items-end gap-1 md:gap-1.5 px-1 md:px-1.5 relative z-0">
             {columnData.xl.map((col, i) => (
               <div key={`col-${i}`} className="flex-1 flex flex-col justify-end gap-1 md:gap-1.5">
-                {col.map((src) => (
+                {col.map((photo) => (
                   <img 
-                    key={src} 
-                    src={src} 
-                    className="w-full grayscale brightness-75 contrast-125 hover:grayscale-0 hover:brightness-100 transition-all duration-700" 
-                    alt="" 
+                    key={photo.id} 
+                    src={photo.src} 
+                    className="w-full grayscale brightness-75 contrast-125 hover:grayscale-0 hover:brightness-100 transition-all duration-700 cursor-pointer" 
+                    alt={photo.title || ""} 
+                    onClick={() => setSelectedPhoto(photo)}
                     onError={(e) => {
-                      console.warn(`Failed to load music photo: ${src}`);
+                      console.warn(`Failed to load music photo: ${photo.src}`);
                       e.currentTarget.style.display = 'none';
                     }}
                   />
@@ -178,5 +209,13 @@ export function SoundClient({ photoWall, settings }: SoundClientProps) {
           </div>
         </section>
       </main>
+
+      <Lightbox 
+        photo={selectedPhoto} 
+        onClose={() => setSelectedPhoto(null)} 
+        onNext={handleNext}
+        onPrev={handlePrev}
+      />
+    </>
   );
 }
