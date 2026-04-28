@@ -10,7 +10,20 @@ interface LensClientProps {
 }
 
 export function LensClient({ featuredPhotos, allPhotos }: LensClientProps) {
-  const [featuredIndex, setFeaturedIndex] = useState(0);
+  // Find the index of the "cover" photo or the one with specific description
+  const initialIndex = (() => {
+    const coverIdx = featuredPhotos.findIndex(p => p.isCover);
+    if (coverIdx !== -1) return coverIdx;
+    
+    const dawnIdx = featuredPhotos.findIndex(p => 
+      p.description?.toLowerCase().includes("dawn in nyc")
+    );
+    if (dawnIdx !== -1) return dawnIdx;
+    
+    return 0;
+  })();
+
+  const [featuredIndex, setFeaturedIndex] = useState(initialIndex);
 
   const nextFeatured = () => {
     if (featuredPhotos.length === 0) return;
