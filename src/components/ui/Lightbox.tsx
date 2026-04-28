@@ -65,16 +65,6 @@ export function Lightbox({ photo, onClose, onNext, onPrev }: LightboxProps) {
       <div 
         className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center pointer-events-none"
       >
-        {/* Navigation Arrows - Desktop only */}
-        {onPrev && (
-          <div 
-            onClick={(e) => { e.stopPropagation(); onPrev(); }}
-            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-50 p-4 text-white/20 hover:text-white transition-all cursor-pointer pointer-events-auto hidden md:block"
-          >
-            <span className="text-4xl font-light font-mono">&lt;</span>
-          </div>
-        )}
-
         <div 
           className="relative flex flex-col items-center justify-center p-4 md:p-8 pointer-events-auto"
           onClick={(e) => e.stopPropagation()}
@@ -111,15 +101,6 @@ export function Lightbox({ photo, onClose, onNext, onPrev }: LightboxProps) {
             )}
           </div>
         </div>
-
-        {onNext && (
-          <div 
-            onClick={(e) => { e.stopPropagation(); onNext(); }}
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 p-4 text-white/20 hover:text-white transition-all cursor-pointer pointer-events-auto hidden md:block"
-          >
-            <span className="text-4xl font-light font-mono">&gt;</span>
-          </div>
-        )}
       </div>
     </div>
   );
