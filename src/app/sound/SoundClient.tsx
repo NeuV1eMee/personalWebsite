@@ -48,19 +48,19 @@ export function SoundClient({ photoWall, settings }: SoundClientProps) {
       const cols: string[][] = Array.from({ length: numCols }, () => []);
       const heights = Array(numCols).fill(0);
 
-      // Use the photoWall from props if it's not empty, otherwise fallback to static musicData
-      const photosToUse = photoWall.length > 0 ? photoWall : musicData.photoWall;
+      // Combine CMS photos with static fallback photos to ensure none are missing
+      const combinedPhotos = Array.from(new Set([
+        ...photoWall,
+        ...(musicData.photoWall || [])
+      ]));
 
-      photosToUse.forEach((src) => {
+      combinedPhotos.forEach((src) => {
         // Heuristic: iPhone 'IMG' files are mostly tall (1.6), Fuji/Others are wider (1.0)
-        // Check for both uppercase and lowercase 'img' to cover CMS uploads
-        const isTall = src.toLowerCase().includes("img_") && (
-          src.includes("4252") || src.includes("3184") || 
-          src.includes("1491") || src.includes("3738") || 
-          src.includes("4013") || src.includes("1267") || 
-          src.includes("3249") || src.includes("0897") ||
-          src.includes("4311")
-        );
+        // Treat most iPhone photos as tall by default
+        const isIPhone = src.toLowerCase().includes("img_");
+        const isTall = isIPhone || 
+                       src.includes("DSCF5594") || // Specific Fuji shots that are vertical
+                       src.includes("1stguitarstage");
         
         const weight = isTall ? 1.6 : 1.0;
         
@@ -98,6 +98,10 @@ export function SoundClient({ photoWall, settings }: SoundClientProps) {
                     src={src} 
                     className="w-full grayscale brightness-75 contrast-125 hover:grayscale-0 hover:brightness-100 transition-all duration-700" 
                     alt="" 
+                    onError={(e) => {
+                      console.warn(`Failed to load music photo: ${src}`);
+                      e.currentTarget.style.display = 'none';
+                    }}
                   />
                 ))}
               </div>
