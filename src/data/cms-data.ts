@@ -2,1671 +2,170 @@
 export const cmsData = {
   "photos": [
     {
-      "title": "fender",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20251128_0001.jpg",
-      "date": "2026-04-21T19:25:00.000-04:00",
-      "camera": "i-2",
-      "year": "2025",
-      "_slug": "20260421232500"
-    },
-    {
-      "title": "Liberty",
-      "category": "featured",
-      "image": "/photos/uploads/r0003823-2.jpg",
-      "date": "2026-04-21T19:31:00.000-04:00",
-      "location": "New York, USA",
-      "year": "2023",
-      "camera": "RICOH GR3",
-      "description": "Dawn in NYC, Statue of Liberty, on a boat trip.",
-      "_slug": "20260421233100"
-    },
-    {
-      "title": "Brooklyn Bridge",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003731.jpg",
-      "date": "2026-04-21T19:33:00.000-04:00",
-      "location": "New York, USA",
-      "year": "2023",
-      "camera": "RICOH GR3",
-      "_slug": "20260421233300"
-    },
-    {
-      "camera": "Fujifilm XT-5",
-      "date": "2026-04-21T19:49:00.000-04:00",
-      "location": "Alaska, USA",
-      "title": "Fairbanks Aurora",
-      "image": "/photos/uploads/dscf8769.jpg",
-      "description": "Aurora in Fairbanks, AK.",
-      "year": "2026",
-      "lens": "Sigma 23mm f/1.4",
-      "category": "featured",
-      "_slug": "20260421234900"
-    },
-    {
-      "camera": "Fujifilm XT-5",
-      "isCover": true,
-      "date": "2026-04-21T19:53:00.000-04:00",
-      "location": "Alaska, USA",
-      "title": "fairbanks",
-      "image": "/photos/uploads/dscf8173.jpg",
-      "year": "2026",
-      "lens": "Sigma 23mm f/1.4",
-      "category": "silence",
-      "_slug": "20260421235300"
-    },
-    {
-      "camera": "Fujifilm XT-5",
-      "date": "2026-04-21T19:54:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "title": "spring",
-      "image": "/photos/uploads/dscf0555.jpg",
-      "description": "冬去春来。",
-      "year": "2026",
-      "lens": "Helios 44-2 58mm f/2",
-      "category": "featured",
-      "_slug": "20260421235400"
-    },
-    {
-      "title": "winter pitt",
-      "category": "featured",
-      "image": "/photos/uploads/07cf0d1b1c9e5dc454411b12817255bf-2.jpg",
-      "date": "2026-04-21T19:57:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "Winter night at University of Pittsburgh.",
-      "year": "2024",
-      "camera": "Fujifilm XT-30ii",
-      "_slug": "20260421235700"
-    },
-    {
-      "camera": "Fujifilm XT-5",
-      "date": "2026-04-21T19:59:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "title": "gtr",
-      "image": "/photos/uploads/dscf0064.jpg",
-      "description": "GTR R33. Vroom vroom.",
-      "year": "2026",
-      "lens": "Helios 44-2 58mm f/2",
-      "category": "featured",
-      "_slug": "20260421235900"
-    },
-    {
-      "camera": "Fujifilm XT-5",
-      "date": "2026-04-21T20:04:00.000-04:00",
-      "location": "Nagoya, Japan",
-      "title": "nagoya",
-      "image": "/photos/uploads/dscf5144.jpg",
-      "description": "Nagoya Castle.",
-      "year": "2025",
-      "lens": "XF16-80mm f/4",
-      "category": "featured",
-      "_slug": "20260422000400"
-    },
-    {
-      "camera": "Fujifilm XT-30ii",
-      "date": "2026-04-21T20:07:00.000-04:00",
-      "location": "San Francisco, USA",
-      "title": "sanjose",
-      "image": "/photos/uploads/xt309484.jpg",
-      "description": "How peaceful is that.",
-      "year": "2024",
-      "lens": "XF18-55 f/2.8-4",
-      "category": "featured",
-      "_slug": "20260422000700"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt309482.jpg",
-      "date": "2026-04-21T20:10:00.000-04:00",
-      "location": "San Francisco, USA",
-      "year": "2024",
-      "camera": "",
-      "_slug": "20260422001000"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt309322.jpg",
-      "date": "2026-04-21T20:11:00.000-04:00",
-      "location": "San Francisco, USA",
-      "year": "2024",
-      "_slug": "20260422001100"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt309256.jpg",
-      "date": "2026-04-21T20:14:00.000-04:00",
-      "location": "San Francisco, USA",
-      "_slug": "20260422001400"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt309181-2.jpg",
-      "location": "San Francisco, USA",
-      "date": "2026-04-21T20:15:00.000-04:00",
-      "_slug": "20260422001500-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt309223.jpg",
-      "date": "2026-04-21T20:15:00.000-04:00",
-      "location": "San Francisco, USA",
-      "_slug": "20260422001500"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt309030.jpg",
-      "location": "San Francisco, USA",
-      "date": "2026-04-21T20:16:00.000-04:00",
-      "_slug": "20260422001600-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt309118.jpg",
-      "location": "San Francisco, USA",
-      "date": "2026-04-21T20:16:00.000-04:00",
-      "_slug": "20260422001600"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt308673.jpg",
-      "location": "New York, USA",
-      "date": "2026-04-21T20:17:00.000-04:00",
-      "description": "At the very end of Long Island.",
-      "_slug": "20260422001700"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt308655.jpg",
-      "location": "New York, USA",
-      "description": "You are waiting for a train, the train will take you far away.",
-      "date": "2026-04-21T20:18:00.000-04:00",
-      "_slug": "20260422001800"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt308590-2.jpg",
-      "date": "2026-04-21T20:19:00.000-04:00",
-      "location": "New York, USA",
-      "year": "2023",
-      "_slug": "20260422001900"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt307894.jpg",
-      "location": "Miami, USA",
-      "date": "2026-04-21T20:20:00.000-04:00",
-      "_slug": "20260422002000-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt308224.jpg",
-      "date": "2026-04-21T20:20:00.000-04:00",
-      "location": "Miami, USA",
-      "_slug": "20260422002000"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt307670.jpg",
-      "date": "2026-04-21T20:21:00.000-04:00",
-      "location": "Miami, USA",
-      "_slug": "20260422002100"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt305905.jpg",
-      "date": "2026-04-21T20:22:00.000-04:00",
-      "location": "Tianjin, China",
-      "description": "GT Show Tianjin",
-      "_slug": "20260422002200"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt304911.jpg",
-      "location": "Los Angeles, USA",
-      "date": "2026-04-21T20:23:00.000-04:00",
-      "_slug": "20260422002300"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt304865.jpg",
-      "date": "2026-04-21T20:24:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "_slug": "20260422002400"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt304375.jpg",
-      "date": "2026-04-21T20:25:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "_slug": "20260422002500-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/xt304530.jpg",
-      "location": "Los Angeles, USA",
-      "date": "2026-04-21T20:25:00.000-04:00",
-      "_slug": "20260422002500"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0063-2.jpg",
-      "date": "2026-04-21T20:42:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "description": "LA Universal Studio",
-      "_slug": "20260422004200"
-    },
-    {
       "title": "New Photo",
       "category": "strangers",
-      "image": "/photos/uploads/c0b4e4ee77e7e41f366c51ac963e1dbf.jpg",
-      "date": "2026-04-21T20:43:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "camera": "Nikon FM2",
-      "year": "2023",
-      "_slug": "20260422004300"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/whb_ly_4.jpg",
-      "date": "2026-04-21T21:00:00.000-04:00",
+      "image": "/photos/uploads/whb_ly_1.jpg",
+      "date": "2026-04-22T01:10:00.000-04:00",
       "location": "Cleveland, USA",
-      "description": "Not strangers. @kyyylie_w @williamwu112",
-      "lens": "Helios 44-2",
+      "description": "@kyyylie_w",
+      "_slug": "20260422051000"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/whb_ly_2.jpg",
+      "date": "2026-04-22T01:09:00.000-04:00",
+      "location": "Cleveland, USA",
+      "year": "",
+      "description": "@williamwu112",
+      "_slug": "20260422050900"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "date": "2026-04-22T01:06:00.000-04:00",
+      "image": "/photos/uploads/img_20260419_0002.jpg",
+      "description": "@chelshuya",
       "year": "2026",
-      "_slug": "20260422010000"
+      "_slug": "20260422050600"
     },
     {
       "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/xt307066.jpg",
-      "date": "2026-04-21T22:40:00.000-04:00",
-      "isCover": true,
-      "_slug": "20260422024000"
+      "category": "strangers",
+      "image": "/photos/uploads/2d4d3c578958d8881ddf62590906268e.jpg",
+      "date": "2026-04-22T01:01:00.000-04:00",
+      "location": "Tianjin, China",
+      "description": "LOL.",
+      "year": "2023",
+      "_slug": "20260422050100"
     },
     {
       "title": "New Photo",
+      "isCover": false,
       "category": "distortion",
-      "image": "/photos/uploads/xt304970.jpg",
-      "date": "2026-04-21T22:41:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "_slug": "20260422024100"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt303553.jpg",
-      "date": "2026-04-21T22:42:00.000-04:00",
-      "location": "Tengchong, China",
-      "_slug": "20260422024200"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt303350.jpg",
-      "date": "2026-04-21T22:43:00.000-04:00",
-      "location": "Tengchong, China",
-      "_slug": "20260422024300"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt303129.jpg",
-      "date": "2026-04-21T22:44:00.000-04:00",
-      "location": "Tengchong, China",
-      "_slug": "20260422024400-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt303342.jpg",
-      "date": "2026-04-21T22:44:00.000-04:00",
-      "location": "Tengchong, China",
-      "_slug": "20260422024400"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt302893.jpg",
-      "date": "2026-04-21T22:45:00.000-04:00",
-      "location": "Kunming, China",
-      "_slug": "20260422024500-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/xt302921.jpg",
-      "date": "2026-04-21T22:45:00.000-04:00",
-      "location": "Kunming, China",
-      "_slug": "20260422024500"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt302807.jpg",
-      "date": "2026-04-21T23:10:00.000-04:00",
-      "location": "Tianjin, China",
-      "description": "Tanggu old train station.",
-      "_slug": "20260422031000"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt302770.jpg",
-      "date": "2026-04-21T23:12:00.000-04:00",
-      "location": "Tianjin, China",
-      "description": "Tanggu old train station.",
-      "_slug": "20260422031200"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt302746.jpg",
-      "date": "2026-04-21T23:13:00.000-04:00",
-      "location": "Tianjin, China",
-      "description": "Tanggu old train station.",
-      "_slug": "20260422031300"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt302735.jpg",
-      "date": "2026-04-21T23:14:00.000-04:00",
-      "location": "Tianjin, China",
-      "description": "Tanggu old train station.",
-      "_slug": "20260422031400"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt302733.jpg",
-      "date": "2026-04-21T23:15:00.000-04:00",
-      "location": "Tianjin, China",
-      "description": "Tanggu old train station.",
-      "_slug": "20260422031500"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt302726.jpg",
-      "date": "2026-04-21T23:16:00.000-04:00",
-      "location": "Tianjin, China",
-      "_slug": "20260422031600"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/xt302602.jpg",
-      "date": "2026-04-21T23:17:00.000-04:00",
-      "location": "Tianjin, China",
-      "description": "回头是岸。",
+      "image": "/photos/uploads/dscfuhatewechat.jpg",
+      "date": "2026-04-22T01:00:00.000-04:00",
+      "location": "Seattle, USA",
       "year": "2025",
-      "_slug": "20260422031700"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt302144.jpg",
-      "date": "2026-04-21T23:18:00.000-04:00",
-      "location": "Hebei, China",
-      "description": "白石山。",
-      "_slug": "20260422031800-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt302541.jpg",
-      "date": "2026-04-21T23:18:00.000-04:00",
-      "location": "Tianjin, China",
-      "_slug": "20260422031800"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/xt302115.jpg",
-      "date": "2026-04-21T23:19:00.000-04:00",
-      "location": "Hebei, China",
-      "description": "白石山",
-      "_slug": "20260422031900"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003826.jpg",
-      "date": "2026-04-21T23:20:00.000-04:00",
-      "location": "New York, USA",
-      "_slug": "20260422032000-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/r0003929-2.jpg",
-      "date": "2026-04-21T23:20:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "If you know, you know.",
-      "_slug": "20260422032000"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003803.jpg",
-      "date": "2026-04-21T23:21:00.000-04:00",
-      "location": "New York, USA",
-      "camera": "RICOH GR3",
-      "_slug": "20260422032100"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003762.jpg",
-      "date": "2026-04-21T23:22:00.000-04:00",
-      "location": "New York, USA",
-      "camera": "RICOH GR3",
-      "_slug": "20260422032200"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/r0003699.jpg",
-      "date": "2026-04-21T23:23:00.000-04:00",
-      "location": "New York, USA",
-      "_slug": "20260422032300"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003691.jpg",
-      "date": "2026-04-21T23:24:00.000-04:00",
-      "location": "New York, USA",
-      "camera": "",
-      "_slug": "20260422032400"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003615-3.jpg",
-      "date": "2026-04-21T23:25:00.000-04:00",
-      "location": "New York, USA",
-      "_slug": "20260422032500-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/r0003637.jpg",
-      "date": "2026-04-21T23:25:00.000-04:00",
-      "location": "New York, USA",
-      "_slug": "20260422032500"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003582.jpg",
-      "location": "New York, USA",
-      "description": "The MET",
-      "date": "2026-04-21T23:26:00.000-04:00",
-      "_slug": "20260422032600"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003557.jpg",
-      "date": "2026-04-21T23:27:00.000-04:00",
-      "location": "New York, USA",
-      "_slug": "20260422032700"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003553.jpg",
-      "date": "2026-04-20T23:28:00.000-04:00",
-      "location": "New York, USA",
-      "isCover": true,
-      "_slug": "20260422032800"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003494.jpg",
-      "date": "2026-04-21T23:29:00.000-04:00",
-      "location": "New York, USA",
-      "_slug": "20260422032900-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003479.jpg",
-      "date": "2026-04-21T23:29:00.000-04:00",
-      "location": "New York, USA",
-      "_slug": "20260422032900-2"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/r0003543-2.jpg",
-      "date": "2026-04-21T23:29:00.000-04:00",
-      "location": "New York, USA",
-      "_slug": "20260422032900"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/r0003416.jpg",
-      "date": "2026-04-21T23:30:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "_slug": "20260422033000-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/r0003417.jpg",
-      "date": "2026-04-21T23:30:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "_slug": "20260422033000"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/r0003398.jpg",
-      "date": "2026-04-21T23:31:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "_slug": "20260422033100"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/r0002920.jpg",
-      "date": "2026-04-21T23:32:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "_slug": "20260422033200-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/r0002919.jpg",
-      "date": "2026-04-21T23:32:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "_slug": "20260422033200"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20260102_0007.jpg",
-      "date": "2026-04-21T23:33:00.000-04:00",
-      "location": "Stirling, UK",
-      "_slug": "20260422033300-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/r0002906.jpg",
-      "date": "2026-04-21T23:33:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "Behind the Cathedral.",
-      "_slug": "20260422033300"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20260102_0008.jpg",
-      "date": "2026-04-21T23:35:00.000-04:00",
-      "location": "Stirling, UK",
-      "_slug": "20260422033500"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20260102_0005.jpg",
-      "date": "2026-04-21T23:36:00.000-04:00",
-      "location": "Stirling, UK",
-      "_slug": "20260422033600-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20260102_0006.jpg",
-      "date": "2026-04-21T23:36:00.000-04:00",
-      "location": "London, UK",
-      "_slug": "20260422033600"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20260102_0001.jpg",
-      "date": "2026-04-21T23:37:00.000-04:00",
-      "location": "London, UK",
-      "_slug": "20260422033700-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20251128_0005.jpg",
-      "date": "2026-04-21T23:37:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "Peter picked up his first bass guitar.",
-      "_slug": "20260422033700-2"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20260102_0002.jpg",
-      "date": "2026-04-21T23:37:00.000-04:00",
-      "location": "London, UK",
-      "_slug": "20260422033700"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20251128_0003-2.jpg",
-      "date": "2026-04-21T23:38:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "N Stuff Music",
-      "_slug": "20260422033800"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20251128_0002-2.jpg",
-      "date": "2026-04-21T23:39:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "N Stuff Music",
-      "_slug": "20260422033900-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20251128_0002.jpg",
-      "date": "2026-04-21T23:39:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "N Stuff Music",
-      "_slug": "20260422033900"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20251128_0001-2.jpg",
-      "date": "2026-04-21T23:41:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "wassup leo",
-      "_slug": "20260422034100-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20251128_0001.jpg",
-      "date": "2026-04-21T23:41:00.000-04:00",
-      "description": "N Stuff Music",
-      "location": "Pittsburgh, USA",
-      "_slug": "20260422034100"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240322_0001.jpg",
-      "date": "2026-04-21T23:42:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "Spring",
-      "_slug": "20260422034200"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0065.jpg",
-      "description": "Universal Studio LA",
-      "location": "Los Angeles, USA",
-      "date": "2026-04-21T23:43:00.000-04:00",
-      "_slug": "20260422034300-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0070.jpg",
-      "location": "Los Angeles, USA",
-      "date": "2026-04-21T23:43:00.000-04:00",
-      "description": "Universal Studio LA",
-      "_slug": "20260422034300"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0041.jpg",
-      "date": "2026-04-21T23:47:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "_slug": "20260422034700"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0029.jpg",
-      "date": "2026-04-21T23:48:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "description": "Santa Monica",
-      "_slug": "20260422034800-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0030.jpg",
-      "date": "2026-04-21T23:48:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "description": "City of stars, are you shining just for me?",
-      "_slug": "20260422034800"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0025.jpg",
-      "date": "2026-04-21T23:49:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "description": "Santa Monica",
-      "_slug": "20260422034900-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0026.jpg",
-      "date": "2026-04-21T23:49:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "_slug": "20260422034900"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0021.jpg",
-      "date": "2026-04-21T23:50:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "description": "Universal",
-      "_slug": "20260422035000"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0019.jpg",
-      "date": "2026-04-21T23:51:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "_slug": "20260422035100-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0020.jpg",
-      "date": "2026-04-21T23:51:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "_slug": "20260422035100"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0012.jpg",
-      "date": "2026-04-21T23:52:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "_slug": "20260422035200-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0013.jpg",
-      "date": "2026-04-21T23:52:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "description": "My first road trip",
-      "_slug": "20260422035200"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0003.jpg",
-      "location": "Los Angeles, USA",
-      "date": "2026-04-21T23:53:00.000-04:00",
-      "_slug": "20260422035300-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0004.jpg",
-      "date": "2026-04-21T23:53:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "description": "",
-      "_slug": "20260422035300"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0001.jpg",
-      "date": "2026-04-21T23:54:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "_slug": "20260422035400-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240318_0002.jpg",
-      "date": "2026-04-21T23:54:00.000-04:00",
-      "location": "Los Angeles, USA",
-      "_slug": "20260422035400"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240304_0004.jpg",
-      "date": "2026-04-21T23:55:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "_slug": "20260422035500-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240304_0003.jpg",
-      "date": "2026-04-21T23:55:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "_slug": "20260422035500-2"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240304_0005.jpg",
-      "location": "Pittsburgh, USA",
-      "date": "2026-04-21T23:55:00.000-04:00",
-      "_slug": "20260422035500"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240304_0001.jpg",
-      "location": "Pittsburgh, USA",
-      "date": "2026-04-21T23:56:00.000-04:00",
-      "_slug": "20260422035600-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240302_0016.jpg",
-      "date": "2026-04-21T23:56:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "_slug": "20260422035600-2"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20240304_0002.jpg",
-      "location": "Pittsburgh, USA",
-      "date": "2026-04-21T23:56:00.000-04:00",
-      "_slug": "20260422035600"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/img_8041.jpg",
-      "location": "Pittsburgh, USA",
-      "date": "2026-04-21T23:57:00.000-04:00",
-      "camera": "Sony A7M4",
-      "_slug": "20260422035700-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/img_20231203_0001.jpg",
-      "location": "Pittsburgh, USA",
-      "date": "2026-04-21T23:57:00.000-04:00",
-      "_slug": "20260422035700"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/img_6323.jpg",
-      "date": "2026-04-21T23:58:00.000-04:00",
-      "location": "Shenzhen, China",
-      "description": "Sorry about your sky wheel",
-      "_slug": "20260422035800"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/0004_0a0324.jpg",
-      "date": "2026-04-21T23:59:00.000-04:00",
-      "location": "Alaska, USA",
-      "camera": "Fujifilm disposable",
-      "_slug": "20260422035900"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/img_5074.jpg",
-      "camera": "iPhone 17 Pro",
-      "description": "",
-      "location": "Alaska, USA",
-      "date": "2026-04-22T00:01:00.000-04:00",
-      "_slug": "20260422040100"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/img_0405.jpg",
-      "date": "2026-04-22T00:02:00.000-04:00",
-      "location": "Kunming, China",
-      "camera": "Canon ixus 70",
-      "_slug": "20260422040200"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/e8a03fadfc041cdd4f83eeb0bd11e467.jpg",
-      "date": "2026-04-22T00:03:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "camera": "Nikon FM2",
-      "_slug": "20260422040300-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/fptr0031.jpg.jpg",
-      "description": "Not strangers",
-      "location": "Pittsburgh, USA",
-      "date": "2026-04-22T00:03:00.000-04:00",
       "camera": "Fujifilm X-Half",
-      "_slug": "20260422040300"
+      "_slug": "20260422050000-1"
     },
     {
       "title": "New Photo",
       "category": "silence",
-      "image": "/photos/uploads/e0f93cc476b4fc1e15e84d9edae491ee.jpg",
-      "date": "2026-04-22T00:04:00.000-04:00",
-      "location": "Cleveland, USA",
-      "_slug": "20260422040400"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf9754.jpg",
-      "date": "2026-04-22T00:05:00.000-04:00",
+      "image": "/photos/uploads/0005_2a0324.jpg",
+      "date": "2026-04-22T01:00:00.000-04:00",
       "location": "Alaska, USA",
-      "_slug": "20260422040500"
+      "year": "2026",
+      "camera": "Fujifilm disposable",
+      "description": "Campfire. ",
+      "_slug": "20260422050000"
     },
     {
       "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf9571.jpg",
-      "date": "2026-04-22T00:06:00.000-04:00",
-      "location": "Alaska, USA",
-      "_slug": "20260422040600-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf9032.jpg",
-      "location": "Alaska, USA",
-      "date": "2026-04-22T00:06:00.000-04:00",
-      "_slug": "20260422040600-2"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf9710.jpg",
-      "date": "2026-04-22T00:06:00.000-04:00",
-      "location": "Alaska, USA",
-      "_slug": "20260422040600"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf8789.jpg",
-      "location": "Alaska, USA",
-      "date": "2026-04-22T00:07:00.000-04:00",
-      "_slug": "20260422040700-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf8783.jpg",
-      "date": "2026-04-22T00:07:00.000-04:00",
-      "location": "Alaska, USA",
-      "description": "Leo's Nikon Z8",
-      "_slug": "20260422040700-2"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf8903.jpg",
-      "location": "Alaska, USA",
-      "date": "2026-04-22T00:07:00.000-04:00",
-      "_slug": "20260422040700"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf8599.jpg",
-      "date": "2026-04-22T00:08:00.000-04:00",
-      "location": "Alaska, USA",
-      "description": "谁懂我对加油站的情有独钟？",
-      "_slug": "20260422040800-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf8725.jpg",
-      "location": "Alaska, USA",
-      "date": "2026-04-22T00:08:00.000-04:00",
-      "_slug": "20260422040800"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/dscf8225.jpg",
-      "description": "Not Strangers.",
-      "date": "2026-04-22T00:09:00.000-04:00",
-      "location": "Alaska, USA",
-      "_slug": "20260422040900-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf8378.jpg",
-      "date": "2026-04-22T00:09:00.000-04:00",
-      "location": "Alaska, USA",
-      "_slug": "20260422040900"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf8043.jpg",
-      "location": "Alaska, USA",
-      "date": "2026-04-22T00:10:00.000-04:00",
-      "_slug": "20260422041000-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf8166.jpg",
-      "date": "2026-04-22T00:10:00.000-04:00",
-      "location": "Alaska, USA",
-      "_slug": "20260422041000"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf7311.jpg",
-      "location": "London, UK",
-      "date": "2026-04-22T00:11:00.000-04:00",
-      "_slug": "20260422041100-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf7414-2.jpg",
-      "date": "2026-04-22T00:11:00.000-04:00",
-      "location": "London, UK",
-      "_slug": "20260422041100"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf7144.jpg",
-      "date": "2026-04-22T00:12:00.000-04:00",
-      "location": "London, UK",
-      "_slug": "20260422041200-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf7264.jpg",
-      "date": "2026-04-22T00:12:00.000-04:00",
-      "location": "London, UK",
-      "_slug": "20260422041200"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf6688.jpg",
-      "date": "2026-04-22T00:13:00.000-04:00",
-      "location": "Stirling, UK",
-      "_slug": "20260422041300-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf6651.jpg",
-      "date": "2026-04-22T00:13:00.000-04:00",
-      "location": "Edinburgh, UK",
-      "description": "牛牛",
-      "_slug": "20260422041300-2"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf7080.jpg",
-      "date": "2026-04-22T00:13:00.000-04:00",
-      "location": "London, UK",
-      "_slug": "20260422041300"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf6426.jpg",
-      "date": "2026-04-22T00:15:00.000-04:00",
-      "location": "Tianjin, China",
-      "description": "My old friend",
-      "_slug": "20260422041500-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/dscf6609.jpg",
-      "date": "2026-04-22T00:15:00.000-04:00",
-      "location": "Edinburgh, UK",
-      "_slug": "20260422041500"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf6361.jpg",
-      "date": "2026-04-22T00:16:00.000-04:00",
-      "location": "Edinburgh, UK",
-      "_slug": "20260422041600"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "date": "2026-04-22T00:17:00.000-04:00",
-      "image": "/photos/uploads/dscf6193.jpg",
-      "location": "Edinburgh, UK",
-      "_slug": "20260422041700-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf6233.jpg",
-      "location": "Edinburgh, UK",
-      "date": "2026-04-22T00:17:00.000-04:00",
-      "_slug": "20260422041700"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf6181.jpg",
-      "date": "2026-04-22T00:18:00.000-04:00",
-      "location": "Edinburgh, UK",
-      "_slug": "20260422041800"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf5997.jpg",
-      "date": "2026-04-22T00:19:00.000-04:00",
-      "location": "Edinburgh, UK",
-      "description": "28",
-      "_slug": "20260422041900-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/dscf6058-2.jpg",
-      "date": "2026-04-22T00:19:00.000-04:00",
-      "location": "Edinburgh, UK",
-      "isCover": true,
-      "_slug": "20260422041900"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf5937.jpg",
-      "date": "2026-04-22T00:20:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "FUJI NO.1",
-      "camera": "",
-      "_slug": "20260422042000"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf5192.jpg",
-      "date": "2026-04-22T00:21:00.000-04:00",
-      "location": "Tokyo, Japan",
-      "_slug": "20260422042100-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf5400.jpg",
-      "date": "2026-04-22T00:21:00.000-04:00",
-      "location": "Tokyo, Japan",
-      "_slug": "20260422042100"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf5136.jpg",
-      "date": "2026-04-22T00:22:00.000-04:00",
-      "location": "Nagoya, Japan",
-      "_slug": "20260422042200"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf5108.jpg",
-      "date": "2026-04-22T00:23:00.000-04:00",
-      "location": "Nagoya, Japan",
-      "_slug": "20260422042300-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/dscf5074.jpg",
-      "location": "Nagoya, Japan",
-      "date": "2026-04-22T00:23:00.000-04:00",
-      "_slug": "20260422042300-2"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf5119.jpg",
-      "date": "2026-04-22T00:23:00.000-04:00",
-      "location": "Nagoya, Japan",
-      "_slug": "20260422042300"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf5037.jpg",
-      "location": "Nagoya, Japan",
-      "date": "2026-04-22T00:24:00.000-04:00",
-      "_slug": "20260422042400"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf4985.jpg",
-      "location": "Nagoya, Japan",
-      "date": "2026-04-22T00:25:00.000-04:00",
-      "_slug": "20260422042500"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf4694.jpg",
-      "date": "2026-04-22T00:26:00.000-04:00",
-      "location": "Jinhua, China",
-      "_slug": "20260422042600-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf4927.jpg",
-      "location": "Nagoya, Japan",
-      "date": "2026-04-22T00:26:00.000-04:00",
-      "_slug": "20260422042600"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/dscf4529.jpg",
-      "date": "2026-04-22T00:27:00.000-04:00",
-      "location": "Jinhua, China",
-      "description": "Walk out of the books.  读万卷书，行万里路。",
-      "_slug": "20260422042700-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf4670.jpg",
-      "date": "2026-04-22T00:27:00.000-04:00",
-      "location": "Jinhua, China",
-      "_slug": "20260422042700"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/dscf4315.jpg",
-      "date": "2026-04-22T00:29:00.000-04:00",
-      "location": "Jinhua, China",
-      "description": "Go Johnny Go Go",
+      "category": "polaroid",
+      "image": "/photos/uploads/6f29454b1754d85dd8b0caac8ec6742c.jpg",
+      "date": "2026-04-22T00:59:00.000-04:00",
+      "location": "San Francisco, USA",
       "year": "2025",
-      "_slug": "20260422042900-1"
+      "_slug": "20260422045900-1"
     },
     {
       "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf4485.jpg",
-      "location": "Jinhua, China",
-      "date": "2026-04-22T00:29:00.000-04:00",
+      "category": "polaroid",
+      "image": "/photos/uploads/7f77a2cd6995a05b540a872b6d66d512.jpg",
+      "date": "2026-04-22T00:59:00.000-04:00",
+      "location": "San Francisco, USA",
       "year": "2025",
-      "_slug": "20260422042900"
+      "_slug": "20260422045900"
     },
     {
       "title": "New Photo",
       "category": "silence",
-      "image": "/photos/uploads/dscf1103.jpg",
-      "date": "2026-04-22T00:30:00.000-04:00",
-      "location": "Cleveland, USA",
+      "image": "/photos/uploads/0008_5a0324.jpg",
+      "date": "2026-04-22T00:58:00.000-04:00",
+      "location": "Alaska, USA",
       "year": "2026",
-      "_slug": "20260422043000-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/dscf4308-2.jpg",
-      "date": "2026-04-22T00:30:00.000-04:00",
-      "location": "Jinhua, China",
-      "year": "2025",
-      "_slug": "20260422043000"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/dscf1082.jpg",
-      "date": "2026-04-22T00:31:00.000-04:00",
-      "location": "Cleveland, USA",
-      "description": "Silent Hill. @chelshuya ",
-      "year": "2026",
-      "_slug": "20260422043100"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf0585.jpg",
-      "date": "2026-04-22T00:32:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "year": "2026",
-      "lens": "Helios 44-2",
-      "_slug": "20260422043200"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf0571.jpg",
-      "location": "Pittsburgh, USA",
-      "date": "2026-04-22T00:33:00.000-04:00",
-      "year": "2026",
-      "lens": "Helios 44-2",
-      "_slug": "20260422043300-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf0583.jpg",
-      "date": "2026-04-22T00:33:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "year": "2026",
-      "lens": "Helios 44-2",
-      "_slug": "20260422043300"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/dscf0282.jpg",
-      "date": "2026-04-22T00:35:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "🦅🦅🦅",
-      "year": "2026",
-      "_slug": "20260422043500-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf0552.jpg",
-      "location": "Pittsburgh, USA",
-      "date": "2026-04-22T00:35:00.000-04:00",
-      "year": "2026",
-      "lens": "Helios 44-2",
-      "_slug": "20260422043500"
+      "camera": "Fujifilm disposable",
+      "_slug": "20260422045800-1"
     },
     {
       "title": "New Photo",
       "category": "distortion",
-      "image": "/photos/uploads/dscf0181.jpg",
-      "location": "Pittsburgh, USA",
-      "date": "2026-04-22T00:36:00.000-04:00",
+      "image": "/photos/uploads/0011_8a0324.jpg",
+      "date": "2026-04-22T00:58:00.000-04:00",
+      "location": "Alaska, USA",
       "year": "2026",
-      "_slug": "20260422043600-1"
+      "camera": "Fujifilm disposable",
+      "_slug": "20260422045800"
     },
     {
       "title": "New Photo",
       "category": "distortion",
-      "image": "/photos/uploads/dscf0270.jpg",
-      "date": "2026-04-22T00:36:00.000-04:00",
-      "location": "Pittsburgh, USA",
+      "image": "/photos/uploads/0021_17a0324.jpg",
+      "date": "2026-04-22T00:57:00.000-04:00",
+      "location": "Alaska, USA",
       "year": "2026",
-      "_slug": "20260422043600"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/dscf0128.jpg",
-      "date": "2026-04-22T00:37:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "year": "2026",
-      "_slug": "20260422043700-1"
+      "camera": "Fujifilm disposable",
+      "_slug": "20260422045700"
     },
     {
       "title": "New Photo",
       "category": "distortion",
-      "image": "/photos/uploads/dscf0170.jpg",
-      "date": "2026-04-22T00:37:00.000-04:00",
-      "location": "Pittsburgh, USA",
+      "image": "/photos/uploads/0027_23a0324.jpg",
+      "date": "2026-04-22T00:56:00.000-04:00",
+      "location": "Alaska, USA",
       "year": "2026",
-      "_slug": "20260422043700"
-    },
-    {
-      "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/dscf0100.jpg",
-      "date": "2026-04-22T00:38:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "year": "2026",
-      "_slug": "20260422043800-1"
+      "camera": "Fujifilm disposable ",
+      "_slug": "20260422045600-1"
     },
     {
       "title": "New Photo",
       "category": "distortion",
-      "image": "/photos/uploads/dscf0030.jpg",
-      "date": "2026-04-22T00:38:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "year": "2026",
-      "_slug": "20260422043800-2"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf0116.jpg",
-      "date": "2026-04-22T00:38:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "year": "2026",
-      "_slug": "20260422043800"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/dscf0029.jpg",
-      "date": "2026-04-22T00:39:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "year": "2026",
-      "_slug": "20260422043900"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/d25e2c0c6ce1f081384dd44428cf7076.jpg",
-      "date": "2026-04-22T00:40:00.000-04:00",
-      "location": "Cleveland, USA",
-      "year": "2026",
-      "_slug": "20260422044000-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/d7334e13d26881e8f32f77151873a558.jpg",
-      "date": "2026-04-22T00:40:00.000-04:00",
-      "location": "Qinghai, China",
-      "year": "2026",
-      "_slug": "20260422044000"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/d6bf6a1cc969f96818f70963b9717960.jpg",
-      "date": "2026-04-22T00:41:00.000-04:00",
-      "location": "Chongqing, China",
-      "year": "2023",
-      "_slug": "20260422044100"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/ca62a8bb4e2884ba9b85360e3c096d4b.jpg",
-      "date": "2026-04-22T00:42:00.000-04:00",
-      "location": "Qinghai, China",
-      "year": "2023",
-      "_slug": "20260422044200"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/c34774dcc6eaf0f5d48d051e7a4b7f24.jpg",
-      "date": "2026-04-22T00:43:00.000-04:00",
+      "image": "/photos/uploads/37d0a9ed9241f184aa9c73827ac9fa88.jpg",
+      "date": "2026-04-22T00:56:00.000-04:00",
       "location": "Hongkong, China",
       "year": "2023",
-      "_slug": "20260422044300"
+      "_slug": "20260422045600"
     },
     {
       "title": "New Photo",
       "category": "distortion",
-      "image": "/photos/uploads/000038320003.jpg",
-      "date": "2026-04-22T00:44:00.000-04:00",
-      "location": "Shenzhen, China",
-      "camera": "Nikon FM2",
-      "year": "2024",
-      "description": "Fujifilm Provia 100F",
-      "_slug": "20260422044400-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/c81e92033a323fad96f5395d94397213.jpg",
-      "date": "2026-04-22T00:44:00.000-04:00",
-      "location": "Cleveland, USA",
-      "year": "2026",
-      "_slug": "20260422044400"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/000038320002.jpg",
-      "date": "2026-04-22T00:45:00.000-04:00",
-      "location": "Shenzhen, China",
-      "year": "2024",
-      "camera": "Nikon FM2",
-      "description": "Fujifilm Provia 100F",
-      "_slug": "20260422044500"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/4760828becdd88444f61be5c351a3631.jpg",
-      "date": "2026-04-22T00:46:00.000-04:00",
-      "location": "Shenzhen, China",
+      "image": "/photos/uploads/054f9ba3f096ae57e9a724a93aae8e0f.jpg",
+      "date": "2026-04-22T00:55:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "My old dorm.",
       "year": "2023",
-      "camera": "RICOH GR3",
-      "_slug": "20260422044600"
+      "_slug": "20260422045500-1"
     },
     {
       "title": "New Photo",
       "category": "distortion",
-      "image": "/photos/uploads/90220b55462b266b4da59432331a27d0.jpg",
-      "date": "2026-04-22T00:47:00.000-04:00",
-      "location": "Chongqing, China",
-      "year": "2023",
-      "_slug": "20260422044700-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/478302d79da8c0851752e6825b9c466a.jpg",
-      "date": "2026-04-22T00:47:00.000-04:00",
+      "image": "/photos/uploads/219fdce17612b92f4d8b518b5330976b.jpg",
+      "date": "2026-04-22T00:55:00.000-04:00",
       "location": "Hongkong, China",
       "year": "2023",
-      "_slug": "20260422044700"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/69946c4a23430b5c41d11c26d471d284.jpg",
-      "date": "2026-04-22T00:48:00.000-04:00",
-      "location": "Cleveland, USA",
-      "description": "wink ;)",
-      "year": "2026",
-      "_slug": "20260422044800"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/58553ede75aa498da117915818d7fb69.jpg",
-      "date": "2026-04-22T00:49:00.000-04:00",
-      "location": "Beijing, China",
-      "year": "2024",
-      "_slug": "20260422044900"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/6341ee6dd1266fe91bf1f0554d1759df.jpg",
-      "date": "2026-04-22T00:50:00.000-04:00",
-      "location": "Beijing, China",
-      "year": "2024",
-      "_slug": "20260422045000"
-    },
-    {
-      "title": "New Photo",
-      "category": "silence",
-      "image": "/photos/uploads/966a6688215176a36ce4f85e2247a08d.jpg",
-      "date": "2026-04-22T00:51:00.000-04:00",
-      "location": "Qinghai, China",
-      "year": "2023",
-      "_slug": "20260422045100-1"
+      "_slug": "20260422045500"
     },
     {
       "title": "New Photo",
       "isCover": false,
       "category": "distortion",
-      "image": "/photos/uploads/dscf0668.jpg",
-      "date": "2026-04-22T00:51:00.000-04:00",
-      "location": "Tokyo, Japan",
-      "camera": "Fujiflm X-Half",
-      "_slug": "20260422045100-2"
+      "date": "2026-04-22T00:54:00.000-04:00",
+      "image": "/photos/uploads/dscf0693.jpg",
+      "location": "Seattle, USA",
+      "year": "2025",
+      "camera": "Fujifilm X-Half",
+      "_slug": "20260422045400-1"
     },
     {
       "title": "New Photo",
       "category": "distortion",
-      "image": "/photos/uploads/5323f0d0c6262b149cda26b2e1b24827.jpg",
-      "date": "2026-04-22T00:51:00.000-04:00",
+      "image": "/photos/uploads/466c2e3e7ae23393b42ca15625231d27.jpg",
+      "date": "2026-04-22T00:54:00.000-04:00",
       "location": "Shenzhen, China",
-      "description": "If you know, you know",
       "year": "2023",
-      "_slug": "20260422045100"
-    },
-    {
-      "title": "New Photo",
-      "isCover": false,
-      "category": "strangers",
-      "image": "/photos/uploads/dscf0676.jpg",
-      "date": "2026-04-22T00:52:00.000-04:00",
-      "location": "Tokyo, Japan",
-      "_slug": "20260422045200"
+      "_slug": "20260422045400"
     },
     {
       "title": "New Photo",
@@ -1700,176 +199,1678 @@ export const cmsData = {
     {
       "title": "New Photo",
       "isCover": false,
-      "category": "distortion",
-      "date": "2026-04-22T00:54:00.000-04:00",
-      "image": "/photos/uploads/dscf0693.jpg",
-      "location": "Seattle, USA",
-      "year": "2025",
-      "camera": "Fujifilm X-Half",
-      "_slug": "20260422045400-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/466c2e3e7ae23393b42ca15625231d27.jpg",
-      "date": "2026-04-22T00:54:00.000-04:00",
-      "location": "Shenzhen, China",
-      "year": "2023",
-      "_slug": "20260422045400"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/054f9ba3f096ae57e9a724a93aae8e0f.jpg",
-      "date": "2026-04-22T00:55:00.000-04:00",
-      "location": "Pittsburgh, USA",
-      "description": "My old dorm.",
-      "year": "2023",
-      "_slug": "20260422045500-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/219fdce17612b92f4d8b518b5330976b.jpg",
-      "date": "2026-04-22T00:55:00.000-04:00",
-      "location": "Hongkong, China",
-      "year": "2023",
-      "_slug": "20260422045500"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/0027_23a0324.jpg",
-      "date": "2026-04-22T00:56:00.000-04:00",
-      "location": "Alaska, USA",
-      "year": "2026",
-      "camera": "Fujifilm disposable ",
-      "_slug": "20260422045600-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/37d0a9ed9241f184aa9c73827ac9fa88.jpg",
-      "date": "2026-04-22T00:56:00.000-04:00",
-      "location": "Hongkong, China",
-      "year": "2023",
-      "_slug": "20260422045600"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/0021_17a0324.jpg",
-      "date": "2026-04-22T00:57:00.000-04:00",
-      "location": "Alaska, USA",
-      "year": "2026",
-      "camera": "Fujifilm disposable",
-      "_slug": "20260422045700"
+      "category": "strangers",
+      "image": "/photos/uploads/dscf0676.jpg",
+      "date": "2026-04-22T00:52:00.000-04:00",
+      "location": "Tokyo, Japan",
+      "_slug": "20260422045200"
     },
     {
       "title": "New Photo",
       "category": "silence",
-      "image": "/photos/uploads/0008_5a0324.jpg",
-      "date": "2026-04-22T00:58:00.000-04:00",
-      "location": "Alaska, USA",
-      "year": "2026",
-      "camera": "Fujifilm disposable",
-      "_slug": "20260422045800-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "distortion",
-      "image": "/photos/uploads/0011_8a0324.jpg",
-      "date": "2026-04-22T00:58:00.000-04:00",
-      "location": "Alaska, USA",
-      "year": "2026",
-      "camera": "Fujifilm disposable",
-      "_slug": "20260422045800"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/6f29454b1754d85dd8b0caac8ec6742c.jpg",
-      "date": "2026-04-22T00:59:00.000-04:00",
-      "location": "San Francisco, USA",
-      "year": "2025",
-      "_slug": "20260422045900-1"
-    },
-    {
-      "title": "New Photo",
-      "category": "polaroid",
-      "image": "/photos/uploads/7f77a2cd6995a05b540a872b6d66d512.jpg",
-      "date": "2026-04-22T00:59:00.000-04:00",
-      "location": "San Francisco, USA",
-      "year": "2025",
-      "_slug": "20260422045900"
+      "image": "/photos/uploads/966a6688215176a36ce4f85e2247a08d.jpg",
+      "date": "2026-04-22T00:51:00.000-04:00",
+      "location": "Qinghai, China",
+      "year": "2023",
+      "_slug": "20260422045100-1"
     },
     {
       "title": "New Photo",
       "isCover": false,
       "category": "distortion",
-      "image": "/photos/uploads/dscfuhatewechat.jpg",
-      "date": "2026-04-22T01:00:00.000-04:00",
-      "location": "Seattle, USA",
-      "year": "2025",
-      "camera": "Fujifilm X-Half",
-      "_slug": "20260422050000-1"
+      "image": "/photos/uploads/dscf0668.jpg",
+      "date": "2026-04-22T00:51:00.000-04:00",
+      "location": "Tokyo, Japan",
+      "camera": "Fujiflm X-Half",
+      "_slug": "20260422045100-2"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/5323f0d0c6262b149cda26b2e1b24827.jpg",
+      "date": "2026-04-22T00:51:00.000-04:00",
+      "location": "Shenzhen, China",
+      "description": "If you know, you know",
+      "year": "2023",
+      "_slug": "20260422045100"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/6341ee6dd1266fe91bf1f0554d1759df.jpg",
+      "date": "2026-04-22T00:50:00.000-04:00",
+      "location": "Beijing, China",
+      "year": "2024",
+      "_slug": "20260422045000"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/58553ede75aa498da117915818d7fb69.jpg",
+      "date": "2026-04-22T00:49:00.000-04:00",
+      "location": "Beijing, China",
+      "year": "2024",
+      "_slug": "20260422044900"
     },
     {
       "title": "New Photo",
       "category": "silence",
-      "image": "/photos/uploads/0005_2a0324.jpg",
-      "date": "2026-04-22T01:00:00.000-04:00",
-      "location": "Alaska, USA",
+      "image": "/photos/uploads/69946c4a23430b5c41d11c26d471d284.jpg",
+      "date": "2026-04-22T00:48:00.000-04:00",
+      "location": "Cleveland, USA",
+      "description": "wink ;)",
       "year": "2026",
-      "camera": "Fujifilm disposable",
-      "description": "Campfire. ",
-      "_slug": "20260422050000"
+      "_slug": "20260422044800"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/90220b55462b266b4da59432331a27d0.jpg",
+      "date": "2026-04-22T00:47:00.000-04:00",
+      "location": "Chongqing, China",
+      "year": "2023",
+      "_slug": "20260422044700-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/478302d79da8c0851752e6825b9c466a.jpg",
+      "date": "2026-04-22T00:47:00.000-04:00",
+      "location": "Hongkong, China",
+      "year": "2023",
+      "_slug": "20260422044700"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/4760828becdd88444f61be5c351a3631.jpg",
+      "date": "2026-04-22T00:46:00.000-04:00",
+      "location": "Shenzhen, China",
+      "year": "2023",
+      "camera": "RICOH GR3",
+      "_slug": "20260422044600"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/000038320002.jpg",
+      "date": "2026-04-22T00:45:00.000-04:00",
+      "location": "Shenzhen, China",
+      "year": "2024",
+      "camera": "Nikon FM2",
+      "description": "Fujifilm Provia 100F",
+      "_slug": "20260422044500"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/000038320003.jpg",
+      "date": "2026-04-22T00:44:00.000-04:00",
+      "location": "Shenzhen, China",
+      "camera": "Nikon FM2",
+      "year": "2024",
+      "description": "Fujifilm Provia 100F",
+      "_slug": "20260422044400-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/c81e92033a323fad96f5395d94397213.jpg",
+      "date": "2026-04-22T00:44:00.000-04:00",
+      "location": "Cleveland, USA",
+      "year": "2026",
+      "_slug": "20260422044400"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/c34774dcc6eaf0f5d48d051e7a4b7f24.jpg",
+      "date": "2026-04-22T00:43:00.000-04:00",
+      "location": "Hongkong, China",
+      "year": "2023",
+      "_slug": "20260422044300"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/ca62a8bb4e2884ba9b85360e3c096d4b.jpg",
+      "date": "2026-04-22T00:42:00.000-04:00",
+      "location": "Qinghai, China",
+      "year": "2023",
+      "_slug": "20260422044200"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/d6bf6a1cc969f96818f70963b9717960.jpg",
+      "date": "2026-04-22T00:41:00.000-04:00",
+      "location": "Chongqing, China",
+      "year": "2023",
+      "_slug": "20260422044100"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/d25e2c0c6ce1f081384dd44428cf7076.jpg",
+      "date": "2026-04-22T00:40:00.000-04:00",
+      "location": "Cleveland, USA",
+      "year": "2026",
+      "_slug": "20260422044000-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/d7334e13d26881e8f32f77151873a558.jpg",
+      "date": "2026-04-22T00:40:00.000-04:00",
+      "location": "Qinghai, China",
+      "year": "2026",
+      "_slug": "20260422044000"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf0029.jpg",
+      "date": "2026-04-22T00:39:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "year": "2026",
+      "_slug": "20260422043900"
     },
     {
       "title": "New Photo",
       "category": "strangers",
-      "image": "/photos/uploads/2d4d3c578958d8881ddf62590906268e.jpg",
-      "date": "2026-04-22T01:01:00.000-04:00",
+      "image": "/photos/uploads/dscf0100.jpg",
+      "date": "2026-04-22T00:38:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "year": "2026",
+      "_slug": "20260422043800-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf0030.jpg",
+      "date": "2026-04-22T00:38:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "year": "2026",
+      "_slug": "20260422043800-2"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf0116.jpg",
+      "date": "2026-04-22T00:38:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "year": "2026",
+      "_slug": "20260422043800"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf0128.jpg",
+      "date": "2026-04-22T00:37:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "year": "2026",
+      "_slug": "20260422043700-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf0170.jpg",
+      "date": "2026-04-22T00:37:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "year": "2026",
+      "_slug": "20260422043700"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf0181.jpg",
+      "location": "Pittsburgh, USA",
+      "date": "2026-04-22T00:36:00.000-04:00",
+      "year": "2026",
+      "_slug": "20260422043600-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf0270.jpg",
+      "date": "2026-04-22T00:36:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "year": "2026",
+      "_slug": "20260422043600"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/dscf0282.jpg",
+      "date": "2026-04-22T00:35:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "🦅🦅🦅",
+      "year": "2026",
+      "_slug": "20260422043500-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf0552.jpg",
+      "location": "Pittsburgh, USA",
+      "date": "2026-04-22T00:35:00.000-04:00",
+      "year": "2026",
+      "lens": "Helios 44-2",
+      "_slug": "20260422043500"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf0571.jpg",
+      "location": "Pittsburgh, USA",
+      "date": "2026-04-22T00:33:00.000-04:00",
+      "year": "2026",
+      "lens": "Helios 44-2",
+      "_slug": "20260422043300-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf0583.jpg",
+      "date": "2026-04-22T00:33:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "year": "2026",
+      "lens": "Helios 44-2",
+      "_slug": "20260422043300"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf0585.jpg",
+      "date": "2026-04-22T00:32:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "year": "2026",
+      "lens": "Helios 44-2",
+      "_slug": "20260422043200"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/dscf1082.jpg",
+      "date": "2026-04-22T00:31:00.000-04:00",
+      "location": "Cleveland, USA",
+      "description": "Silent Hill. @chelshuya ",
+      "year": "2026",
+      "_slug": "20260422043100"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf1103.jpg",
+      "date": "2026-04-22T00:30:00.000-04:00",
+      "location": "Cleveland, USA",
+      "year": "2026",
+      "_slug": "20260422043000-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/dscf4308-2.jpg",
+      "date": "2026-04-22T00:30:00.000-04:00",
+      "location": "Jinhua, China",
+      "year": "2025",
+      "_slug": "20260422043000"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/dscf4315.jpg",
+      "date": "2026-04-22T00:29:00.000-04:00",
+      "location": "Jinhua, China",
+      "description": "Go Johnny Go Go",
+      "year": "2025",
+      "_slug": "20260422042900-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf4485.jpg",
+      "location": "Jinhua, China",
+      "date": "2026-04-22T00:29:00.000-04:00",
+      "year": "2025",
+      "_slug": "20260422042900"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/dscf4529.jpg",
+      "date": "2026-04-22T00:27:00.000-04:00",
+      "location": "Jinhua, China",
+      "description": "Walk out of the books.  读万卷书，行万里路。",
+      "_slug": "20260422042700-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf4670.jpg",
+      "date": "2026-04-22T00:27:00.000-04:00",
+      "location": "Jinhua, China",
+      "_slug": "20260422042700"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf4694.jpg",
+      "date": "2026-04-22T00:26:00.000-04:00",
+      "location": "Jinhua, China",
+      "_slug": "20260422042600-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf4927.jpg",
+      "location": "Nagoya, Japan",
+      "date": "2026-04-22T00:26:00.000-04:00",
+      "_slug": "20260422042600"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf4985.jpg",
+      "location": "Nagoya, Japan",
+      "date": "2026-04-22T00:25:00.000-04:00",
+      "_slug": "20260422042500"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf5037.jpg",
+      "location": "Nagoya, Japan",
+      "date": "2026-04-22T00:24:00.000-04:00",
+      "_slug": "20260422042400"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf5108.jpg",
+      "date": "2026-04-22T00:23:00.000-04:00",
+      "location": "Nagoya, Japan",
+      "_slug": "20260422042300-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/dscf5074.jpg",
+      "location": "Nagoya, Japan",
+      "date": "2026-04-22T00:23:00.000-04:00",
+      "_slug": "20260422042300-2"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf5119.jpg",
+      "date": "2026-04-22T00:23:00.000-04:00",
+      "location": "Nagoya, Japan",
+      "_slug": "20260422042300"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf5136.jpg",
+      "date": "2026-04-22T00:22:00.000-04:00",
+      "location": "Nagoya, Japan",
+      "_slug": "20260422042200"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf5192.jpg",
+      "date": "2026-04-22T00:21:00.000-04:00",
+      "location": "Tokyo, Japan",
+      "_slug": "20260422042100-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf5400.jpg",
+      "date": "2026-04-22T00:21:00.000-04:00",
+      "location": "Tokyo, Japan",
+      "_slug": "20260422042100"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf5937.jpg",
+      "date": "2026-04-22T00:20:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "FUJI NO.1",
+      "camera": "",
+      "_slug": "20260422042000"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf5997.jpg",
+      "date": "2026-04-22T00:19:00.000-04:00",
+      "location": "Edinburgh, UK",
+      "description": "28",
+      "_slug": "20260422041900-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/dscf6058-2.jpg",
+      "date": "2026-04-22T00:19:00.000-04:00",
+      "location": "Edinburgh, UK",
+      "isCover": true,
+      "_slug": "20260422041900"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf6181.jpg",
+      "date": "2026-04-22T00:18:00.000-04:00",
+      "location": "Edinburgh, UK",
+      "_slug": "20260422041800"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "date": "2026-04-22T00:17:00.000-04:00",
+      "image": "/photos/uploads/dscf6193.jpg",
+      "location": "Edinburgh, UK",
+      "_slug": "20260422041700-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf6233.jpg",
+      "location": "Edinburgh, UK",
+      "date": "2026-04-22T00:17:00.000-04:00",
+      "_slug": "20260422041700"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf6361.jpg",
+      "date": "2026-04-22T00:16:00.000-04:00",
+      "location": "Edinburgh, UK",
+      "_slug": "20260422041600"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf6426.jpg",
+      "date": "2026-04-22T00:15:00.000-04:00",
       "location": "Tianjin, China",
-      "description": "LOL.",
-      "year": "2023",
-      "_slug": "20260422050100"
+      "description": "My old friend",
+      "_slug": "20260422041500-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/dscf6609.jpg",
+      "date": "2026-04-22T00:15:00.000-04:00",
+      "location": "Edinburgh, UK",
+      "_slug": "20260422041500"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf6688.jpg",
+      "date": "2026-04-22T00:13:00.000-04:00",
+      "location": "Stirling, UK",
+      "_slug": "20260422041300-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf6651.jpg",
+      "date": "2026-04-22T00:13:00.000-04:00",
+      "location": "Edinburgh, UK",
+      "description": "牛牛",
+      "_slug": "20260422041300-2"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf7080.jpg",
+      "date": "2026-04-22T00:13:00.000-04:00",
+      "location": "London, UK",
+      "_slug": "20260422041300"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf7144.jpg",
+      "date": "2026-04-22T00:12:00.000-04:00",
+      "location": "London, UK",
+      "_slug": "20260422041200-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf7264.jpg",
+      "date": "2026-04-22T00:12:00.000-04:00",
+      "location": "London, UK",
+      "_slug": "20260422041200"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf7311.jpg",
+      "location": "London, UK",
+      "date": "2026-04-22T00:11:00.000-04:00",
+      "_slug": "20260422041100-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/dscf7414-2.jpg",
+      "date": "2026-04-22T00:11:00.000-04:00",
+      "location": "London, UK",
+      "_slug": "20260422041100"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf8043.jpg",
+      "location": "Alaska, USA",
+      "date": "2026-04-22T00:10:00.000-04:00",
+      "_slug": "20260422041000-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf8166.jpg",
+      "date": "2026-04-22T00:10:00.000-04:00",
+      "location": "Alaska, USA",
+      "_slug": "20260422041000"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/dscf8225.jpg",
+      "description": "Not Strangers.",
+      "date": "2026-04-22T00:09:00.000-04:00",
+      "location": "Alaska, USA",
+      "_slug": "20260422040900-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf8378.jpg",
+      "date": "2026-04-22T00:09:00.000-04:00",
+      "location": "Alaska, USA",
+      "_slug": "20260422040900"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf8599.jpg",
+      "date": "2026-04-22T00:08:00.000-04:00",
+      "location": "Alaska, USA",
+      "description": "谁懂我对加油站的情有独钟？",
+      "_slug": "20260422040800-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf8725.jpg",
+      "location": "Alaska, USA",
+      "date": "2026-04-22T00:08:00.000-04:00",
+      "_slug": "20260422040800"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf8789.jpg",
+      "location": "Alaska, USA",
+      "date": "2026-04-22T00:07:00.000-04:00",
+      "_slug": "20260422040700-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf8783.jpg",
+      "date": "2026-04-22T00:07:00.000-04:00",
+      "location": "Alaska, USA",
+      "description": "Leo's Nikon Z8",
+      "_slug": "20260422040700-2"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf8903.jpg",
+      "location": "Alaska, USA",
+      "date": "2026-04-22T00:07:00.000-04:00",
+      "_slug": "20260422040700"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf9571.jpg",
+      "date": "2026-04-22T00:06:00.000-04:00",
+      "location": "Alaska, USA",
+      "_slug": "20260422040600-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf9032.jpg",
+      "location": "Alaska, USA",
+      "date": "2026-04-22T00:06:00.000-04:00",
+      "_slug": "20260422040600-2"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf9710.jpg",
+      "date": "2026-04-22T00:06:00.000-04:00",
+      "location": "Alaska, USA",
+      "_slug": "20260422040600"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/dscf9754.jpg",
+      "date": "2026-04-22T00:05:00.000-04:00",
+      "location": "Alaska, USA",
+      "_slug": "20260422040500"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/e0f93cc476b4fc1e15e84d9edae491ee.jpg",
+      "date": "2026-04-22T00:04:00.000-04:00",
+      "location": "Cleveland, USA",
+      "_slug": "20260422040400"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/e8a03fadfc041cdd4f83eeb0bd11e467.jpg",
+      "date": "2026-04-22T00:03:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "camera": "Nikon FM2",
+      "_slug": "20260422040300-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/fptr0031.jpg.jpg",
+      "description": "Not strangers",
+      "location": "Pittsburgh, USA",
+      "date": "2026-04-22T00:03:00.000-04:00",
+      "camera": "Fujifilm X-Half",
+      "_slug": "20260422040300"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/img_0405.jpg",
+      "date": "2026-04-22T00:02:00.000-04:00",
+      "location": "Kunming, China",
+      "camera": "Canon ixus 70",
+      "_slug": "20260422040200"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/img_5074.jpg",
+      "camera": "iPhone 17 Pro",
+      "description": "",
+      "location": "Alaska, USA",
+      "date": "2026-04-22T00:01:00.000-04:00",
+      "_slug": "20260422040100"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/0004_0a0324.jpg",
+      "date": "2026-04-21T23:59:00.000-04:00",
+      "location": "Alaska, USA",
+      "camera": "Fujifilm disposable",
+      "_slug": "20260422035900"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/img_6323.jpg",
+      "date": "2026-04-21T23:58:00.000-04:00",
+      "location": "Shenzhen, China",
+      "description": "Sorry about your sky wheel",
+      "_slug": "20260422035800"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/img_8041.jpg",
+      "location": "Pittsburgh, USA",
+      "date": "2026-04-21T23:57:00.000-04:00",
+      "camera": "Sony A7M4",
+      "_slug": "20260422035700-1"
     },
     {
       "title": "New Photo",
       "category": "polaroid",
-      "date": "2026-04-22T01:06:00.000-04:00",
-      "image": "/photos/uploads/img_20260419_0002.jpg",
-      "description": "@chelshuya",
+      "image": "/photos/uploads/img_20231203_0001.jpg",
+      "location": "Pittsburgh, USA",
+      "date": "2026-04-21T23:57:00.000-04:00",
+      "_slug": "20260422035700"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240304_0001.jpg",
+      "location": "Pittsburgh, USA",
+      "date": "2026-04-21T23:56:00.000-04:00",
+      "_slug": "20260422035600-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240302_0016.jpg",
+      "date": "2026-04-21T23:56:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "_slug": "20260422035600-2"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240304_0002.jpg",
+      "location": "Pittsburgh, USA",
+      "date": "2026-04-21T23:56:00.000-04:00",
+      "_slug": "20260422035600"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240304_0004.jpg",
+      "date": "2026-04-21T23:55:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "_slug": "20260422035500-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240304_0003.jpg",
+      "date": "2026-04-21T23:55:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "_slug": "20260422035500-2"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240304_0005.jpg",
+      "location": "Pittsburgh, USA",
+      "date": "2026-04-21T23:55:00.000-04:00",
+      "_slug": "20260422035500"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0001.jpg",
+      "date": "2026-04-21T23:54:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "_slug": "20260422035400-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0002.jpg",
+      "date": "2026-04-21T23:54:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "_slug": "20260422035400"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0003.jpg",
+      "location": "Los Angeles, USA",
+      "date": "2026-04-21T23:53:00.000-04:00",
+      "_slug": "20260422035300-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0004.jpg",
+      "date": "2026-04-21T23:53:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "description": "",
+      "_slug": "20260422035300"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0012.jpg",
+      "date": "2026-04-21T23:52:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "_slug": "20260422035200-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0013.jpg",
+      "date": "2026-04-21T23:52:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "description": "My first road trip",
+      "_slug": "20260422035200"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0019.jpg",
+      "date": "2026-04-21T23:51:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "_slug": "20260422035100-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0020.jpg",
+      "date": "2026-04-21T23:51:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "_slug": "20260422035100"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0021.jpg",
+      "date": "2026-04-21T23:50:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "description": "Universal",
+      "_slug": "20260422035000"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0025.jpg",
+      "date": "2026-04-21T23:49:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "description": "Santa Monica",
+      "_slug": "20260422034900-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0026.jpg",
+      "date": "2026-04-21T23:49:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "_slug": "20260422034900"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0029.jpg",
+      "date": "2026-04-21T23:48:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "description": "Santa Monica",
+      "_slug": "20260422034800-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0030.jpg",
+      "date": "2026-04-21T23:48:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "description": "City of stars, are you shining just for me?",
+      "_slug": "20260422034800"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0041.jpg",
+      "date": "2026-04-21T23:47:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "_slug": "20260422034700"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0065.jpg",
+      "description": "Universal Studio LA",
+      "location": "Los Angeles, USA",
+      "date": "2026-04-21T23:43:00.000-04:00",
+      "_slug": "20260422034300-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0070.jpg",
+      "location": "Los Angeles, USA",
+      "date": "2026-04-21T23:43:00.000-04:00",
+      "description": "Universal Studio LA",
+      "_slug": "20260422034300"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240322_0001.jpg",
+      "date": "2026-04-21T23:42:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "Spring",
+      "_slug": "20260422034200"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20251128_0001-2.jpg",
+      "date": "2026-04-21T23:41:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "wassup leo",
+      "_slug": "20260422034100-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20251128_0001.jpg",
+      "date": "2026-04-21T23:41:00.000-04:00",
+      "description": "N Stuff Music",
+      "location": "Pittsburgh, USA",
+      "_slug": "20260422034100"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20251128_0002-2.jpg",
+      "date": "2026-04-21T23:39:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "N Stuff Music",
+      "_slug": "20260422033900-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20251128_0002.jpg",
+      "date": "2026-04-21T23:39:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "N Stuff Music",
+      "_slug": "20260422033900"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20251128_0003-2.jpg",
+      "date": "2026-04-21T23:38:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "N Stuff Music",
+      "_slug": "20260422033800"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20260102_0001.jpg",
+      "date": "2026-04-21T23:37:00.000-04:00",
+      "location": "London, UK",
+      "_slug": "20260422033700-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20251128_0005.jpg",
+      "date": "2026-04-21T23:37:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "Peter picked up his first bass guitar.",
+      "_slug": "20260422033700-2"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20260102_0002.jpg",
+      "date": "2026-04-21T23:37:00.000-04:00",
+      "location": "London, UK",
+      "_slug": "20260422033700"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20260102_0005.jpg",
+      "date": "2026-04-21T23:36:00.000-04:00",
+      "location": "Stirling, UK",
+      "_slug": "20260422033600-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20260102_0006.jpg",
+      "date": "2026-04-21T23:36:00.000-04:00",
+      "location": "London, UK",
+      "_slug": "20260422033600"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20260102_0008.jpg",
+      "date": "2026-04-21T23:35:00.000-04:00",
+      "location": "Stirling, UK",
+      "_slug": "20260422033500"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20260102_0007.jpg",
+      "date": "2026-04-21T23:33:00.000-04:00",
+      "location": "Stirling, UK",
+      "_slug": "20260422033300-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/r0002906.jpg",
+      "date": "2026-04-21T23:33:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "Behind the Cathedral.",
+      "_slug": "20260422033300"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/r0002920.jpg",
+      "date": "2026-04-21T23:32:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "_slug": "20260422033200-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/r0002919.jpg",
+      "date": "2026-04-21T23:32:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "_slug": "20260422033200"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/r0003398.jpg",
+      "date": "2026-04-21T23:31:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "_slug": "20260422033100"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/r0003416.jpg",
+      "date": "2026-04-21T23:30:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "_slug": "20260422033000-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/r0003417.jpg",
+      "date": "2026-04-21T23:30:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "_slug": "20260422033000"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003494.jpg",
+      "date": "2026-04-21T23:29:00.000-04:00",
+      "location": "New York, USA",
+      "_slug": "20260422032900-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003479.jpg",
+      "date": "2026-04-21T23:29:00.000-04:00",
+      "location": "New York, USA",
+      "_slug": "20260422032900-2"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003543-2.jpg",
+      "date": "2026-04-21T23:29:00.000-04:00",
+      "location": "New York, USA",
+      "_slug": "20260422032900"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003557.jpg",
+      "date": "2026-04-21T23:27:00.000-04:00",
+      "location": "New York, USA",
+      "_slug": "20260422032700"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003582.jpg",
+      "location": "New York, USA",
+      "description": "The MET",
+      "date": "2026-04-21T23:26:00.000-04:00",
+      "_slug": "20260422032600"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003615-3.jpg",
+      "date": "2026-04-21T23:25:00.000-04:00",
+      "location": "New York, USA",
+      "_slug": "20260422032500-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/r0003637.jpg",
+      "date": "2026-04-21T23:25:00.000-04:00",
+      "location": "New York, USA",
+      "_slug": "20260422032500"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003691.jpg",
+      "date": "2026-04-21T23:24:00.000-04:00",
+      "location": "New York, USA",
+      "camera": "",
+      "_slug": "20260422032400"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/r0003699.jpg",
+      "date": "2026-04-21T23:23:00.000-04:00",
+      "location": "New York, USA",
+      "_slug": "20260422032300"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003762.jpg",
+      "date": "2026-04-21T23:22:00.000-04:00",
+      "location": "New York, USA",
+      "camera": "RICOH GR3",
+      "_slug": "20260422032200"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003803.jpg",
+      "date": "2026-04-21T23:21:00.000-04:00",
+      "location": "New York, USA",
+      "camera": "RICOH GR3",
+      "_slug": "20260422032100"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003826.jpg",
+      "date": "2026-04-21T23:20:00.000-04:00",
+      "location": "New York, USA",
+      "_slug": "20260422032000-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/r0003929-2.jpg",
+      "date": "2026-04-21T23:20:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "If you know, you know.",
+      "_slug": "20260422032000"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt302115.jpg",
+      "date": "2026-04-21T23:19:00.000-04:00",
+      "location": "Hebei, China",
+      "description": "白石山",
+      "_slug": "20260422031900"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt302144.jpg",
+      "date": "2026-04-21T23:18:00.000-04:00",
+      "location": "Hebei, China",
+      "description": "白石山。",
+      "_slug": "20260422031800-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt302541.jpg",
+      "date": "2026-04-21T23:18:00.000-04:00",
+      "location": "Tianjin, China",
+      "_slug": "20260422031800"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/xt302602.jpg",
+      "date": "2026-04-21T23:17:00.000-04:00",
+      "location": "Tianjin, China",
+      "description": "回头是岸。",
+      "year": "2025",
+      "_slug": "20260422031700"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt302726.jpg",
+      "date": "2026-04-21T23:16:00.000-04:00",
+      "location": "Tianjin, China",
+      "_slug": "20260422031600"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt302733.jpg",
+      "date": "2026-04-21T23:15:00.000-04:00",
+      "location": "Tianjin, China",
+      "description": "Tanggu old train station.",
+      "_slug": "20260422031500"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt302735.jpg",
+      "date": "2026-04-21T23:14:00.000-04:00",
+      "location": "Tianjin, China",
+      "description": "Tanggu old train station.",
+      "_slug": "20260422031400"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt302746.jpg",
+      "date": "2026-04-21T23:13:00.000-04:00",
+      "location": "Tianjin, China",
+      "description": "Tanggu old train station.",
+      "_slug": "20260422031300"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt302770.jpg",
+      "date": "2026-04-21T23:12:00.000-04:00",
+      "location": "Tianjin, China",
+      "description": "Tanggu old train station.",
+      "_slug": "20260422031200"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt302807.jpg",
+      "date": "2026-04-21T23:10:00.000-04:00",
+      "location": "Tianjin, China",
+      "description": "Tanggu old train station.",
+      "_slug": "20260422031000"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt302893.jpg",
+      "date": "2026-04-21T22:45:00.000-04:00",
+      "location": "Kunming, China",
+      "_slug": "20260422024500-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/xt302921.jpg",
+      "date": "2026-04-21T22:45:00.000-04:00",
+      "location": "Kunming, China",
+      "_slug": "20260422024500"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt303129.jpg",
+      "date": "2026-04-21T22:44:00.000-04:00",
+      "location": "Tengchong, China",
+      "_slug": "20260422024400-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt303342.jpg",
+      "date": "2026-04-21T22:44:00.000-04:00",
+      "location": "Tengchong, China",
+      "_slug": "20260422024400"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt303350.jpg",
+      "date": "2026-04-21T22:43:00.000-04:00",
+      "location": "Tengchong, China",
+      "_slug": "20260422024300"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt303553.jpg",
+      "date": "2026-04-21T22:42:00.000-04:00",
+      "location": "Tengchong, China",
+      "_slug": "20260422024200"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt304970.jpg",
+      "date": "2026-04-21T22:41:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "_slug": "20260422024100"
+    },
+    {
+      "title": "New Photo",
+      "category": "polaroid",
+      "image": "/photos/uploads/xt307066.jpg",
+      "date": "2026-04-21T22:40:00.000-04:00",
+      "isCover": true,
+      "_slug": "20260422024000"
+    },
+    {
+      "title": "New Photo",
+      "category": "strangers",
+      "image": "/photos/uploads/whb_ly_4.jpg",
+      "date": "2026-04-21T21:00:00.000-04:00",
+      "location": "Cleveland, USA",
+      "description": "Not strangers. @kyyylie_w @williamwu112",
+      "lens": "Helios 44-2",
       "year": "2026",
-      "_slug": "20260422050600"
+      "_slug": "20260422010000"
     },
     {
       "title": "New Photo",
       "category": "strangers",
-      "image": "/photos/uploads/whb_ly_2.jpg",
-      "date": "2026-04-22T01:09:00.000-04:00",
-      "location": "Cleveland, USA",
-      "year": "",
-      "description": "@williamwu112",
-      "_slug": "20260422050900"
+      "image": "/photos/uploads/c0b4e4ee77e7e41f366c51ac963e1dbf.jpg",
+      "date": "2026-04-21T20:43:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "camera": "Nikon FM2",
+      "year": "2023",
+      "_slug": "20260422004300"
     },
     {
       "title": "New Photo",
-      "category": "strangers",
-      "image": "/photos/uploads/whb_ly_1.jpg",
-      "date": "2026-04-22T01:10:00.000-04:00",
-      "location": "Cleveland, USA",
-      "description": "@kyyylie_w",
-      "_slug": "20260422051000"
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20240318_0063-2.jpg",
+      "date": "2026-04-21T20:42:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "description": "LA Universal Studio",
+      "_slug": "20260422004200"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt304375.jpg",
+      "date": "2026-04-21T20:25:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "_slug": "20260422002500-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt304530.jpg",
+      "location": "Los Angeles, USA",
+      "date": "2026-04-21T20:25:00.000-04:00",
+      "_slug": "20260422002500"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt304865.jpg",
+      "date": "2026-04-21T20:24:00.000-04:00",
+      "location": "Los Angeles, USA",
+      "_slug": "20260422002400"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt304911.jpg",
+      "location": "Los Angeles, USA",
+      "date": "2026-04-21T20:23:00.000-04:00",
+      "_slug": "20260422002300"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt305905.jpg",
+      "date": "2026-04-21T20:22:00.000-04:00",
+      "location": "Tianjin, China",
+      "description": "GT Show Tianjin",
+      "_slug": "20260422002200"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt307670.jpg",
+      "date": "2026-04-21T20:21:00.000-04:00",
+      "location": "Miami, USA",
+      "_slug": "20260422002100"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt307894.jpg",
+      "location": "Miami, USA",
+      "date": "2026-04-21T20:20:00.000-04:00",
+      "_slug": "20260422002000-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt308224.jpg",
+      "date": "2026-04-21T20:20:00.000-04:00",
+      "location": "Miami, USA",
+      "_slug": "20260422002000"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt308590-2.jpg",
+      "date": "2026-04-21T20:19:00.000-04:00",
+      "location": "New York, USA",
+      "year": "2023",
+      "_slug": "20260422001900"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt308655.jpg",
+      "location": "New York, USA",
+      "description": "You are waiting for a train, the train will take you far away.",
+      "date": "2026-04-21T20:18:00.000-04:00",
+      "_slug": "20260422001800"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt308673.jpg",
+      "location": "New York, USA",
+      "date": "2026-04-21T20:17:00.000-04:00",
+      "description": "At the very end of Long Island.",
+      "_slug": "20260422001700"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt309030.jpg",
+      "location": "San Francisco, USA",
+      "date": "2026-04-21T20:16:00.000-04:00",
+      "_slug": "20260422001600-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt309118.jpg",
+      "location": "San Francisco, USA",
+      "date": "2026-04-21T20:16:00.000-04:00",
+      "_slug": "20260422001600"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt309181-2.jpg",
+      "location": "San Francisco, USA",
+      "date": "2026-04-21T20:15:00.000-04:00",
+      "_slug": "20260422001500-1"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt309223.jpg",
+      "date": "2026-04-21T20:15:00.000-04:00",
+      "location": "San Francisco, USA",
+      "_slug": "20260422001500"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt309256.jpg",
+      "date": "2026-04-21T20:14:00.000-04:00",
+      "location": "San Francisco, USA",
+      "_slug": "20260422001400"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/xt309322.jpg",
+      "date": "2026-04-21T20:11:00.000-04:00",
+      "location": "San Francisco, USA",
+      "year": "2024",
+      "_slug": "20260422001100"
+    },
+    {
+      "title": "New Photo",
+      "category": "silence",
+      "image": "/photos/uploads/xt309482.jpg",
+      "date": "2026-04-21T20:10:00.000-04:00",
+      "location": "San Francisco, USA",
+      "year": "2024",
+      "camera": "",
+      "_slug": "20260422001000"
+    },
+    {
+      "camera": "Fujifilm XT-30ii",
+      "date": "2026-04-21T20:07:00.000-04:00",
+      "location": "San Francisco, USA",
+      "title": "sanjose",
+      "image": "/photos/uploads/xt309484.jpg",
+      "description": "How peaceful is that.",
+      "year": "2024",
+      "lens": "XF18-55 f/2.8-4",
+      "category": "featured",
+      "_slug": "20260422000700"
+    },
+    {
+      "camera": "Fujifilm XT-5",
+      "date": "2026-04-21T20:04:00.000-04:00",
+      "location": "Nagoya, Japan",
+      "title": "nagoya",
+      "image": "/photos/uploads/dscf5144.jpg",
+      "description": "Nagoya Castle.",
+      "year": "2025",
+      "lens": "XF16-80mm f/4",
+      "category": "featured",
+      "_slug": "20260422000400"
+    },
+    {
+      "camera": "Fujifilm XT-5",
+      "date": "2026-04-21T19:59:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "title": "gtr",
+      "image": "/photos/uploads/dscf0064.jpg",
+      "description": "GTR R33. Vroom vroom.",
+      "year": "2026",
+      "lens": "Helios 44-2 58mm f/2",
+      "category": "featured",
+      "_slug": "20260421235900"
+    },
+    {
+      "title": "winter pitt",
+      "category": "featured",
+      "image": "/photos/uploads/07cf0d1b1c9e5dc454411b12817255bf-2.jpg",
+      "date": "2026-04-21T19:57:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "description": "Winter night at University of Pittsburgh.",
+      "year": "2024",
+      "camera": "Fujifilm XT-30ii",
+      "_slug": "20260421235700"
+    },
+    {
+      "camera": "Fujifilm XT-5",
+      "date": "2026-04-21T19:54:00.000-04:00",
+      "location": "Pittsburgh, USA",
+      "title": "spring",
+      "image": "/photos/uploads/dscf0555.jpg",
+      "description": "冬去春来。",
+      "year": "2026",
+      "lens": "Helios 44-2 58mm f/2",
+      "category": "featured",
+      "_slug": "20260421235400"
+    },
+    {
+      "camera": "Fujifilm XT-5",
+      "isCover": true,
+      "date": "2026-04-21T19:53:00.000-04:00",
+      "location": "Alaska, USA",
+      "title": "fairbanks",
+      "image": "/photos/uploads/dscf8173.jpg",
+      "year": "2026",
+      "lens": "Sigma 23mm f/1.4",
+      "category": "silence",
+      "_slug": "20260421235300"
+    },
+    {
+      "camera": "Fujifilm XT-5",
+      "date": "2026-04-21T19:49:00.000-04:00",
+      "location": "Alaska, USA",
+      "title": "Fairbanks Aurora",
+      "image": "/photos/uploads/dscf8769.jpg",
+      "description": "Aurora in Fairbanks, AK.",
+      "year": "2026",
+      "lens": "Sigma 23mm f/1.4",
+      "category": "featured",
+      "_slug": "20260421234900"
+    },
+    {
+      "title": "Brooklyn Bridge",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003731.jpg",
+      "date": "2026-04-21T19:33:00.000-04:00",
+      "location": "New York, USA",
+      "year": "2023",
+      "camera": "RICOH GR3",
+      "_slug": "20260421233300"
+    },
+    {
+      "camera": "RICOH GR3",
+      "isCover": true,
+      "date": "2026-04-21T19:31:00.000-04:00",
+      "location": "New York, USA",
+      "title": "Liberty",
+      "image": "/photos/uploads/r0003823-2.jpg",
+      "description": "Dawn in NYC, Statue of Liberty, on a boat trip.",
+      "year": "2023",
+      "category": "featured",
+      "_slug": "20260421233100"
+    },
+    {
+      "title": "fender",
+      "category": "polaroid",
+      "image": "/photos/uploads/img_20251128_0001.jpg",
+      "date": "2026-04-21T19:25:00.000-04:00",
+      "camera": "i-2",
+      "year": "2025",
+      "_slug": "20260421232500"
+    },
+    {
+      "title": "New Photo",
+      "category": "distortion",
+      "image": "/photos/uploads/r0003553.jpg",
+      "date": "2026-04-20T23:28:00.000-04:00",
+      "location": "New York, USA",
+      "isCover": true,
+      "_slug": "20260422032800"
     }
   ],
   "musicPhotos": [
     {
-      "image": "/musicPhotos/1stguitarstage.jpg",
       "title": "Music Moment",
-      "date": "2026-04-22T00:00:00Z",
-      "_slug": "1stguitarstage"
+      "image": "/photos/uploads/img_7233.jpg",
+      "date": "2026-04-24T03:38:00.000-04:00",
+      "_slug": "20260424073800"
     },
     {
       "title": "Music Moment",
@@ -1878,10 +1879,10 @@ export const cmsData = {
       "_slug": "20260424073700"
     },
     {
+      "image": "/musicPhotos/1stguitarstage.jpg",
       "title": "Music Moment",
-      "image": "/photos/uploads/img_7233.jpg",
-      "date": "2026-04-24T03:38:00.000-04:00",
-      "_slug": "20260424073800"
+      "date": "2026-04-22T00:00:00Z",
+      "_slug": "1stguitarstage"
     },
     {
       "image": "/musicPhotos/2026cny.jpg",

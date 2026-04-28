@@ -1,10 +1,11 @@
 {
-  "title": "Liberty",
-  "category": "featured",
-  "image": "/photos/uploads/r0003823-2.jpg",
+  "camera": "RICOH GR3",
+  "isCover": true,
   "date": "2026-04-21T19:31:00.000-04:00",
   "location": "New York, USA",
+  "title": "Liberty",
+  "image": "/photos/uploads/r0003823-2.jpg",
+  "description": "Dawn in NYC, Statue of Liberty, on a boat trip.",
   "year": "2023",
-  "camera": "RICOH GR3",
-  "description": "Dawn in NYC, Statue of Liberty, on a boat trip."
+  "category": "featured"
 }

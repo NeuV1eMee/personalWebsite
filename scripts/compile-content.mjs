@@ -9,26 +9,62 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
+// Get actual files from public directories to handle case-sensitivity
+const musicPhotosFiles = fs.existsSync(path.join(process.cwd(), 'public/musicPhotos')) 
+  ? fs.readdirSync(path.join(process.cwd(), 'public/musicPhotos')) 
+  : [];
+const uploadsFiles = fs.existsSync(path.join(process.cwd(), 'public/photos/uploads')) 
+  ? fs.readdirSync(path.join(process.cwd(), 'public/photos/uploads')) 
+  : [];
+
+function normalizePath(p) {
+  if (typeof p !== 'string') return p;
+  
+  // Normalize /musicPhotos/
+  if (p.startsWith('/musicPhotos/')) {
+    const fileName = p.replace('/musicPhotos/', '');
+    const match = musicPhotosFiles.find(f => f.toLowerCase() === fileName.toLowerCase());
+    return match ? `/musicPhotos/${match}` : p;
+  }
+  
+  // Normalize /photos/uploads/
+  if (p.startsWith('/photos/uploads/')) {
+    const fileName = p.replace('/photos/uploads/', '');
+    const match = uploadsFiles.find(f => f.toLowerCase() === fileName.toLowerCase());
+    return match ? `/photos/uploads/${match}` : p;
+  }
+  
+  return p;
+}
+
+function walkAndNormalize(obj) {
+  if (!obj || typeof obj !== 'object') return obj;
+  
+  if (Array.isArray(obj)) {
+    return obj.map(item => walkAndNormalize(item));
+  }
+  
+  const normalized = {};
+  for (const [key, value] of Object.entries(obj)) {
+    if (typeof value === 'string') {
+      normalized[key] = normalizePath(value);
+    } else {
+      normalized[key] = walkAndNormalize(value);
+    }
+  }
+  return normalized;
+}
+
 function readJsonFiles(dir) {
   if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir)
     .filter(f => f.endsWith('.json'))
     .map(f => {
       const content = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
-      
-      // Normalize image paths to match Git casing
-      if (content.image && content.image.startsWith('/musicPhotos/')) {
-        const fileName = content.image.replace('/musicPhotos/', '');
-        const actualFiles = fs.readdirSync(path.join(process.cwd(), 'public/musicPhotos'));
-        const match = actualFiles.find(af => af.toLowerCase() === fileName.toLowerCase());
-        if (match) {
-          content.image = `/musicPhotos/${match}`;
-        }
-      }
-
+      const normalized = walkAndNormalize(content);
       return {
-        ...content,
-        _slug: f.replace(/\.json$/, '') // Keep the original filename as the slug/ID
+        ...normalized,
+        _slug: f.replace(/\.json$/, '')
       };
     });
 }
@@ -42,9 +78,9 @@ function compile() {
       journal: readJsonFiles(path.join(contentDir, 'journal')),
 
       settings: {
-        homepage: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/homepage.json'), 'utf8')),
-        about: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/about.json'), 'utf8')),
-        music: JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/music.json'), 'utf8')),
+        homepage: walkAndNormalize(JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/homepage.json'), 'utf8'))),
+        about: walkAndNormalize(JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/about.json'), 'utf8'))),
+        music: walkAndNormalize(JSON.parse(fs.readFileSync(path.join(contentDir, 'settings/music.json'), 'utf8'))),
       }
     };
 
@@ -59,10 +95,8 @@ export const cmsData = ${JSON.stringify(data, null, 2)};
   }
 }
 
-// Initial compile
 compile();
 
-// Watch mode
 if (process.argv.includes('--watch')) {
   console.log('👀 Watching for changes in content directory...');
   fs.watch(contentDir, { recursive: true }, (eventType, filename) => {
