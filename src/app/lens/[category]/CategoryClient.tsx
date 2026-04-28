@@ -11,6 +11,20 @@ interface CategoryClientProps {
 export function CategoryClient({ filteredPhotos }: CategoryClientProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
+  const handleNext = () => {
+    if (!selectedPhoto) return;
+    const currentIndex = filteredPhotos.findIndex(p => p.id === selectedPhoto.id);
+    const nextIndex = (currentIndex + 1) % filteredPhotos.length;
+    setSelectedPhoto(filteredPhotos[nextIndex]);
+  };
+
+  const handlePrev = () => {
+    if (!selectedPhoto) return;
+    const currentIndex = filteredPhotos.findIndex(p => p.id === selectedPhoto.id);
+    const prevIndex = (currentIndex - 1 + filteredPhotos.length) % filteredPhotos.length;
+    setSelectedPhoto(filteredPhotos[prevIndex]);
+  };
+
   return (
     <>
       <main className="pt-48 px-6 md:px-16 lg:px-32 xl:px-48 max-w-[1800px] mx-auto">
@@ -49,6 +63,8 @@ export function CategoryClient({ filteredPhotos }: CategoryClientProps) {
       <Lightbox 
         photo={selectedPhoto} 
         onClose={() => setSelectedPhoto(null)} 
+        onNext={handleNext}
+        onPrev={handlePrev}
       />
     </>
   );

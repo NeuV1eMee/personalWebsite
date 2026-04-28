@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Photo, CATEGORIES } from "@/lib/photo-constants";
 
@@ -24,6 +24,24 @@ export function LensClient({ featuredPhotos, allPhotos }: LensClientProps) {
 
   const currentFeatured = featuredPhotos.length > 0 ? featuredPhotos[featuredIndex] : null;
   const currentDescription = currentFeatured ? currentFeatured.description : "";
+
+  // Keyboard support for carousel
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (featuredPhotos.length <= 1) return;
+      
+      if (event.key === "ArrowRight") {
+        nextFeatured();
+      } else if (event.key === "ArrowLeft") {
+        prevFeatured();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [featuredIndex, featuredPhotos]);
 
   return (
     <main className="pt-36 px-6 md:px-12 max-w-[1600px] mx-auto space-y-64">
