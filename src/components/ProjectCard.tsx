@@ -119,6 +119,15 @@ export function ProjectCard({ project, index, onClick }: ProjectCardProps) {
     </div>
   );
 
+  // If project has a gallery and slug, link to detail page
+  if (project.gallery && project.gallery.length > 0 && project.slug) {
+    return (
+      <Link href={`/build/${project.slug}`} className="block group cursor-pointer">
+        {CardContent}
+      </Link>
+    );
+  }
+
   if (onClick) {
       return (
           <div onClick={onClick} className="block group cursor-pointer">

@@ -1978,15 +1978,24 @@ export const cmsData = {
   "projects": [
     {
       "title": "AE-Synth",
+      "slug": "ae-synth",
       "year": "2025",
       "imageUrl": "/photos/uploads/aesynth.jpg",
-      "description": "An audio controller that uses an Arduino to control signal output; the signal is fed into Logic Pro to trigger selected synthesizer sounds.",
+      "description": "This custom MIDI controller replaces traditional keyboards with a single voice-trigger button and five faders. Designed for real-time timbre sculpting alongside Logic Pro demo tracks, it shifts the focus from playing notes to dynamically shaping sound.",
       "tools": [
         "Arduino",
         "LogicPro",
-        "VinylCut"
+        "LaserCut"
       ],
       "link": "#",
+      "gallery": [
+        "/photos/uploads/img_7922.jpg",
+        "/photos/uploads/img_7924.jpg",
+        "https://www.youtube.com/embed/fnZgnXm_Qdw",
+        "/photos/uploads/img_7925.jpg",
+        "/photos/uploads/img_7923.jpg"
+      ],
+      "fullDescription": "This custom MIDI controller redefines human-computer interaction in electronic music by subverting the traditional keyboard paradigm. Instead of a multi-key layout where each button triggers a static note, this device features only a single tactile button dedicated entirely to voice triggering (\"the act of making sound\"). The core philosophy is to treat sound not as a series of discrete pitches, but as a continuous, evolving canvas shaped entirely by real-time performance gestures.\n\nTo demonstrate its performance capabilities, we designed dedicated interactive demo tracks in Apple Logic Pro. Users can play alongside these backing tracks, exploring how a single trigger can transform from a cinematic sweep into a searing synth lead purely through physical interaction.\n\n- Technical Architecture & Hardware Design\nMicrocontroller: Powered by an Arduino Leonardo, leveraging its ATmega32u4 chip to achieve native USB-MIDI functionality. This eliminated the need for third-party serial-to-MIDI bridges, ensuring class-compliant, plug-and-play operation with macOS and ultra-low latency response times.\n\nSensor Interface: Equipped with five precision slide potentiometers (faders) that stream continuous analog data to the Leonardo, which translates the physical movement into MIDI CC (Control Change) messages.\n\nParameter Mapping (Logic Pro): The 5 faders are seamlessly mapped to essential synthesis parameters: Pitch, Vibrato, Filter Cutoff, Resonance, and Volume.\n\n- Industrial Design & Craftsmanship\nEnclosure: Built with an emphasis on both structural integrity and aesthetics. The chassis components were digitally modeled and laser-cut from premium thin wooden panels, utilizing a precise interlocking puzzle-piece design for a screwless look.\n\nFinishing: The exterior surfaces were finished with custom spray paint and decorative coating to give the natural wood a sleek, modern, hardware-synth aesthetic.\n\n- Workflow & User Experience\nThe instrument thrives on continuous modulation. By holding down the primary trigger button, the user activates the sound source; moving the 5 faders synchronously allows for dramatic filter sweeps, aggressive vibratos, and expressive sonic textures. The inclusion of guided demo tracks turned the controller into an accessible, intuitive installation—allowing even non-musicians to instantly grasp the relationship between tactile movement and electronic sound synthesis.",
       "_slug": "2023-echo-chamber"
     },
     {
